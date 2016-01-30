@@ -1,0 +1,47 @@
+PODS:
+  - Alamofire (3.1.5)
+  - ChameleonFramework/Default (2.0.6)
+  - ChameleonFramework/Swift (2.0.6):
+    - ChameleonFramework/Default
+  - CryptoSwift (0.2.2)
+  - Device (0.0.6)
+  - Kingfisher (2.0.1)
+  - PKHUD (2.2.5)
+  - ReachabilitySwift (2.3.3)
+  - Realm (0.97.0):
+    - Realm/Headers (= 0.97.0)
+  - Realm/Headers (0.97.0)
+  - RealmSwift (0.97.0):
+    - Realm (= 0.97.0)
+  - SnapKit (0.19.0)
+  - SVProgressHUD (1.1.3)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - ChameleonFramework/Swift
+  - CryptoSwift
+  - Device
+  - Kingfisher (~> 2.0.1)
+  - PKHUD
+  - ReachabilitySwift
+  - RealmSwift
+  - SnapKit
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  ChameleonFramework: a6b466873ff9a4ce3a5196c20bccf1a97ad9f446
+  CryptoSwift: d382228d6301c09474132417878a741c2a2e68cd
+  Device: 2b48a78b55e5631a8b1006b325dfefc32f6b8690
+  Kingfisher: 3af2020040453f710507819e6aa5f5721da03d9b
+  PKHUD: 15d9db01fb008bb9247c6d785c585f587955b113
+  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
+  Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
+  RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c
+  SnapKit: 57c00a21bac67a863f2192e816330f6665585938
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0
