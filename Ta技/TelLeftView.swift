@@ -11,7 +11,7 @@ import UIKit
 class TelLeftView: UIView {
 
     let label = UILabel()
-    
+
     init(frame: CGRect, areaCode: String) {
         super.init(frame: frame)
         self.label.text = areaCode

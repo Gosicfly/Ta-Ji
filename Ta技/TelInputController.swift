@@ -5,18 +5,18 @@
 //  Created by Gosicfly on 16/1/26.
 //  Copyright © 2016年 Gosicfly. All rights reserved.
 //
-//http://taji.whutech.com/register?phone=17072750175&code=原文&password=MD5
-//http://taji.whutech.com/sms.php?phone=手机号
+//短信验证码请求http://taji.whutech.com/sms.php?phone=手机号
+//验证码验证请求http://taji.whutech.com/sms_verify?phone=手机号&code=验证码
 
 import UIKit
 import SnapKit
 import SVProgressHUD
 import Alamofire
 import SwiftyJSON
-import ReachabilitySwift
-import CryptoSwift
 
 class TelInputController: UIViewController, TANavigationBarType {
+    
+    private let reachability = ReachabilityManager.sharedManager()
     
     var telInputField: UITextField! {
         didSet {
@@ -26,7 +26,7 @@ class TelInputController: UIViewController, TANavigationBarType {
                 make.left.equalTo(self.view).offset(40)
                 make.right.equalTo(self.view).offset(-40)
                 make.top.equalTo(self.view).offset(120)
-                make.height.equalTo(30)
+                make.height.equalTo(40)
             }
             self.telInputField.keyboardType = .PhonePad
             self.telInputField.borderStyle = .RoundedRect
@@ -35,7 +35,6 @@ class TelInputController: UIViewController, TANavigationBarType {
             self.telInputField.leftView = leftView
             self.telInputField.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
             self.telInputField.clearButtonMode = .WhileEditing
-//            self.telInputField.
             self.telInputField.becomeFirstResponder()
         }
     }
@@ -64,7 +63,7 @@ class TelInputController: UIViewController, TANavigationBarType {
                 make.left.equalTo(self.view).offset(40)
                 make.right.equalTo(self.view).offset(-40)
                 make.top.equalTo(self.nextButton.snp_bottom).offset(10)
-                make.height.equalTo(30)
+                make.height.equalTo(35)
             }
             self.signInButton.backgroundColor = UIColor.clearColor()
             self.signInButton.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
@@ -83,8 +82,9 @@ class TelInputController: UIViewController, TANavigationBarType {
     func setNavigationBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: defaultTintColot]
         self.navigationItem.title = "你的手机号"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .Plain, target: self, action: Selector("cancel"))
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "返回", style: .Plain, target: self, action: Selector("cancel"))
+        let cancelBarButton = UIBarButtonItem(image: UIImage(named: "icon_register_first_back"), style: .Plain, target: self, action: Selector("cancel"))
+        self.navigationItem.leftBarButtonItem = cancelBarButton
+        
         
     }
     
@@ -99,19 +99,29 @@ class TelInputController: UIViewController, TANavigationBarType {
     }
     
     func next() {
-//        let phoneNumber = self.telInputField.text!
-//        Alamofire.request(.GET, "http://taji.whutech.com/sms.php?phone=\(phoneNumber)").responseJSON { (response) -> Void in
-//            //TODO
-//            //ReachabilitySwift 联网测试
-//            let json = JSON(response.result.value!)
-//            print(json)
-//            guard json["status"].string! == "200" else {
-//                return
-//            }
-//        }
-        let vc = CodeInputController()
-        vc.telNumber = self.telInputField.text!
-        self.navigationController?.pushViewController(vc, animated: true)
+        SVProgressHUD.show()
+        switch self.reachability.isReachable() {
+        case true:      //有网络连接时
+            let phoneNumber = self.telInputField.text!
+            Alamofire.request(.GET, "http://taji.whutech.com/sms.php?phone=\(phoneNumber)").responseJSON { response in
+                let json = JSON(response.result.value!)
+                print(json)
+                guard json["status"].string! == "200" else {
+                    SVProgressHUD.showErrorWithStatus("请检查手机号码")
+                    return
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.dismiss()
+                    self.telInputField.resignFirstResponder()
+                    let vc = CodeInputController()
+                    vc.telNumber = self.telInputField.text!
+                    self.navigationController?.pushViewController(vc, animated: true)
+                })
+            }
+        case false:     //无网络连接时
+            SVProgressHUD.showErrorWithStatus("无网络连接")
+        }
+
     }
     
     func dismiss() {

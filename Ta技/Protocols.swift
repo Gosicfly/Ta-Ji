@@ -15,7 +15,7 @@ protocol ItemSelectable: class {
 
 protocol HomeTitleViewDelegate: class {
     
-    func transitionFromViewControllerToViewController(fromeViewController: UIViewController, toViewController: UIViewController, completion: ((Bool) -> Void)?)
+    func transition(fromeViewController fromeViewController: UIViewController, toViewController: UIViewController, completion: ((Bool) -> Void)?)
 }
 
 protocol TANavigationBarType: class {

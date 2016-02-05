@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		638C475D685BF472CB5F5538 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F13FDD73B62F3E08CF6566 /* Pods.framework */; };
+		A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */; };
 		A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342426E1C567A4200FAD46D /* AppDelegate.swift */; };
 		A34242741C567A4200FAD46D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34242721C567A4200FAD46D /* Main.storyboard */; };
 		A34242761C567A4200FAD46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A34242751C567A4200FAD46D /* Assets.xcassets */; };
@@ -31,11 +32,13 @@
 		A3D709071C5795540055AD9D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709061C5795540055AD9D /* Protocols.swift */; };
 		A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709081C5A77310055AD9D /* TelLeftView.swift */; };
 		A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7090D1C5BBCFF0055AD9D /* TATextField.swift */; };
+		A3D709101C5CDBE90055AD9D /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7090F1C5CDBE90055AD9D /* PasswordInputController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		888C711AA3FE1361E7834B5F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8E2A27AB5A2023B99F6E93F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		A342426B1C567A4200FAD46D /* Ta技.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ta技.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A342426E1C567A4200FAD46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A34242731C567A4200FAD46D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		A3D709061C5795540055AD9D /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A3D709081C5A77310055AD9D /* TelLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelLeftView.swift; sourceTree = "<group>"; };
 		A3D7090D1C5BBCFF0055AD9D /* TATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATextField.swift; sourceTree = "<group>"; };
+		A3D7090F1C5CDBE90055AD9D /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
 		C3F13FDD73B62F3E08CF6566 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +172,7 @@
 		A34242861C567AF400FAD46D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			children = (
 				A3D708FB1C575ACF0055AD9D /* TelInputController.swift */,
 				A3D708FD1C575B850055AD9D /* CodeInputController.swift */,
+				A3D7090F1C5CDBE90055AD9D /* PasswordInputController.swift */,
 				A3D709081C5A77310055AD9D /* TelLeftView.swift */,
 				A3D7090D1C5BBCFF0055AD9D /* TATextField.swift */,
 			);
@@ -406,6 +412,7 @@
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,
 				A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */,
+				A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */,
 				A342429F1C567C7600FAD46D /* HotMenuCell.swift in Sources */,
 				A34242911C567BB400FAD46D /* TATabBarController.swift in Sources */,
 				A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */,
@@ -421,6 +428,7 @@
 				A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */,
 				A3D709071C5795540055AD9D /* Protocols.swift in Sources */,
 				A342429B1C567C4000FAD46D /* HomeTitleView.swift in Sources */,
+				A3D709101C5CDBE90055AD9D /* PasswordInputController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

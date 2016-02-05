@@ -5,16 +5,18 @@
 //  Created by Gosicfly on 16/1/26.
 //  Copyright © 2016年 Gosicfly. All rights reserved.
 //
+//短信验证码请求http://taji.whutech.com/sms.php?phone=手机号
+//验证码验证请求http://taji.whutech.com/sms_verify?phone=手机号&code=验证码
 
 import UIKit
 import SnapKit
 import SVProgressHUD
 import Alamofire
 import SwiftyJSON
-import ReachabilitySwift
-import CryptoSwift
 
-class CodeInputController: UIViewController, TANavigationBarType {
+class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecognizerDelegate {
+    
+    private let reachability = ReachabilityManager.sharedManager()
     
     var i = 60
     
@@ -28,7 +30,7 @@ class CodeInputController: UIViewController, TANavigationBarType {
             self.hintOne.snp_makeConstraints { (make) -> Void in
                 make.left.equalTo(self.view).offset(40)
                 make.right.equalTo(self.view).offset(-40)
-                make.top.equalTo(self.view).offset(30)
+                make.top.equalTo(self.view).offset(60)
                 make.height.equalTo(30)
             }
             self.hintOne.backgroundColor = UIColor.clearColor()
@@ -72,7 +74,13 @@ class CodeInputController: UIViewController, TANavigationBarType {
             self.codeInputField.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
             self.codeInputField.layer.cornerRadius = 5
             self.codeInputField.clearButtonMode = .WhileEditing
+            self.codeInputField.autocorrectionType = .No
+            self.codeInputField.spellCheckingType = .No
+            self.codeInputField.returnKeyType = .Done
+            self.codeInputField.delegate = self
             self.codeInputField.placeholder = "输入短信验证码"
+            //这个地方console会输出一个警告，不明白是为什么
+            performSelector(Selector("becomeFirstResponderAfterSecond"), withObject: nil, afterDelay: 0.6)
         }
     }
     
@@ -83,7 +91,7 @@ class CodeInputController: UIViewController, TANavigationBarType {
                 make.left.equalTo(self.view).offset(40)
                 make.right.equalTo(self.view).offset(-40)
                 make.top.equalTo(self.codeInputField.snp_bottom).offset(10)
-                make.height.equalTo(40)
+                make.height.equalTo(35)
             }
             self.requestAgainButton.backgroundColor  = UIColor.clearColor()
             self.requestAgainButton.layer.cornerRadius = 5
@@ -93,6 +101,7 @@ class CodeInputController: UIViewController, TANavigationBarType {
             self.requestAgainButton.enabled = false
             self.requestAgainButton.setTitle("重新获取(\(self.i)秒)", forState: .Disabled)
             self.requestAgainButton.setTitle("重新获取", forState: .Normal)
+            self.requestAgainButton.addTarget(self, action: Selector("requestAgain"), forControlEvents: .TouchUpInside)
         }
     }
     
@@ -103,7 +112,7 @@ class CodeInputController: UIViewController, TANavigationBarType {
                 make.left.equalTo(self.view).offset(40)
                 make.right.equalTo(self.view).offset(-40)
                 make.top.equalTo(self.requestAgainButton.snp_bottom).offset(10)
-                make.height.equalTo(40)
+                make.height.equalTo(35)
             }
             self.nextButton.backgroundColor = navigationBarColor
             self.nextButton.layer.cornerRadius = 5
@@ -126,6 +135,8 @@ class CodeInputController: UIViewController, TANavigationBarType {
         let backBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: Selector("back"))
         self.navigationItem.leftBarButtonItem = backBarButtonItem
         self.navigationItem.title = "短信验证"
+        //左滑返回
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
     }
     
@@ -150,16 +161,42 @@ class CodeInputController: UIViewController, TANavigationBarType {
     }
     
     func next() {
-        let code = self.codeInputField.text
-        Alamofire.request(.GET, "").responseJSON { (response) -> Void in
-            let response = response.result
-            guard response.error != nil else {
-                print(response.error)
-                return
-            }
-            let json = JSON(response.value!)
-            
+        SVProgressHUD.show()
+        switch self.reachability.isReachable() {
+        case true:
+            let code = self.codeInputField.text!.uppercaseString
+            Alamofire.request(.GET, "http://taji.whutech.com/sms_verify?phone=\(self.telNumber)&code=\(code)").responseJSON(completionHandler: { response in
+                let json = JSON(response.result.value!)
+                print(json)
+                guard json["status"].string! == "200" else {
+                    SVProgressHUD.showErrorWithStatus("验证码错误")
+                    self.performSelector(Selector("dismiss"), withObject: nil, afterDelay: 0.5)
+                    self.performSelector(Selector("becomeFirstResponderAfterSecond"), withObject: nil, afterDelay: 0.6)
+                    return
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.dismiss()
+                    self.codeInputField.endEditing(true)
+                    let passwordInputController = PasswordInputController()
+                    self.navigationController?.pushViewController(passwordInputController, animated: true)
+                })
+            })
+        case false:
+            SVProgressHUD.showErrorWithStatus("无网络连接")
         }
+    }
+    
+    //TODO
+    func requestAgain() {
+        
+    }
+    
+    func becomeFirstResponderAfterSecond() {
+        self.codeInputField.becomeFirstResponder()
+    }
+    
+    func dismiss() {
+        SVProgressHUD.dismiss()
     }
     
     func back() {
@@ -172,5 +209,14 @@ class CodeInputController: UIViewController, TANavigationBarType {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.codeInputField.resignFirstResponder()
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension CodeInputController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.next()
+        return true
     }
 }

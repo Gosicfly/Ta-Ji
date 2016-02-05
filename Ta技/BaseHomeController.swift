@@ -56,7 +56,7 @@ class BaseHomeController: UIViewController, TANavigationBarType {
 
 extension BaseHomeController: HomeTitleViewDelegate {
     
-    func transitionFromViewControllerToViewController(fromeViewController: UIViewController, toViewController: UIViewController, completion: ((Bool) -> Void)?) {
+    func transition(fromeViewController  fromeViewController: UIViewController, toViewController: UIViewController, completion: ((Bool) -> Void)?) {
         self.transitionFromViewController(fromeViewController, toViewController: toViewController, duration: 0, options: UIViewAnimationOptions.TransitionNone, animations: nil, completion: completion)
     }
 }

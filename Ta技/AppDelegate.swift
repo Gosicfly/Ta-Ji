@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setDefalutNavigationBarStyle() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UINavigationBar.appearance().barTintColor = navigationBarColor
         UINavigationBar.appearance().tintColor = defaultTintColot
         UINavigationBar.appearance().translucent = false

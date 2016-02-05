@@ -22,7 +22,7 @@ class HotViewController: UIViewController {
     
     private var _toRight: Bool = true
     
-    private var _itemStringArray: [String] = ["广场", "绘画", "设计", "手工", "搭配", "摄影"]
+    private var _itemStringArray: [String] = ["广场", "绘画", "设计", "手工", "搭配", "摄影", "代码", "足球"]
     
     private var _bottomView: UIView!
     
@@ -41,7 +41,7 @@ class HotViewController: UIViewController {
             layout.minimumInteritemSpacing = 0
             layout.minimumLineSpacing = 0
             layout.scrollDirection = .Horizontal
-            layout.itemSize = CGSize(width: SCREEN_WIDTH / 5, height: 23)
+            layout.itemSize = CGSize(width: SCREEN_WIDTH / 5, height: 27)
             self._menuView = UICollectionView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: layout.itemSize.height), collectionViewLayout: layout)
             self._menuView.registerClass(HotMenuCell.self, forCellWithReuseIdentifier: "HotMenuCell")
             self._menuView.delegate = self
