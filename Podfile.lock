@@ -6,7 +6,6 @@ PODS:
   - CryptoSwift (0.2.2)
   - Device (0.0.6)
   - Kingfisher (2.0.1)
-  - PKHUD (2.2.5)
   - ReachabilitySwift (2.3.3)
   - Realm (0.97.0):
     - Realm/Headers (= 0.97.0)
@@ -23,7 +22,6 @@ DEPENDENCIES:
   - CryptoSwift
   - Device
   - Kingfisher (~> 2.0.1)
-  - PKHUD
   - ReachabilitySwift
   - RealmSwift
   - SnapKit
@@ -36,7 +34,6 @@ SPEC CHECKSUMS:
   CryptoSwift: d382228d6301c09474132417878a741c2a2e68cd
   Device: 2b48a78b55e5631a8b1006b325dfefc32f6b8690
   Kingfisher: 3af2020040453f710507819e6aa5f5721da03d9b
-  PKHUD: 15d9db01fb008bb9247c6d785c585f587955b113
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
   RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c

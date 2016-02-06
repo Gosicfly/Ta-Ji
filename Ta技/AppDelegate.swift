@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: SCREEN_BOUNDS)
         self.setTabBar()
         self.setDefalutNavigationBarStyle()
-        self.window?.rootViewController = UINavigationController(rootViewController: TelInputController())
-//        self.window?.rootViewController = tabBarVC
+//        self.window?.rootViewController = UINavigationController(rootViewController: TelInputController())
+        self.window?.rootViewController = tabBarVC
         self.window?.makeKeyAndVisible()
         return true
     }
