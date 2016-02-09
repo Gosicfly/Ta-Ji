@@ -25,6 +25,7 @@
 		A34242A91C567CEC00FAD46D /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A81C567CEC00FAD46D /* MeViewController.swift */; };
 		A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242AA1C567D0500FAD46D /* UIExtensions.swift */; };
 		A34242AF1C567EB800FAD46D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A34242AE1C567EB800FAD46D /* Podfile */; };
+		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
 		A3D709021C575BF90055AD9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709011C575BF90055AD9D /* LoginViewController.swift */; };
@@ -35,6 +36,7 @@
 		A3D709101C5CDBE90055AD9D /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7090F1C5CDBE90055AD9D /* PasswordInputController.swift */; };
 		A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */; };
 		A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */; };
+		A3E03F1E1C65FB7F006BEF6F /* HotPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1D1C65FB7F006BEF6F /* HotPageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,7 @@
 		A34242A81C567CEC00FAD46D /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		A34242AA1C567D0500FAD46D /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		A34242AE1C567EB800FAD46D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
 		A3D709011C575BF90055AD9D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		A3D7090F1C5CDBE90055AD9D /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
 		A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollView.swift; sourceTree = "<group>"; };
 		A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollViewCell.swift; sourceTree = "<group>"; };
+		A3E03F1D1C65FB7F006BEF6F /* HotPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotPageCell.swift; sourceTree = "<group>"; };
 		C3F13FDD73B62F3E08CF6566 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -257,6 +261,8 @@
 			children = (
 				A342429C1C567C5F00FAD46D /* HotViewController.swift */,
 				A342429E1C567C7600FAD46D /* HotMenuCell.swift */,
+				A3E03F1D1C65FB7F006BEF6F /* HotPageCell.swift */,
+				A3E03F1F1C672E14006BEF6F /* CustomCells */,
 			);
 			name = "热门";
 			sourceTree = "<group>";
@@ -296,6 +302,14 @@
 				A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */,
 			);
 			name = GFCycleScrollView;
+			sourceTree = "<group>";
+		};
+		A3E03F1F1C672E14006BEF6F /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +440,7 @@
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,
 				A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */,
+				A3E03F1E1C65FB7F006BEF6F /* HotPageCell.swift in Sources */,
 				A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */,
 				A342429F1C567C7600FAD46D /* HotMenuCell.swift in Sources */,
 				A34242911C567BB400FAD46D /* TATabBarController.swift in Sources */,
@@ -438,6 +453,7 @@
 				A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */,
 				A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */,
 				A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */,
+				A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */,
 				A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */,
 				A34242991C567C2A00FAD46D /* BaseHomeController.swift in Sources */,
 				A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */,

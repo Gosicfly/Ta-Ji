@@ -43,7 +43,7 @@ class HotViewController: UIViewController {
             layout.scrollDirection = .Horizontal
             layout.itemSize = CGSize(width: SCREEN_WIDTH / 5, height: 27)
             self._menuView = UICollectionView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: layout.itemSize.height), collectionViewLayout: layout)
-            self._menuView.registerClass(HotMenuCell.self, forCellWithReuseIdentifier: "HotMenuCell")
+            self._menuView.registerClass(HotMenuCell.self, forCellWithReuseIdentifier: String(HotMenuCell))
             self._menuView.delegate = self
             self._menuView.dataSource = self
             self._menuView.scrollEnabled = true
@@ -64,7 +64,7 @@ class HotViewController: UIViewController {
             layout.minimumInteritemSpacing = 0
             layout.minimumLineSpacing = 0
             layout.scrollDirection = .Horizontal;
-            layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGTH - self._menuView.bounds.height)
+            layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGTH - self._menuView.bounds.height-(self.navigationController?.navigationBar.bounds.height)!-UIApplication.sharedApplication().statusBarFrame.height-(self.tabBarController?.tabBar.bounds.height)!)
             self._pageView = UICollectionView(frame: CGRect(x: 0, y: self._menuView.bounds.height, width: SCREEN_WIDTH, height: layout.itemSize.height), collectionViewLayout: layout)
             self._pageView.dataSource = self
             self._pageView.delegate = self
@@ -73,7 +73,7 @@ class HotViewController: UIViewController {
             self._pageView.contentSize = CGSize(width: SCREEN_WIDTH * 2, height: SCREEN_HEIGTH - self._menuView.bounds.height)
             self._pageView.bounces = false
             self._pageView.showsHorizontalScrollIndicator = false
-            self._pageView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+            self._pageView.registerClass(HotPageCell.self, forCellWithReuseIdentifier: String(HotPageCell))
             self.view.addSubview(self._pageView)
         }
     }
@@ -87,15 +87,12 @@ extension HotViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         if collectionView == self._menuView {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HotMenuCell", forIndexPath: indexPath) as! HotMenuCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(HotMenuCell), forIndexPath: indexPath) as! HotMenuCell
             cell.name = self._itemStringArray[indexPath.row]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("UICollectionViewCell", forIndexPath: indexPath)
-            let R = CGFloat(arc4random_uniform(255))/255
-            let G = CGFloat(arc4random_uniform(255))/255
-            let B = CGFloat(arc4random_uniform(255))/255
-            cell.backgroundColor = UIColor(red: R, green: G, blue: B, alpha: 1)
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(HotPageCell), forIndexPath: indexPath) as! HotPageCell
+            cell.collectionView.backgroundColor = collectionViewBackgroundColor
             return cell
         }
     }

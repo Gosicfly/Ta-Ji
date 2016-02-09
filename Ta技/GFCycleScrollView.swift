@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 轮播图
 class GFCycleScrollView: UIView {
 
 }
