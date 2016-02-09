@@ -63,30 +63,30 @@ class SquareCell: UICollectionViewCell {
         }
     }
     
-    var supportImageView: UIImageView! {
+    var likeImageView: UIImageView! {
         didSet {
-            self.addSubview(self.supportImageView)
-            self.supportImageView.snp_makeConstraints { (make) -> Void in
+            self.addSubview(self.likeImageView)
+            self.likeImageView.snp_makeConstraints { (make) -> Void in
                 make.left.equalTo(self.avatarImageView.snp_right).offset(7)
-                make.width.equalTo(self.supportImageView.snp_height)
-                make.top.equalTo(self.showImageView.snp_bottom).offset(5)
-                make.bottom.equalTo(self).offset(-5)
+                make.width.equalTo(self.likeImageView.snp_height)
+                make.top.equalTo(self.showImageView.snp_bottom).offset(2)
+                make.bottom.equalTo(self).offset(-2)
             }
         }
     }
     
-    var numberOfSupporters: UILabel! {
+    var numberOfLikers: UILabel! {
         didSet {
-            self.addSubview(self.numberOfSupporters)
-            self.numberOfSupporters.snp_makeConstraints { (make) -> Void in
-                make.left.equalTo(self.supportImageView.snp_right).offset(4)
+            self.addSubview(self.numberOfLikers)
+            self.numberOfLikers.snp_makeConstraints { (make) -> Void in
+                make.left.equalTo(self.likeImageView.snp_right).offset(4)
                 make.right.equalTo(self)
-                make.top.equalTo(self.supportImageView)
-                make.bottom.equalTo(self.supportImageView)
+                make.top.equalTo(self.likeImageView)
+                make.bottom.equalTo(self.likeImageView)
             }
-            self.numberOfSupporters.text = "1024"
-            self.numberOfSupporters.textColor = defaultTintColot
-            self.numberOfSupporters.font = UIFont.systemFontOfSize(12)
+            self.numberOfLikers.text = "1024"
+            self.numberOfLikers.textColor = defaultTintColot
+            self.numberOfLikers.font = UIFont.systemFontOfSize(12)
         }
         
     }
@@ -111,8 +111,8 @@ class SquareCell: UICollectionViewCell {
         self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.width / 2
         self.avatarImageView.layer.masksToBounds = true
         self.titleLabel = UILabel()
-        self.supportImageView = UIImageView(image: UIImage(named: "support"))
-        self.numberOfSupporters = UILabel()
+        self.likeImageView = UIImageView(image: UIImage(named: "support"))
+        self.numberOfLikers = UILabel()
         
         self.bringSubviewToFront(self.avatarImageView)
         self.bringSubviewToFront(self.titleLabel)
