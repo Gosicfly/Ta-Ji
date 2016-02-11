@@ -79,7 +79,7 @@ class GFCycleScrollView: UICollectionReusableView {
         self.layout = UICollectionViewFlowLayout()
         self.collectionView = UICollectionView(frame: self.frame, collectionViewLayout: self.layout)
         self.pageControl = UIPageControl()
-        self.timer = NSTimer(timeInterval: 3.5, target: self, selector: Selector("scrollImages"), userInfo: nil, repeats: true)
+        self.timer = NSTimer(timeInterval: 3.2, target: self, selector: Selector("scrollImages"), userInfo: nil, repeats: true)
     }
     
     override func layoutSubviews() {
@@ -128,6 +128,16 @@ extension GFCycleScrollView: UIScrollViewDelegate {
         } else {
             self.pageControl.currentPage = Int(selectedItem) - 1
         }
+    }
+    
+    //拖曳时暂停定时器
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        self.timer.fireDate = NSDate.distantFuture()
+    }
+    
+    //拖曳结束重启定时器
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.timer.fireDate = NSDate(timeIntervalSinceNow: self.timer.timeInterval)
     }
     
 }
