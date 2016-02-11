@@ -10,7 +10,15 @@ import UIKit
 
 class HotMenuCell: UICollectionViewCell {
     
-    var titleLabel: UILabel!
+    var titleLabel: UILabel! {
+        didSet {
+            self.titleLabel.textColor = defaultTintColot
+            self.titleLabel.highlightedTextColor = selectedColor
+            self.titleLabel.textAlignment = .Center
+            self.titleLabel.font = UIFont.systemFontOfSize(14)
+            self.addSubview(self.titleLabel)
+        }
+    }
     
     var name: String {
         set {
@@ -25,13 +33,8 @@ class HotMenuCell: UICollectionViewCell {
     }
     
     override init(frame: CGRect) {
-        self.titleLabel = UILabel()
-        self.titleLabel.textColor = UIColor.whiteColor()
-        self.titleLabel.highlightedTextColor = selectedColor
-        self.titleLabel.textAlignment = .Center
-        self.titleLabel.font = UIFont.systemFontOfSize(14)
         super.init(frame: frame)
-        self.addSubview(self.titleLabel)
+        self.setSubViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,4 +46,7 @@ class HotMenuCell: UICollectionViewCell {
         self.titleLabel.bounds = self.contentView.bounds
     }
     
+    func setSubViews() {
+        self.titleLabel = UILabel()
+    }
 }
