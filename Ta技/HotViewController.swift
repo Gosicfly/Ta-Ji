@@ -43,7 +43,7 @@ class HotViewController: UIViewController {
             layout.scrollDirection = .Horizontal
             layout.itemSize = CGSize(width: SCREEN_WIDTH / 5, height: 27)
             self._menuView = UICollectionView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: layout.itemSize.height), collectionViewLayout: layout)
-            self._menuView.registerClass(HotMenuCell.self, forCellWithReuseIdentifier: String(HotMenuCell))
+            self._menuView.registerClass(HotMenu.self, forCellWithReuseIdentifier: String(HotMenu))
             self._menuView.delegate = self
             self._menuView.dataSource = self
             self._menuView.scrollEnabled = true
@@ -73,33 +73,32 @@ class HotViewController: UIViewController {
             self._pageView.contentSize = CGSize(width: SCREEN_WIDTH * 2, height: SCREEN_HEIGTH - self._menuView.bounds.height)
             self._pageView.bounces = false
             self._pageView.showsHorizontalScrollIndicator = false
-            self._pageView.registerClass(HotPageCell.self, forCellWithReuseIdentifier: String(HotPageCell))
+            self._pageView.registerClass(HotPage.self, forCellWithReuseIdentifier: String(HotPage))
             self.view.addSubview(self._pageView)
         }
     }
 }
 
 extension HotViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self._itemStringArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
         if collectionView == self._menuView {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(HotMenuCell), forIndexPath: indexPath) as! HotMenuCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(HotMenu), forIndexPath: indexPath) as! HotMenu
             cell.name = self._itemStringArray[indexPath.row]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(HotPageCell), forIndexPath: indexPath) as! HotPageCell
-            cell.collectionView.backgroundColor = collectionViewBackgroundColor
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(HotPage), forIndexPath: indexPath) as! HotPage
             return cell
         }
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if (collectionView == self._menuView) {
-            if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? HotMenuCell {
+            if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? HotMenu {
                 self._menuView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
                 self._pageView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
             } else {

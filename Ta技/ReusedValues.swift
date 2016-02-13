@@ -20,6 +20,8 @@ let defaultTintColot = UIColor(red: 204/255, green: 205/255, blue: 206/255, alph
 
 let collectionViewBackgroundColor = UIColor(red: 78/255, green: 60/255, blue: 101/255, alpha: 1)
 
+let textViewBackgroundColor = UIColor(red: 122/255, green: 109/255, blue: 133/255, alpha: 1)
+
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
 let SCREEN_HEIGTH = UIScreen.mainScreen().bounds.height

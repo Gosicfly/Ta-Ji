@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HotMenuCell: UICollectionViewCell {
+class HotMenu: UICollectionViewCell {
     
     var titleLabel: UILabel! {
         didSet {

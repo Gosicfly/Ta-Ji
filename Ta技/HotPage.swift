@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HotPageCell: UICollectionViewCell {
+class HotPage: UICollectionViewCell {
     
     func scope(closure: () -> Void) {
         closure()
@@ -34,6 +34,7 @@ class HotPageCell: UICollectionViewCell {
             self.collectionView.registerClass(GFCycleScrollView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: String(GFCycleScrollView))
             self.collectionView.dataSource = self
             self.collectionView.delegate = self
+            self.collectionView.backgroundColor = collectionViewBackgroundColor
         }
         self.contentView.addSubview(self.collectionView)
     }
@@ -49,7 +50,7 @@ class HotPageCell: UICollectionViewCell {
     
 }
 
-extension HotPageCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HotPage: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 13

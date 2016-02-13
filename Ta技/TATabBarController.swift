@@ -17,7 +17,7 @@ class TATabBarController: UITabBarController {
         button.layer.shadowColor = UIColor.blackColor().CGColor
         button.layer.shadowOpacity = 0.4
         button.layer.shadowPath = UIBezierPath(roundedRect: CGRectInset(button.bounds, -5, 1), cornerRadius: 0).CGPath
-        button.addTarget(self, action: Selector("a"), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: Selector("presentPublishViewController"), forControlEvents: .TouchUpInside)
         return button
     }()
     
@@ -54,7 +54,8 @@ class TATabBarController: UITabBarController {
         self.tabBar.addSubview(self.centerButton)
     }
     
-    func a() {
-        print("a")
+    func presentPublishViewController() {
+        let publishViewController = PublishViewController()
+        self.presentViewController(UINavigationController(rootViewController: publishViewController), animated: true, completion: nil)
     }
 }

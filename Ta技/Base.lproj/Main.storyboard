@@ -32,10 +32,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oqW-AV-GVP">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="reply" id="Yfd-AP-pXj"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOI-Gv-dmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334" y="359"/>
+            <point key="canvasLocation" x="940" y="358"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OPZ-e6-hqp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IWw-ud-lFS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="95T-Du-Z7d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kbA-JN-Rzr" kind="relationship" relationship="rootViewController" id="d9B-BA-Az2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fk3-7W-Rcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="358"/>
         </scene>
     </scenes>
 </document>
