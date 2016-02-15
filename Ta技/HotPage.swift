@@ -34,7 +34,7 @@ class HotPage: UICollectionViewCell {
             self.collectionView.registerClass(GFCycleScrollView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: String(GFCycleScrollView))
             self.collectionView.dataSource = self
             self.collectionView.delegate = self
-            self.collectionView.backgroundColor = collectionViewBackgroundColor
+            self.collectionView.backgroundColor = defaultBackgroundColor
         }
         self.contentView.addSubview(self.collectionView)
     }

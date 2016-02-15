@@ -18,7 +18,7 @@ let bottomViewColor = UIColor(red: 80/255, green: 235/255, blue: 165/255, alpha:
 
 let defaultTintColot = UIColor(red: 204/255, green: 205/255, blue: 206/255, alpha: 1)
 
-let collectionViewBackgroundColor = UIColor(red: 78/255, green: 60/255, blue: 101/255, alpha: 1)
+let defaultBackgroundColor = UIColor(red: 78/255, green: 60/255, blue: 101/255, alpha: 1)
 
 let textViewBackgroundColor = UIColor(red: 122/255, green: 109/255, blue: 133/255, alpha: 1)
 

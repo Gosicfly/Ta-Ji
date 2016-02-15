@@ -28,6 +28,7 @@
 		A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A61C567CD300FAD46D /* MessageViewController.swift */; };
 		A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242AA1C567D0500FAD46D /* UIExtensions.swift */; };
 		A34242AF1C567EB800FAD46D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A34242AE1C567EB800FAD46D /* Podfile */; };
+		A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12051C724BDA005FAC9F /* TALabel.swift */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
@@ -67,6 +68,7 @@
 		A34242A61C567CD300FAD46D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		A34242AA1C567D0500FAD46D /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		A34242AE1C567EB800FAD46D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A35A12051C724BDA005FAC9F /* TALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALabel.swift; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		A342428C1C567B7100FAD46D /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				A35A12051C724BDA005FAC9F /* TALabel.swift */,
 				A3252B581C6F4B7100022AC0 /* MeViewController.swift */,
 				A3252B591C6F4B7100022AC0 /* MeViewController.xib */,
 			);
@@ -476,6 +479,7 @@
 				A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */,
 				A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */,
 				A34242991C567C2A00FAD46D /* BaseHomeController.swift in Sources */,
+				A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */,
 				A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */,
 				A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */,
 				A3D709071C5795540055AD9D /* Protocols.swift in Sources */,
