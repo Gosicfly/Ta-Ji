@@ -7,8 +7,6 @@ pod 'ReachabilitySwift'           #检测网络
 pod 'SnapKit'                   #自动布局
 pod 'Kingfisher', '~> 2.0.1'          #网络图片缓存库
 pod 'Device'                   #判断设备型号
-#pod 'PageMenu'               #顶部滑动菜单
-#pod 'TKSubmitTransition'     #动效按钮
 pod 'RealmSwift'                 #数据库
 pod 'CryptoSwift'                 #加密库
 pod 'SVProgressHUD'              #HUD (OC)
