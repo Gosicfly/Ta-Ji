@@ -29,6 +29,8 @@
 		A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242AA1C567D0500FAD46D /* UIExtensions.swift */; };
 		A34242AF1C567EB800FAD46D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A34242AE1C567EB800FAD46D /* Podfile */; };
 		A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12051C724BDA005FAC9F /* TALabel.swift */; };
+		A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12071C73863F005FAC9F /* MeMenuCell.swift */; };
+		A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A35A12081C73863F005FAC9F /* MeMenuCell.xib */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
@@ -69,6 +71,8 @@
 		A34242AA1C567D0500FAD46D /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		A34242AE1C567EB800FAD46D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A35A12051C724BDA005FAC9F /* TALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALabel.swift; sourceTree = "<group>"; };
+		A35A12071C73863F005FAC9F /* MeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMenuCell.swift; sourceTree = "<group>"; };
+		A35A12081C73863F005FAC9F /* MeMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeMenuCell.xib; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 				A35A12051C724BDA005FAC9F /* TALabel.swift */,
 				A3252B581C6F4B7100022AC0 /* MeViewController.swift */,
 				A3252B591C6F4B7100022AC0 /* MeViewController.xib */,
+				A35A12071C73863F005FAC9F /* MeMenuCell.swift */,
+				A35A12081C73863F005FAC9F /* MeMenuCell.xib */,
 			);
 			name = "我的";
 			sourceTree = "<group>";
@@ -397,6 +403,7 @@
 				A3252B601C6F50C600022AC0 /* PublishViewController.xib in Resources */,
 				A34242791C567A4200FAD46D /* LaunchScreen.storyboard in Resources */,
 				A34242761C567A4200FAD46D /* Assets.xcassets in Resources */,
+				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
 				A34242741C567A4200FAD46D /* Main.storyboard in Resources */,
@@ -468,6 +475,7 @@
 				A342429F1C567C7600FAD46D /* HotMenu.swift in Sources */,
 				A34242911C567BB400FAD46D /* TATabBarController.swift in Sources */,
 				A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */,
+				A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */,
 				A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */,
 				A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */,
 				A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */,

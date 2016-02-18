@@ -107,6 +107,7 @@ class SquareCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         self.layoutIfNeeded()
         self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.width / 2
         self.avatarImageView.layer.masksToBounds = true
