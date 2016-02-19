@@ -34,6 +34,7 @@ class PublishViewController: UIViewController, TANavigationBarType {
     @IBOutlet weak var wechatImageView: UIImageView!
     
     @IBOutlet weak var weiboImageView: UIImageView!
+    
     @IBOutlet weak var shituquanImageView: UIImageView!
     
     override func viewDidLoad() {

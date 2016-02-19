@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HotMenu: UICollectionViewCell {
+class TAMenuItem: UICollectionViewCell {
     
     var titleLabel: UILabel! {
         didSet {
@@ -43,10 +43,11 @@ class HotMenu: UICollectionViewCell {
     
     override func layoutSubviews() {
         self.titleLabel.center = self.contentView.center
-        self.titleLabel.bounds = self.contentView.bounds
+        self.titleLabel.frame = self.contentView.bounds
     }
     
     func setSubViews() {
         self.titleLabel = UILabel()
+        self.titleLabel.numberOfLines = 0
     }
 }

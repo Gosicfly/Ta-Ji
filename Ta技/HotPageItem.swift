@@ -8,34 +8,35 @@
 
 import UIKit
 
-class HotPage: UICollectionViewCell {
+class HotPageItem: UICollectionViewCell {
     
     func scope(closure: () -> Void) {
         closure()
     }
     
-    var collectionView: UICollectionView!
-    
-    var layout: UICollectionViewFlowLayout!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        scope {
-            self.layout = UICollectionViewFlowLayout()
+    var layout: UICollectionViewFlowLayout! {
+        didSet {
             self.layout.scrollDirection = .Vertical
             self.layout.itemSize = CGSize(width: SCREEN_WIDTH / 2, height: SCREEN_HEIGTH / 3)
             self.layout.headerReferenceSize = CGSize(width: SCREEN_WIDTH, height: 110)
             self.layout.minimumInteritemSpacing = 0
             self.layout.minimumLineSpacing = 0
         }
-        scope { () -> Void in
-            self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
+    }
+    
+    var collectionView: UICollectionView! {
+        didSet {
             self.collectionView.registerClass(SquareCell.self, forCellWithReuseIdentifier: String(SquareCell))
             self.collectionView.registerClass(GFCycleScrollView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: String(GFCycleScrollView))
             self.collectionView.dataSource = self
             self.collectionView.delegate = self
             self.collectionView.backgroundColor = defaultBackgroundColor
         }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setSubViews()
         self.contentView.addSubview(self.collectionView)
     }
 
@@ -48,9 +49,16 @@ class HotPage: UICollectionViewCell {
         self.collectionView.center = self.contentView.center
     }
     
+    // MARK: - private methods
+    private func setSubViews() {
+        self.layout = UICollectionViewFlowLayout()
+        self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
+    }
+    
 }
 
-extension HotPage: UICollectionViewDelegate, UICollectionViewDataSource {
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+extension HotPageItem: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 13

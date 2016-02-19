@@ -21,7 +21,7 @@
 		A34242991C567C2A00FAD46D /* BaseHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242981C567C2A00FAD46D /* BaseHomeController.swift */; };
 		A342429B1C567C4000FAD46D /* HomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342429A1C567C4000FAD46D /* HomeTitleView.swift */; };
 		A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342429C1C567C5F00FAD46D /* HotViewController.swift */; };
-		A342429F1C567C7600FAD46D /* HotMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342429E1C567C7600FAD46D /* HotMenu.swift */; };
+		A342429F1C567C7600FAD46D /* TAMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342429E1C567C7600FAD46D /* TAMenuItem.swift */; };
 		A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A01C567C8C00FAD46D /* ConcernViewController.swift */; };
 		A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A21C567CA400FAD46D /* ActivityViewController.swift */; };
 		A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A41C567CBA00FAD46D /* CircleViewController.swift */; };
@@ -40,9 +40,10 @@
 		A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709081C5A77310055AD9D /* TelLeftView.swift */; };
 		A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7090D1C5BBCFF0055AD9D /* TATextField.swift */; };
 		A3D709101C5CDBE90055AD9D /* PasswordInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7090F1C5CDBE90055AD9D /* PasswordInputController.swift */; };
+		A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EE11C77627600DD7313 /* RecommendPageItem.swift */; };
 		A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */; };
 		A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */; };
-		A3E03F1E1C65FB7F006BEF6F /* HotPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1D1C65FB7F006BEF6F /* HotPage.swift */; };
+		A3E03F1E1C65FB7F006BEF6F /* HotPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +64,7 @@
 		A34242981C567C2A00FAD46D /* BaseHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHomeController.swift; sourceTree = "<group>"; };
 		A342429A1C567C4000FAD46D /* HomeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTitleView.swift; sourceTree = "<group>"; };
 		A342429C1C567C5F00FAD46D /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
-		A342429E1C567C7600FAD46D /* HotMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotMenu.swift; sourceTree = "<group>"; };
+		A342429E1C567C7600FAD46D /* TAMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAMenuItem.swift; sourceTree = "<group>"; };
 		A34242A01C567C8C00FAD46D /* ConcernViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcernViewController.swift; sourceTree = "<group>"; };
 		A34242A21C567CA400FAD46D /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		A34242A41C567CBA00FAD46D /* CircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
@@ -82,9 +83,10 @@
 		A3D709081C5A77310055AD9D /* TelLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelLeftView.swift; sourceTree = "<group>"; };
 		A3D7090D1C5BBCFF0055AD9D /* TATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATextField.swift; sourceTree = "<group>"; };
 		A3D7090F1C5CDBE90055AD9D /* PasswordInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputController.swift; sourceTree = "<group>"; };
+		A3DE3EE11C77627600DD7313 /* RecommendPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendPageItem.swift; sourceTree = "<group>"; };
 		A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollView.swift; sourceTree = "<group>"; };
 		A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollViewCell.swift; sourceTree = "<group>"; };
-		A3E03F1D1C65FB7F006BEF6F /* HotPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotPage.swift; sourceTree = "<group>"; };
+		A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotPageItem.swift; sourceTree = "<group>"; };
 		C3F13FDD73B62F3E08CF6566 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				A342428B1C567B6A00FAD46D /* 登陆 */,
 				A342428F1C567B8F00FAD46D /* 首页 */,
 				A342428E1C567B8900FAD46D /* 圈子 */,
+				A3252B5C1C6F509E00022AC0 /* 发布技能 */,
 				A342428D1C567B7F00FAD46D /* 消息 */,
 				A342428C1C567B7100FAD46D /* 我的 */,
 			);
@@ -191,6 +194,7 @@
 		A34242841C567ADF00FAD46D /* Reused */ = {
 			isa = PBXGroup;
 			children = (
+				A342429E1C567C7600FAD46D /* TAMenuItem.swift */,
 				A3E03F181C65CD1F006BEF6F /* GFCycleScrollView */,
 				A3D709031C575D270055AD9D /* ReusedValues.swift */,
 				A3D709061C5795540055AD9D /* Protocols.swift */,
@@ -257,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				A34242A41C567CBA00FAD46D /* CircleViewController.swift */,
+				A3DE3EE11C77627600DD7313 /* RecommendPageItem.swift */,
+				A3DE3EE31C77727200DD7313 /* CustomCells */,
 			);
 			name = "圈子";
 			sourceTree = "<group>";
@@ -266,7 +272,6 @@
 			children = (
 				A34242941C567BF500FAD46D /* Base */,
 				A34242951C567BFC00FAD46D /* 热门 */,
-				A3252B5C1C6F509E00022AC0 /* 发布技能 */,
 				A34242961C567C0100FAD46D /* 关注 */,
 				A34242971C567C0600FAD46D /* 活动 */,
 			);
@@ -286,8 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				A342429C1C567C5F00FAD46D /* HotViewController.swift */,
-				A342429E1C567C7600FAD46D /* HotMenu.swift */,
-				A3E03F1D1C65FB7F006BEF6F /* HotPage.swift */,
+				A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */,
 				A3E03F1F1C672E14006BEF6F /* CustomCells */,
 			);
 			name = "热门";
@@ -319,6 +323,13 @@
 				A3D7090D1C5BBCFF0055AD9D /* TATextField.swift */,
 			);
 			name = "注册";
+			sourceTree = "<group>";
+		};
+		A3DE3EE31C77727200DD7313 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		A3E03F181C65CD1F006BEF6F /* GFCycleScrollView */ = {
@@ -469,10 +480,10 @@
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,
 				A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */,
-				A3E03F1E1C65FB7F006BEF6F /* HotPage.swift in Sources */,
+				A3E03F1E1C65FB7F006BEF6F /* HotPageItem.swift in Sources */,
 				A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */,
 				A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */,
-				A342429F1C567C7600FAD46D /* HotMenu.swift in Sources */,
+				A342429F1C567C7600FAD46D /* TAMenuItem.swift in Sources */,
 				A34242911C567BB400FAD46D /* TATabBarController.swift in Sources */,
 				A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */,
 				A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */,
@@ -481,6 +492,7 @@
 				A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */,
 				A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */,
 				A3D709021C575BF90055AD9D /* LoginViewController.swift in Sources */,
+				A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */,
 				A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */,
 				A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */,
 				A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */,
