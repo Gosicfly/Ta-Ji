@@ -10,10 +10,6 @@ import UIKit
 
 class HotPageItem: UICollectionViewCell {
     
-    func scope(closure: () -> Void) {
-        closure()
-    }
-    
     var layout: UICollectionViewFlowLayout! {
         didSet {
             self.layout.scrollDirection = .Vertical
@@ -26,6 +22,7 @@ class HotPageItem: UICollectionViewCell {
     
     var collectionView: UICollectionView! {
         didSet {
+            self.contentView.addSubview(self.collectionView)
             self.collectionView.registerClass(SquareCell.self, forCellWithReuseIdentifier: String(SquareCell))
             self.collectionView.registerClass(GFCycleScrollView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: String(GFCycleScrollView))
             self.collectionView.dataSource = self
@@ -37,7 +34,6 @@ class HotPageItem: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setSubViews()
-        self.contentView.addSubview(self.collectionView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -52,7 +48,7 @@ class HotPageItem: UICollectionViewCell {
     // MARK: - private methods
     private func setSubViews() {
         self.layout = UICollectionViewFlowLayout()
-        self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
+        self.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: self.layout)
     }
     
 }

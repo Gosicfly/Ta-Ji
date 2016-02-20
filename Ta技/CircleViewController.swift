@@ -26,7 +26,7 @@ class CircleViewController: UIViewController {
     
     lazy private var _bottomView: UIView = {
         let _view = UIView()
-        _view.backgroundColor = bottomViewColor
+        _view.backgroundColor = UIColor(red: 68/255, green: 56/255, blue: 83/255, alpha: 1)
         return _view
     }()
     
@@ -48,7 +48,7 @@ class CircleViewController: UIViewController {
             self._menuView.showsHorizontalScrollIndicator = false
             self._menuView.bounces = false
             self._menuView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width * 2, height: 0)
-            self._menuView.backgroundColor = UIColor(red: 63/255, green: 48/255, blue: 81/255, alpha: 1)
+            self._menuView.backgroundColor = UIColor(red: 225/255, green: 222/255, blue: 230/255, alpha: 1)
             self._menuView.selectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: true, scrollPosition: .Left)
             self._menuView.addSubview(self._bottomView)
             self.view.addSubview(self._menuView)
@@ -116,6 +116,8 @@ extension CircleViewController: UICollectionViewDataSource, UICollectionViewDele
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(TAMenuItem), forIndexPath: indexPath) as! TAMenuItem
             cell.name = self._itemStringArray[indexPath.row]
             self._bottomView.center = cell.center
+            cell.titleLabel.textColor = UIColor(red: 130/255, green: 130/255, blue: 130/255, alpha: 1)
+            cell.titleLabel.highlightedTextColor = UIColor(red: 68/255, green: 56/255, blue: 83/255, alpha: 1)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(RecommendPageItem), forIndexPath: indexPath) as! RecommendPageItem
