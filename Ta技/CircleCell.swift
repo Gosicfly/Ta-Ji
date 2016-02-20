@@ -29,6 +29,8 @@ class CircleCell: UITableViewCell {
             var rect = newValue
             rect.origin.x += CGFloat(inset)
             rect.size.width -= CGFloat(2*inset)
+            rect.origin.y += CGFloat(inset)
+            rect.size.height -= CGFloat(inset)
             super.frame = rect
         }
         get {

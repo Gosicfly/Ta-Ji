@@ -41,17 +41,20 @@ class CircleViewController: UIViewController {
     
     private var _menuView: UICollectionView! {
         didSet {
-            self._menuView.registerClass(TAMenuItem.self, forCellWithReuseIdentifier: String(TAMenuItem))
-            self._menuView.delegate = self
-            self._menuView.dataSource = self
-            self._menuView.scrollEnabled = true
-            self._menuView.showsHorizontalScrollIndicator = false
-            self._menuView.bounces = false
-            self._menuView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width * 2, height: 0)
-            self._menuView.backgroundColor = UIColor(red: 225/255, green: 222/255, blue: 230/255, alpha: 1)
-            self._menuView.selectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: true, scrollPosition: .Left)
-            self._menuView.addSubview(self._bottomView)
-            self.view.addSubview(self._menuView)
+            self.view.addSubview(_menuView)
+            _menuView.registerClass(TAMenuItem.self, forCellWithReuseIdentifier: String(TAMenuItem))
+            _menuView.delegate = self
+            _menuView.dataSource = self
+            _menuView.scrollEnabled = true
+            _menuView.showsHorizontalScrollIndicator = false
+            _menuView.bounces = false
+            _menuView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width * 2, height: 0)
+            _menuView.backgroundColor = UIColor(red: 225/255, green: 222/255, blue: 230/255, alpha: 1)
+            _menuView.selectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: true, scrollPosition: .Left)
+            let separatorLine = UIView(frame: CGRect(x: 0, y: _menuView.bounds.height - 1, width: SCREEN_WIDTH, height: 1))
+            separatorLine.backgroundColor = UIColor.lightGrayColor()
+            _menuView.addSubview(separatorLine)
+            _menuView.addSubview(self._bottomView)
         }
     }
 
@@ -121,6 +124,14 @@ extension CircleViewController: UICollectionViewDataSource, UICollectionViewDele
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(RecommendPageItem), forIndexPath: indexPath) as! RecommendPageItem
+            switch indexPath.row {
+            case 0:
+                cell.type = .Hot
+            case 1:
+                cell.type = .Mine
+            default:
+                break
+            }
             return cell
         }
     }

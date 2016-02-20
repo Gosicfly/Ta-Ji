@@ -8,7 +8,15 @@
 
 import UIKit
 
+enum RecommendPageItemType {
+    
+    case Hot
+    case Mine
+}
+
 class RecommendPageItem: UICollectionViewCell {
+    
+    var type: RecommendPageItemType = .Hot
     
     var tableView: UITableView! {
         didSet {
@@ -46,11 +54,26 @@ class RecommendPageItem: UICollectionViewCell {
 extension RecommendPageItem: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 10
+        switch self.type {
+        case .Hot:
+            return 1
+        case .Mine:
+            return 2
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch self.type {
+        case .Hot:
+            return 10
+        case .Mine:
+            switch section {
+            case 0:
+                return 3
+            default:
+                return 2
+            }
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -59,15 +82,29 @@ extension RecommendPageItem: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard section != 0 else {
+        guard self.type == .Mine && section == 1 else {
             return 0
         }
-        return 5
+        return 30
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 225/255, green: 222/255, blue: 230/255, alpha: 1)
-        return view
+        guard self.type == .Mine else {
+            return nil
+        }
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 70))
+        let title = UILabel()
+        title.numberOfLines = 0
+        title.text = "你可能感兴趣的小组"
+        title.textColor = UIColor(red: 130/255, green: 130/255, blue: 130/255, alpha: 1)
+        title.font = UIFont.systemFontOfSize(12)
+        title.textAlignment = .Left
+        headerView.addSubview(title)
+        title.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(headerView).offset(10)
+            make.centerY.equalTo(headerView).offset(10)
+        }
+        return headerView
     }
+    
 }
