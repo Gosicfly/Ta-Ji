@@ -150,9 +150,7 @@ extension HotViewController: UICollectionViewDelegate, UICollectionViewDataSourc
 extension HotViewController {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView == self._pageView {
-            if (scrollView == self._pageView) {
-                self._bottomView.frame.origin.x = scrollView.contentOffset.x / SCREEN_WIDTH * self._bottomView.bounds.width
-            }
+            self._bottomView.frame.origin.x = scrollView.contentOffset.x / SCREEN_WIDTH * self._bottomView.bounds.width
         }
     }
     

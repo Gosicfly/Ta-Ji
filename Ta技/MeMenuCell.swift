@@ -17,10 +17,8 @@ class MeMenuCell: UITableViewCell {
     @IBOutlet weak var optionalHint: UILabel!
     
     let separatorLine = CAShapeLayer()
-    
-    var section: Int!
-    
-    var row: Int!
+
+    var (section, row): (Int, Int) = (0, 0)
     
     override func awakeFromNib() {
         super.awakeFromNib()

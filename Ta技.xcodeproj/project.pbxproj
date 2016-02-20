@@ -43,6 +43,9 @@
 		A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EE11C77627600DD7313 /* RecommendPageItem.swift */; };
 		A3DE3EEA1C77795E00DD7313 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EE81C77795E00DD7313 /* CircleCell.swift */; };
 		A3DE3EEB1C77795E00DD7313 /* CircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DE3EE91C77795E00DD7313 /* CircleCell.xib */; };
+		A3DE3EEE1C7844C000DD7313 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EED1C7844C000DD7313 /* SearchController.swift */; };
+		A3DE3EF31C7848C500DD7313 /* SearchPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EF11C7848C500DD7313 /* SearchPageItem.swift */; };
+		A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DE3EF21C7848C500DD7313 /* SearchPageItem.xib */; };
 		A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */; };
 		A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */; };
 		A3E03F1E1C65FB7F006BEF6F /* HotPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */; };
@@ -88,6 +91,9 @@
 		A3DE3EE11C77627600DD7313 /* RecommendPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendPageItem.swift; sourceTree = "<group>"; };
 		A3DE3EE81C77795E00DD7313 /* CircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
 		A3DE3EE91C77795E00DD7313 /* CircleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleCell.xib; sourceTree = "<group>"; };
+		A3DE3EED1C7844C000DD7313 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		A3DE3EF11C7848C500DD7313 /* SearchPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPageItem.swift; sourceTree = "<group>"; };
+		A3DE3EF21C7848C500DD7313 /* SearchPageItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPageItem.xib; sourceTree = "<group>"; };
 		A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollView.swift; sourceTree = "<group>"; };
 		A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollViewCell.swift; sourceTree = "<group>"; };
 		A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotPageItem.swift; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 				A34242951C567BFC00FAD46D /* 热门 */,
 				A34242961C567C0100FAD46D /* 关注 */,
 				A34242971C567C0600FAD46D /* 活动 */,
+				A3DE3EEC1C78429400DD7313 /* 搜索 */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -336,6 +343,16 @@
 				A3DE3EE91C77795E00DD7313 /* CircleCell.xib */,
 			);
 			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		A3DE3EEC1C78429400DD7313 /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				A3DE3EED1C7844C000DD7313 /* SearchController.swift */,
+				A3DE3EF11C7848C500DD7313 /* SearchPageItem.swift */,
+				A3DE3EF21C7848C500DD7313 /* SearchPageItem.xib */,
+			);
+			name = "搜索";
 			sourceTree = "<group>";
 		};
 		A3E03F181C65CD1F006BEF6F /* GFCycleScrollView */ = {
@@ -423,6 +440,7 @@
 				A34242761C567A4200FAD46D /* Assets.xcassets in Resources */,
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
+				A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
 				A34242741C567A4200FAD46D /* Main.storyboard in Resources */,
 			);
@@ -500,7 +518,9 @@
 				A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */,
 				A3D709021C575BF90055AD9D /* LoginViewController.swift in Sources */,
 				A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */,
+				A3DE3EF31C7848C500DD7313 /* SearchPageItem.swift in Sources */,
 				A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */,
+				A3DE3EEE1C7844C000DD7313 /* SearchController.swift in Sources */,
 				A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */,
 				A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */,
 				A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */,

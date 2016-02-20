@@ -44,7 +44,8 @@ class BaseHomeController: UIViewController, TANavigationBarType {
     }
     
     func search() {
-        //TODO
+        let searchController = SearchController()
+        self.navigationController?.pushViewController(searchController, animated: true)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
