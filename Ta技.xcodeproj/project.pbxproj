@@ -31,6 +31,14 @@
 		A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12051C724BDA005FAC9F /* TALabel.swift */; };
 		A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12071C73863F005FAC9F /* MeMenuCell.swift */; };
 		A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A35A12081C73863F005FAC9F /* MeMenuCell.xib */; };
+		A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794E21C78AAAC0063EE09 /* MAndACell.swift */; };
+		A37794E51C78AAAC0063EE09 /* MAndACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794E31C78AAAC0063EE09 /* MAndACell.xib */; };
+		A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794E61C78AF740063EE09 /* MAndAController.swift */; };
+		A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794E71C78AF740063EE09 /* MAndAController.xib */; };
+		A37794ED1C78C11D0063EE09 /* SubscribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EB1C78C11D0063EE09 /* SubscribeController.swift */; };
+		A37794EE1C78C11D0063EE09 /* SubscribeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794EC1C78C11D0063EE09 /* SubscribeController.xib */; };
+		A37794F11C78C30D0063EE09 /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */; };
+		A37794F21C78C30D0063EE09 /* SubscribeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F01C78C30D0063EE09 /* SubscribeCell.xib */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
@@ -79,6 +87,14 @@
 		A35A12051C724BDA005FAC9F /* TALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALabel.swift; sourceTree = "<group>"; };
 		A35A12071C73863F005FAC9F /* MeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMenuCell.swift; sourceTree = "<group>"; };
 		A35A12081C73863F005FAC9F /* MeMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeMenuCell.xib; sourceTree = "<group>"; };
+		A37794E21C78AAAC0063EE09 /* MAndACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAndACell.swift; sourceTree = "<group>"; };
+		A37794E31C78AAAC0063EE09 /* MAndACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAndACell.xib; sourceTree = "<group>"; };
+		A37794E61C78AF740063EE09 /* MAndAController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAndAController.swift; sourceTree = "<group>"; };
+		A37794E71C78AF740063EE09 /* MAndAController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAndAController.xib; sourceTree = "<group>"; };
+		A37794EB1C78C11D0063EE09 /* SubscribeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeController.swift; sourceTree = "<group>"; };
+		A37794EC1C78C11D0063EE09 /* SubscribeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeController.xib; sourceTree = "<group>"; };
+		A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
+		A37794F01C78C30D0063EE09 /* SubscribeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeCell.xib; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
@@ -255,6 +271,8 @@
 				A3252B591C6F4B7100022AC0 /* MeViewController.xib */,
 				A35A12071C73863F005FAC9F /* MeMenuCell.swift */,
 				A35A12081C73863F005FAC9F /* MeMenuCell.xib */,
+				A37794EA1C78C0BD0063EE09 /* 标签栏 */,
+				A37794E01C78A97F0063EE09 /* 选项卡 */,
 			);
 			name = "我的";
 			sourceTree = "<group>";
@@ -322,6 +340,36 @@
 				A34242A21C567CA400FAD46D /* ActivityViewController.swift */,
 			);
 			name = "活动";
+			sourceTree = "<group>";
+		};
+		A37794E01C78A97F0063EE09 /* 选项卡 */ = {
+			isa = PBXGroup;
+			children = (
+				A37794E11C78A9BB0063EE09 /* 师徒圈 */,
+			);
+			name = "选项卡";
+			sourceTree = "<group>";
+		};
+		A37794E11C78A9BB0063EE09 /* 师徒圈 */ = {
+			isa = PBXGroup;
+			children = (
+				A37794E61C78AF740063EE09 /* MAndAController.swift */,
+				A37794E71C78AF740063EE09 /* MAndAController.xib */,
+				A37794E21C78AAAC0063EE09 /* MAndACell.swift */,
+				A37794E31C78AAAC0063EE09 /* MAndACell.xib */,
+			);
+			name = "师徒圈";
+			sourceTree = "<group>";
+		};
+		A37794EA1C78C0BD0063EE09 /* 标签栏 */ = {
+			isa = PBXGroup;
+			children = (
+				A37794EB1C78C11D0063EE09 /* SubscribeController.swift */,
+				A37794EC1C78C11D0063EE09 /* SubscribeController.xib */,
+				A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */,
+				A37794F01C78C30D0063EE09 /* SubscribeCell.xib */,
+			);
+			name = "标签栏";
 			sourceTree = "<group>";
 		};
 		A3D708FA1C575AB30055AD9D /* 注册 */ = {
@@ -436,6 +484,9 @@
 			files = (
 				A3252B601C6F50C600022AC0 /* PublishViewController.xib in Resources */,
 				A3DE3EEB1C77795E00DD7313 /* CircleCell.xib in Resources */,
+				A37794F21C78C30D0063EE09 /* SubscribeCell.xib in Resources */,
+				A37794EE1C78C11D0063EE09 /* SubscribeController.xib in Resources */,
+				A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */,
 				A34242791C567A4200FAD46D /* LaunchScreen.storyboard in Resources */,
 				A34242761C567A4200FAD46D /* Assets.xcassets in Resources */,
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
@@ -443,6 +494,7 @@
 				A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
 				A34242741C567A4200FAD46D /* Main.storyboard in Resources */,
+				A37794E51C78AAAC0063EE09 /* MAndACell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */,
+				A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */,
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,
 				A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */,
@@ -527,9 +580,12 @@
 				A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */,
 				A34242991C567C2A00FAD46D /* BaseHomeController.swift in Sources */,
 				A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */,
+				A37794ED1C78C11D0063EE09 /* SubscribeController.swift in Sources */,
+				A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */,
 				A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */,
 				A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */,
 				A3D709071C5795540055AD9D /* Protocols.swift in Sources */,
+				A37794F11C78C30D0063EE09 /* SubscribeCell.swift in Sources */,
 				A3DE3EEA1C77795E00DD7313 /* CircleCell.swift in Sources */,
 				A342429B1C567C4000FAD46D /* HomeTitleView.swift in Sources */,
 				A3D709101C5CDBE90055AD9D /* PasswordInputController.swift in Sources */,

@@ -13,6 +13,8 @@
                 <outlet property="blurBackgroundImageView" destination="jHi-mM-mPn" id="Hb9-Ec-Eaz"/>
                 <outlet property="blurEffectView" destination="wL5-rh-Ko9" id="Qg0-hq-fco"/>
                 <outlet property="name" destination="ICC-qT-CM9" id="m6m-Ue-2KZ"/>
+                <outlet property="numberOfFans" destination="rlQ-wU-YBZ" id="3YQ-TZ-NUW"/>
+                <outlet property="numberOfSubscribers" destination="lO2-BU-paK" id="qA1-Iv-YQq"/>
                 <outlet property="school" destination="TPw-VJ-6E4" id="tbE-a8-22u"/>
                 <outlet property="signature" destination="o3C-p3-nfm" id="o7p-dQ-98s"/>
                 <outlet property="tableView" destination="y7X-cs-bjK" id="Ae7-wq-LSF"/>
@@ -33,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="171.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="axW-Uz-jMj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="axW-Uz-jMj">
                                 <rect key="frame" x="127" y="15" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="axW-Uz-jMj" secondAttribute="height" multiplier="1:1" id="FFt-K8-cp9"/>
@@ -225,11 +227,11 @@
                 <constraint firstAttribute="trailing" secondItem="zsI-a1-ZBp" secondAttribute="trailing" id="uwW-Br-WLR"/>
                 <constraint firstItem="zsI-a1-ZBp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vir-Ci-ofr"/>
             </constraints>
-            <point key="canvasLocation" x="1271" y="128"/>
+            <point key="canvasLocation" x="1493" y="96"/>
         </view>
     </objects>
     <resources>
-        <image name="2" width="960" height="600"/>
+        <image name="avatar" width="200" height="200"/>
         <image name="背景" width="25" height="25"/>
     </resources>
 </document>

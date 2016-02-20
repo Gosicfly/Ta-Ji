@@ -34,6 +34,16 @@ class MeViewController: UIViewController, TANavigationBarType {
         }
     }
     
+    @IBOutlet weak var numberOfSubscribers: UILabel! {
+        didSet {
+            numberOfSubscribers.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushSubscribeController"))
+            numberOfSubscribers.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    
+    @IBOutlet weak var numberOfFans: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
@@ -56,6 +66,11 @@ class MeViewController: UIViewController, TANavigationBarType {
     // MARK: - Selector
     func settings() {
         
+    }
+    
+    func pushSubscribeController() {
+        let subscribeController = SubscribeController()
+        self.navigationController?.pushViewController(subscribeController, animated: true)
     }
 }
 

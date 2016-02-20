@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscribeController" customModule="Ta技" customModuleProvider="target">
+            <connections>
+                <outlet property="seachBar" destination="fmf-LD-A47" id="L6j-oK-61L"/>
+                <outlet property="searchDisplayController" destination="kBE-AB-ltH" id="tNm-Q3-h31"/>
+                <outlet property="tableView" destination="Kum-20-2Hk" id="nma-d5-pdd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fmf-LD-A47">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="hV2-2M-EEk"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kum-20-2Hk">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Kum-20-2Hk" firstAttribute="top" secondItem="fmf-LD-A47" secondAttribute="bottom" id="2VU-De-RFB"/>
+                <constraint firstItem="fmf-LD-A47" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2oP-el-hl4"/>
+                <constraint firstItem="Kum-20-2Hk" firstAttribute="leading" secondItem="fmf-LD-A47" secondAttribute="leading" id="6TF-vS-QMn"/>
+                <constraint firstItem="fmf-LD-A47" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OHf-p5-YuO"/>
+                <constraint firstAttribute="trailing" secondItem="fmf-LD-A47" secondAttribute="trailing" id="gs2-9N-wnl"/>
+                <constraint firstItem="Kum-20-2Hk" firstAttribute="trailing" secondItem="fmf-LD-A47" secondAttribute="trailing" id="jbl-7X-TNH"/>
+                <constraint firstAttribute="bottom" secondItem="Kum-20-2Hk" secondAttribute="bottom" id="nMc-IE-lh5"/>
+            </constraints>
+            <point key="canvasLocation" x="370" y="328"/>
+        </view>
+        <searchDisplayController id="kBE-AB-ltH">
+            <connections>
+                <outlet property="delegate" destination="-1" id="2Hl-oa-lcJ"/>
+                <outlet property="searchBar" destination="fmf-LD-A47" id="UqK-er-nKu"/>
+                <outlet property="searchContentsController" destination="-1" id="hMe-fv-mHj"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="oLh-gL-GnE"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="ncx-Oi-LvA"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+</document>
