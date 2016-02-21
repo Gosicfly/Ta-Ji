@@ -39,6 +39,8 @@
 		A37794EE1C78C11D0063EE09 /* SubscribeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794EC1C78C11D0063EE09 /* SubscribeController.xib */; };
 		A37794F11C78C30D0063EE09 /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */; };
 		A37794F21C78C30D0063EE09 /* SubscribeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F01C78C30D0063EE09 /* SubscribeCell.xib */; };
+		A37794F51C795F320063EE09 /* FansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794F31C795F320063EE09 /* FansController.swift */; };
+		A37794F61C795F320063EE09 /* FansController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F41C795F320063EE09 /* FansController.xib */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
@@ -95,6 +97,8 @@
 		A37794EC1C78C11D0063EE09 /* SubscribeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeController.xib; sourceTree = "<group>"; };
 		A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
 		A37794F01C78C30D0063EE09 /* SubscribeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeCell.xib; sourceTree = "<group>"; };
+		A37794F31C795F320063EE09 /* FansController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FansController.swift; sourceTree = "<group>"; };
+		A37794F41C795F320063EE09 /* FansController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FansController.xib; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
@@ -366,10 +370,20 @@
 			children = (
 				A37794EB1C78C11D0063EE09 /* SubscribeController.swift */,
 				A37794EC1C78C11D0063EE09 /* SubscribeController.xib */,
+				A37794F31C795F320063EE09 /* FansController.swift */,
+				A37794F41C795F320063EE09 /* FansController.xib */,
+				A37794F71C795F4E0063EE09 /* CustomCells */,
+			);
+			name = "标签栏";
+			sourceTree = "<group>";
+		};
+		A37794F71C795F4E0063EE09 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
 				A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */,
 				A37794F01C78C30D0063EE09 /* SubscribeCell.xib */,
 			);
-			name = "标签栏";
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		A3D708FA1C575AB30055AD9D /* 注册 */ = {
@@ -493,6 +507,7 @@
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
 				A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
+				A37794F61C795F320063EE09 /* FansController.xib in Resources */,
 				A34242741C567A4200FAD46D /* Main.storyboard in Resources */,
 				A37794E51C78AAAC0063EE09 /* MAndACell.xib in Resources */,
 			);
@@ -566,6 +581,7 @@
 				A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */,
 				A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */,
 				A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */,
+				A37794F51C795F320063EE09 /* FansController.swift in Sources */,
 				A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */,
 				A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */,
 				A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */,

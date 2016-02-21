@@ -42,7 +42,13 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         }
     }
     
-    @IBOutlet weak var numberOfFans: UILabel!
+    @IBOutlet weak var numberOfFans: UILabel! {
+        didSet {
+            numberOfFans.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushSubscribeController"))
+            numberOfFans.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +80,12 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         subscribeController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(subscribeController, animated: true)
 
+    }
+    
+    func pushFansController() {
+        let fansController = FansController()
+        fansController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(fansController, animated: true)
     }
 }
 
