@@ -7,9 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscribeController" customModule="Ta技" customModuleProvider="target">
             <connections>
-                <outlet property="seachBar" destination="fmf-LD-A47" id="L6j-oK-61L"/>
-                <outlet property="searchDisplayController" destination="kBE-AB-ltH" id="tNm-Q3-h31"/>
-                <outlet property="tableView" destination="Kum-20-2Hk" id="nma-d5-pdd"/>
+                <outlet property="searchBar" destination="h4H-tK-7kE" id="WBQ-Wi-CT7"/>
+                <outlet property="searchDisplayController" destination="JdB-0w-81o" id="hin-8G-WM3"/>
+                <outlet property="tableView" destination="ddA-Dk-eNP" id="EnY-0M-2Iv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,37 +18,46 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fmf-LD-A47">
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="h4H-tK-7kE">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="hV2-2M-EEk"/>
+                        <outlet property="delegate" destination="-1" id="xT9-CG-9pm"/>
                     </connections>
                 </searchBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kum-20-2Hk">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ddA-Dk-eNP">
                     <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Kum-20-2Hk" firstAttribute="top" secondItem="fmf-LD-A47" secondAttribute="bottom" id="2VU-De-RFB"/>
-                <constraint firstItem="fmf-LD-A47" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2oP-el-hl4"/>
-                <constraint firstItem="Kum-20-2Hk" firstAttribute="leading" secondItem="fmf-LD-A47" secondAttribute="leading" id="6TF-vS-QMn"/>
-                <constraint firstItem="fmf-LD-A47" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OHf-p5-YuO"/>
-                <constraint firstAttribute="trailing" secondItem="fmf-LD-A47" secondAttribute="trailing" id="gs2-9N-wnl"/>
-                <constraint firstItem="Kum-20-2Hk" firstAttribute="trailing" secondItem="fmf-LD-A47" secondAttribute="trailing" id="jbl-7X-TNH"/>
-                <constraint firstAttribute="bottom" secondItem="Kum-20-2Hk" secondAttribute="bottom" id="nMc-IE-lh5"/>
+                <constraint firstItem="ddA-Dk-eNP" firstAttribute="top" secondItem="h4H-tK-7kE" secondAttribute="bottom" id="2XI-zF-xZY"/>
+                <constraint firstItem="h4H-tK-7kE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JpX-oY-mgu"/>
+                <constraint firstItem="ddA-Dk-eNP" firstAttribute="trailing" secondItem="h4H-tK-7kE" secondAttribute="trailing" id="MtE-G7-JrI"/>
+                <constraint firstAttribute="trailing" secondItem="h4H-tK-7kE" secondAttribute="trailing" id="OYg-UD-Gcu"/>
+                <constraint firstItem="h4H-tK-7kE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ViN-Kh-oh8"/>
+                <constraint firstAttribute="bottom" secondItem="ddA-Dk-eNP" secondAttribute="bottom" id="n8I-8U-h7O"/>
+                <constraint firstItem="ddA-Dk-eNP" firstAttribute="leading" secondItem="h4H-tK-7kE" secondAttribute="leading" id="um7-Vk-BeW"/>
             </constraints>
-            <point key="canvasLocation" x="370" y="328"/>
+            <point key="canvasLocation" x="804" y="289"/>
         </view>
         <searchDisplayController id="kBE-AB-ltH">
             <connections>
                 <outlet property="delegate" destination="-1" id="2Hl-oa-lcJ"/>
-                <outlet property="searchBar" destination="fmf-LD-A47" id="UqK-er-nKu"/>
                 <outlet property="searchContentsController" destination="-1" id="hMe-fv-mHj"/>
                 <outlet property="searchResultsDataSource" destination="-1" id="oLh-gL-GnE"/>
                 <outlet property="searchResultsDelegate" destination="-1" id="ncx-Oi-LvA"/>
+            </connections>
+        </searchDisplayController>
+        <searchDisplayController id="JdB-0w-81o">
+            <connections>
+                <outlet property="delegate" destination="-1" id="fQW-VH-THq"/>
+                <outlet property="searchBar" destination="h4H-tK-7kE" id="isu-k6-X1m"/>
+                <outlet property="searchContentsController" destination="-1" id="pWV-DE-1Rm"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="TkU-D8-6H2"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="72p-5V-MLl"/>
             </connections>
         </searchDisplayController>
     </objects>

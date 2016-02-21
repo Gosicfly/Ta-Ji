@@ -10,15 +10,15 @@ import UIKit
 
 class SubscribeController: UIViewController, TANavigationBarType {
 
-    @IBOutlet weak var seachBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.registerNib(UINib(nibName: "SubscribeCell", bundle: nil), forCellReuseIdentifier: String(SubscribeCell))
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.estimatedRowHeight = 50
             tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 50
         }
     }
     

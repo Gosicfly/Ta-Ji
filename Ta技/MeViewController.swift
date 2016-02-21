@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class MeViewController: UIViewController, TANavigationBarType {
+class MeViewController: UIViewController, TANavigationBarType, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var blurBackgroundImageView: UIImageView!
     
@@ -53,6 +53,7 @@ class MeViewController: UIViewController, TANavigationBarType {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "设置"), style: .Plain, target: self, action: Selector("settings"))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = navigationBarColor
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     
@@ -70,7 +71,9 @@ class MeViewController: UIViewController, TANavigationBarType {
     
     func pushSubscribeController() {
         let subscribeController = SubscribeController()
+        subscribeController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(subscribeController, animated: true)
+
     }
 }
 

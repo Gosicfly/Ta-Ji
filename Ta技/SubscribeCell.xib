@@ -46,12 +46,13 @@
                     <constraint firstItem="oHr-Ht-bhf" firstAttribute="leading" secondItem="nOn-Xe-9ga" secondAttribute="trailing" constant="18" id="oyw-dO-tbs"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="avatar" destination="nOn-Xe-9ga" id="hHB-ls-bNC"/>
                 <outlet property="name" destination="oHr-Ht-bhf" id="HZh-AF-nrX"/>
                 <outlet property="signature" destination="bF8-U4-NOu" id="hSv-sN-s0X"/>
             </connections>
-            <point key="canvasLocation" x="353" y="280.5"/>
+            <point key="canvasLocation" x="489" y="423.5"/>
         </tableViewCell>
     </objects>
     <resources>
