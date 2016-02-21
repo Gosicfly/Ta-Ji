@@ -22,3 +22,8 @@ protocol TANavigationBarType: class {
     
     func setNavigationBar()
 }
+
+// 提供默认下拉刷新动作
+protocol TARefreshable: class {
+    
+}

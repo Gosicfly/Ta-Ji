@@ -1,11 +1,12 @@
 PODS:
-  - Alamofire (3.1.5)
+  - Alamofire (3.2.0)
   - ChameleonFramework/Default (2.0.6)
   - ChameleonFramework/Swift (2.0.6):
     - ChameleonFramework/Default
   - CryptoSwift (0.2.2)
   - Device (0.0.6)
-  - Kingfisher (2.0.1)
+  - Kingfisher (2.0.3)
+  - MJRefresh (3.1.0)
   - ReachabilitySwift (2.3.3)
   - Realm (0.97.0):
     - Realm/Headers (= 0.97.0)
@@ -17,11 +18,12 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 3.2.0)
   - ChameleonFramework/Swift
   - CryptoSwift
   - Device
-  - Kingfisher (~> 2.0.1)
+  - Kingfisher (~> 2.0.3)
+  - MJRefresh
   - ReachabilitySwift
   - RealmSwift
   - SnapKit
@@ -29,11 +31,12 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
   ChameleonFramework: a6b466873ff9a4ce3a5196c20bccf1a97ad9f446
   CryptoSwift: d382228d6301c09474132417878a741c2a2e68cd
   Device: 2b48a78b55e5631a8b1006b325dfefc32f6b8690
-  Kingfisher: 3af2020040453f710507819e6aa5f5721da03d9b
+  Kingfisher: 44c1f1912f19371a67d701e67c96d6bb45ca1c8d
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
   RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c

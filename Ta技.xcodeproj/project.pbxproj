@@ -41,6 +41,7 @@
 		A37794F21C78C30D0063EE09 /* SubscribeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F01C78C30D0063EE09 /* SubscribeCell.xib */; };
 		A37794F51C795F320063EE09 /* FansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794F31C795F320063EE09 /* FansController.swift */; };
 		A37794F61C795F320063EE09 /* FansController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F41C795F320063EE09 /* FansController.xib */; };
+		A37794F91C79B0E80063EE09 /* TARefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794F81C79B0E80063EE09 /* TARefreshControl.swift */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
@@ -99,6 +100,7 @@
 		A37794F01C78C30D0063EE09 /* SubscribeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeCell.xib; sourceTree = "<group>"; };
 		A37794F31C795F320063EE09 /* FansController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FansController.swift; sourceTree = "<group>"; };
 		A37794F41C795F320063EE09 /* FansController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FansController.xib; sourceTree = "<group>"; };
+		A37794F81C79B0E80063EE09 /* TARefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TARefreshControl.swift; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		A34242841C567ADF00FAD46D /* Reused */ = {
 			isa = PBXGroup;
 			children = (
+				A37794F81C79B0E80063EE09 /* TARefreshControl.swift */,
 				A342429E1C567C7600FAD46D /* TAMenuItem.swift */,
 				A3E03F181C65CD1F006BEF6F /* GFCycleScrollView */,
 				A3D709031C575D270055AD9D /* ReusedValues.swift */,
@@ -568,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37794F91C79B0E80063EE09 /* TARefreshControl.swift in Sources */,
 				A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */,
 				A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */,
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,

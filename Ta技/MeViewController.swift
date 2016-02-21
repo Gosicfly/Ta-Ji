@@ -62,7 +62,6 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
