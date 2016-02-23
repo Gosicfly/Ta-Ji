@@ -45,7 +45,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var numberOfFans: UILabel! {
         didSet {
             numberOfFans.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushSubscribeController"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushFansController"))
             numberOfFans.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -75,15 +75,13 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     }
     
     func pushSubscribeController() {
-        let subscribeController = SubscribeController()
-        subscribeController.hidesBottomBarWhenPushed = true
+        let subscribeController = SubscriberController()
         self.navigationController?.pushViewController(subscribeController, animated: true)
 
     }
     
     func pushFansController() {
         let fansController = FansController()
-        fansController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(fansController, animated: true)
     }
 }

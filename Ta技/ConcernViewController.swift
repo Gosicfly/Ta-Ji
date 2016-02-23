@@ -1,5 +1,5 @@
 //
-//  ConcernViewController.swift
+//  SubscribeViewController.swift
 //  TA技
 //
 //  Created by Gosicfly on 16/1/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConcernViewController: UIViewController {
+class SubscribeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

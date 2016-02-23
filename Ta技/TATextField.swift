@@ -10,7 +10,7 @@ import UIKit
 
 class TATextField: UITextField {
     
-    var edgeInsets: UIEdgeInsets
+    var edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     
     init(frame: CGRect, edgeInsets: UIEdgeInsets = UIEdgeInsetsZero) {
         self.edgeInsets = edgeInsets
@@ -18,12 +18,12 @@ class TATextField: UITextField {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override func textRectForBounds(bounds: CGRect) -> CGRect {
         var rect = self.editingRectForBounds(self.bounds)
-        rect.size.height += 60
+        rect.size.height += 50
         return rect
     }
     

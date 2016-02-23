@@ -83,6 +83,9 @@ class SearchController: UIViewController, TANavigationBarType {
     }
 
     override func viewDidLoad() {
+        //不覆盖视图
+        definesPresentationContext = true
+        automaticallyAdjustsScrollViewInsets = false
         super.viewDidLoad()
         self.setNavigationBar()
         self.setSubViews()
@@ -138,6 +141,7 @@ extension SearchController: UICollectionViewDataSource, UICollectionViewDelegate
             default:
                 break
             }
+            cell.menuView = self._menuView
             return cell
         }
     }

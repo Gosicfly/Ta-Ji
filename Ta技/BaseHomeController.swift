@@ -12,7 +12,7 @@ class BaseHomeController: UIViewController, TANavigationBarType {
     
     let hotViewController = HotViewController()
     
-    let concernViewController = ConcernViewController()
+    let concernViewController = SubscribeViewController()
     
     let activityViewController = ActivityViewController()
     

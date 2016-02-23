@@ -32,7 +32,7 @@ class HomeTitleView: UIView, ItemSelectable {
         self.thirdBtn.frame = CGRect(x: self.frame.width / 3 * 2, y: 0, width: self.frame.width / 3, height: 40)
         
         self.firstBtn.setTitle("热门", forState: .Normal)
-        self.secondBtn.setTitle("关注", forState: .Normal)
+        self.secondBtn.setTitle("订阅", forState: .Normal)
         self.thirdBtn.setTitle("活动", forState: .Normal)
         
         self.firstBtn.setTitleColor(selectedColor, forState: UIControlState.Selected)

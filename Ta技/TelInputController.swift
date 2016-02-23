@@ -5,8 +5,6 @@
 //  Created by Gosicfly on 16/1/26.
 //  Copyright © 2016年 Gosicfly. All rights reserved.
 //
-//短信验证码请求http://taji.whutech.com/sms.php?phone=手机号
-//验证码验证请求http://taji.whutech.com/sms_verify?phone=手机号&code=验证码
 
 import UIKit
 import SnapKit
@@ -102,8 +100,8 @@ class TelInputController: UIViewController, TANavigationBarType {
         SVProgressHUD.show()
         switch self.reachability.isReachable() {
         case true:      //有网络连接时
-            let phoneNumber = self.telInputField.text!
-            Alamofire.request(.GET, "http://taji.whutech.com/sms.php?phone=\(phoneNumber)").responseJSON { response in
+            let moblie = self.telInputField.text!
+            Alamofire.request(.GET, "http://taji.whutech.com/Sms/get_code?mobile=\(moblie)").responseJSON { response in
                 let json = JSON(response.result.value!)
                 print(json)
                 guard json["status"].string! == "200" else {
@@ -114,7 +112,7 @@ class TelInputController: UIViewController, TANavigationBarType {
                     self.dismiss()
                     self.telInputField.resignFirstResponder()
                     let vc = CodeInputController()
-                    vc.telNumber = self.telInputField.text!
+                    vc.mobile = self.telInputField.text!
                     self.navigationController?.pushViewController(vc, animated: true)
                 })
             }
@@ -129,7 +127,7 @@ class TelInputController: UIViewController, TANavigationBarType {
     }
     
     func cancel() {
-        print("tellinput")
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

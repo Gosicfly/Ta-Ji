@@ -36,16 +36,24 @@
 		A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794E61C78AF740063EE09 /* MAndAController.swift */; };
 		A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794E71C78AF740063EE09 /* MAndAController.xib */; };
 		A37794ED1C78C11D0063EE09 /* SubscribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EB1C78C11D0063EE09 /* SubscribeController.swift */; };
-		A37794EE1C78C11D0063EE09 /* SubscribeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794EC1C78C11D0063EE09 /* SubscribeController.xib */; };
-		A37794F11C78C30D0063EE09 /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */; };
-		A37794F21C78C30D0063EE09 /* SubscribeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F01C78C30D0063EE09 /* SubscribeCell.xib */; };
+		A37794EE1C78C11D0063EE09 /* SubscriberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794EC1C78C11D0063EE09 /* SubscriberController.xib */; };
+		A37794F11C78C30D0063EE09 /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EF1C78C30D0063EE09 /* SubscriberCell.swift */; };
+		A37794F21C78C30D0063EE09 /* SubscriberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F01C78C30D0063EE09 /* SubscriberCell.xib */; };
 		A37794F51C795F320063EE09 /* FansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794F31C795F320063EE09 /* FansController.swift */; };
 		A37794F61C795F320063EE09 /* FansController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F41C795F320063EE09 /* FansController.xib */; };
-		A37794F91C79B0E80063EE09 /* TARefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794F81C79B0E80063EE09 /* TARefreshControl.swift */; };
+		A37795001C79EF7A0063EE09 /* PaintingPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794FE1C79EF7A0063EE09 /* PaintingPictureCell.swift */; };
+		A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794FF1C79EF7A0063EE09 /* PaintingPictureCell.xib */; };
+		A37795041C79EF8F0063EE09 /* PaintingVedioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37795021C79EF8F0063EE09 /* PaintingVedioCell.swift */; };
+		A37795051C79EF8F0063EE09 /* PaintingVedioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37795031C79EF8F0063EE09 /* PaintingVedioCell.xib */; };
+		A37795081C79F8840063EE09 /* TARichTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37795071C79F8840063EE09 /* TARichTextLabel.swift */; };
+		A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37795091C79FBEB0063EE09 /* TAActionLabel.swift */; };
+		A377950C1C79FCC90063EE09 /* TAPureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950B1C79FCC90063EE09 /* TAPureLabel.swift */; };
+		A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
+		A3AF0B3A1C7B406300C3FD5B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B381C7B406300C3FD5B /* LoginController.swift */; };
+		A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AF0B391C7B406300C3FD5B /* LoginController.xib */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
-		A3D709021C575BF90055AD9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709011C575BF90055AD9D /* LoginViewController.swift */; };
 		A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709031C575D270055AD9D /* ReusedValues.swift */; };
 		A3D709071C5795540055AD9D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709061C5795540055AD9D /* Protocols.swift */; };
 		A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709081C5A77310055AD9D /* TelLeftView.swift */; };
@@ -95,16 +103,24 @@
 		A37794E61C78AF740063EE09 /* MAndAController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAndAController.swift; sourceTree = "<group>"; };
 		A37794E71C78AF740063EE09 /* MAndAController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAndAController.xib; sourceTree = "<group>"; };
 		A37794EB1C78C11D0063EE09 /* SubscribeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeController.swift; sourceTree = "<group>"; };
-		A37794EC1C78C11D0063EE09 /* SubscribeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeController.xib; sourceTree = "<group>"; };
-		A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
-		A37794F01C78C30D0063EE09 /* SubscribeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeCell.xib; sourceTree = "<group>"; };
+		A37794EC1C78C11D0063EE09 /* SubscriberController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriberController.xib; sourceTree = "<group>"; };
+		A37794EF1C78C30D0063EE09 /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
+		A37794F01C78C30D0063EE09 /* SubscriberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriberCell.xib; sourceTree = "<group>"; };
 		A37794F31C795F320063EE09 /* FansController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FansController.swift; sourceTree = "<group>"; };
 		A37794F41C795F320063EE09 /* FansController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FansController.xib; sourceTree = "<group>"; };
-		A37794F81C79B0E80063EE09 /* TARefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TARefreshControl.swift; sourceTree = "<group>"; };
+		A37794FE1C79EF7A0063EE09 /* PaintingPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingPictureCell.swift; sourceTree = "<group>"; };
+		A37794FF1C79EF7A0063EE09 /* PaintingPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaintingPictureCell.xib; sourceTree = "<group>"; };
+		A37795021C79EF8F0063EE09 /* PaintingVedioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingVedioCell.swift; sourceTree = "<group>"; };
+		A37795031C79EF8F0063EE09 /* PaintingVedioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaintingVedioCell.xib; sourceTree = "<group>"; };
+		A37795071C79F8840063EE09 /* TARichTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TARichTextLabel.swift; sourceTree = "<group>"; };
+		A37795091C79FBEB0063EE09 /* TAActionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAActionLabel.swift; sourceTree = "<group>"; };
+		A377950B1C79FCC90063EE09 /* TAPureLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAPureLabel.swift; sourceTree = "<group>"; };
+		A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextConvertHelper.swift; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
+		A3AF0B381C7B406300C3FD5B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		A3AF0B391C7B406300C3FD5B /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
-		A3D709011C575BF90055AD9D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3D709031C575D270055AD9D /* ReusedValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusedValues.swift; sourceTree = "<group>"; };
 		A3D709061C5795540055AD9D /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A3D709081C5A77310055AD9D /* TelLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelLeftView.swift; sourceTree = "<group>"; };
@@ -226,9 +242,9 @@
 		A34242841C567ADF00FAD46D /* Reused */ = {
 			isa = PBXGroup;
 			children = (
-				A37794F81C79B0E80063EE09 /* TARefreshControl.swift */,
-				A342429E1C567C7600FAD46D /* TAMenuItem.swift */,
+				A37795061C79F85C0063EE09 /* TARichTextLabel */,
 				A3E03F181C65CD1F006BEF6F /* GFCycleScrollView */,
+				A342429E1C567C7600FAD46D /* TAMenuItem.swift */,
 				A3D709031C575D270055AD9D /* ReusedValues.swift */,
 				A3D709061C5795540055AD9D /* Protocols.swift */,
 				A34242AA1C567D0500FAD46D /* UIExtensions.swift */,
@@ -240,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */,
+				A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -264,7 +281,8 @@
 		A342428B1C567B6A00FAD46D /* 登陆 */ = {
 			isa = PBXGroup;
 			children = (
-				A3D709011C575BF90055AD9D /* LoginViewController.swift */,
+				A3AF0B381C7B406300C3FD5B /* LoginController.swift */,
+				A3AF0B391C7B406300C3FD5B /* LoginController.xib */,
 				A3D708FA1C575AB30055AD9D /* 注册 */,
 			);
 			name = "登陆";
@@ -307,7 +325,7 @@
 			children = (
 				A34242941C567BF500FAD46D /* Base */,
 				A34242951C567BFC00FAD46D /* 热门 */,
-				A34242961C567C0100FAD46D /* 关注 */,
+				A34242961C567C0100FAD46D /* 订阅 */,
 				A34242971C567C0600FAD46D /* 活动 */,
 				A3DE3EEC1C78429400DD7313 /* 搜索 */,
 			);
@@ -333,12 +351,12 @@
 			name = "热门";
 			sourceTree = "<group>";
 		};
-		A34242961C567C0100FAD46D /* 关注 */ = {
+		A34242961C567C0100FAD46D /* 订阅 */ = {
 			isa = PBXGroup;
 			children = (
 				A34242A01C567C8C00FAD46D /* ConcernViewController.swift */,
 			);
-			name = "关注";
+			name = "订阅";
 			sourceTree = "<group>";
 		};
 		A34242971C567C0600FAD46D /* 活动 */ = {
@@ -372,7 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				A37794EB1C78C11D0063EE09 /* SubscribeController.swift */,
-				A37794EC1C78C11D0063EE09 /* SubscribeController.xib */,
+				A37794EC1C78C11D0063EE09 /* SubscriberController.xib */,
 				A37794F31C795F320063EE09 /* FansController.swift */,
 				A37794F41C795F320063EE09 /* FansController.xib */,
 				A37794F71C795F4E0063EE09 /* CustomCells */,
@@ -383,10 +401,20 @@
 		A37794F71C795F4E0063EE09 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				A37794EF1C78C30D0063EE09 /* SubscribeCell.swift */,
-				A37794F01C78C30D0063EE09 /* SubscribeCell.xib */,
+				A37794EF1C78C30D0063EE09 /* SubscriberCell.swift */,
+				A37794F01C78C30D0063EE09 /* SubscriberCell.xib */,
 			);
 			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		A37795061C79F85C0063EE09 /* TARichTextLabel */ = {
+			isa = PBXGroup;
+			children = (
+				A37795071C79F8840063EE09 /* TARichTextLabel.swift */,
+				A377950B1C79FCC90063EE09 /* TAPureLabel.swift */,
+				A37795091C79FBEB0063EE09 /* TAActionLabel.swift */,
+			);
+			name = TARichTextLabel;
 			sourceTree = "<group>";
 		};
 		A3D708FA1C575AB30055AD9D /* 注册 */ = {
@@ -433,6 +461,10 @@
 			isa = PBXGroup;
 			children = (
 				A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */,
+				A37794FE1C79EF7A0063EE09 /* PaintingPictureCell.swift */,
+				A37794FF1C79EF7A0063EE09 /* PaintingPictureCell.xib */,
+				A37795021C79EF8F0063EE09 /* PaintingVedioCell.swift */,
+				A37795031C79EF8F0063EE09 /* PaintingVedioCell.xib */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -501,10 +533,13 @@
 			files = (
 				A3252B601C6F50C600022AC0 /* PublishViewController.xib in Resources */,
 				A3DE3EEB1C77795E00DD7313 /* CircleCell.xib in Resources */,
-				A37794F21C78C30D0063EE09 /* SubscribeCell.xib in Resources */,
-				A37794EE1C78C11D0063EE09 /* SubscribeController.xib in Resources */,
+				A37794F21C78C30D0063EE09 /* SubscriberCell.xib in Resources */,
+				A37794EE1C78C11D0063EE09 /* SubscriberController.xib in Resources */,
+				A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */,
 				A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */,
+				A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */,
 				A34242791C567A4200FAD46D /* LaunchScreen.storyboard in Resources */,
+				A37795051C79EF8F0063EE09 /* PaintingVedioCell.xib in Resources */,
 				A34242761C567A4200FAD46D /* Assets.xcassets in Resources */,
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
@@ -571,7 +606,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A37794F91C79B0E80063EE09 /* TARefreshControl.swift in Sources */,
+				A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */,
+				A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */,
+				A37795081C79F8840063EE09 /* TARichTextLabel.swift in Sources */,
 				A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */,
 				A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */,
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
@@ -587,9 +624,11 @@
 				A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */,
 				A37794F51C795F320063EE09 /* FansController.swift in Sources */,
 				A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */,
+				A37795001C79EF7A0063EE09 /* PaintingPictureCell.swift in Sources */,
+				A3AF0B3A1C7B406300C3FD5B /* LoginController.swift in Sources */,
 				A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */,
 				A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */,
-				A3D709021C575BF90055AD9D /* LoginViewController.swift in Sources */,
+				A37795041C79EF8F0063EE09 /* PaintingVedioCell.swift in Sources */,
 				A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */,
 				A3DE3EF31C7848C500DD7313 /* SearchPageItem.swift in Sources */,
 				A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */,
@@ -603,9 +642,10 @@
 				A37794ED1C78C11D0063EE09 /* SubscribeController.swift in Sources */,
 				A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */,
 				A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */,
+				A377950C1C79FCC90063EE09 /* TAPureLabel.swift in Sources */,
 				A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */,
 				A3D709071C5795540055AD9D /* Protocols.swift in Sources */,
-				A37794F11C78C30D0063EE09 /* SubscribeCell.swift in Sources */,
+				A37794F11C78C30D0063EE09 /* SubscriberCell.swift in Sources */,
 				A3DE3EEA1C77795E00DD7313 /* CircleCell.swift in Sources */,
 				A342429B1C567C4000FAD46D /* HomeTitleView.swift in Sources */,
 				A3D709101C5CDBE90055AD9D /* PasswordInputController.swift in Sources */,

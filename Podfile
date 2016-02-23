@@ -12,3 +12,5 @@ pod 'CryptoSwift'               #加密库
 pod 'SVProgressHUD'             #HUD (OC)
 pod 'ChameleonFramework/Swift'  #颜色框架
 pod 'MJRefresh'                 #下拉刷新 (OC)
+pod 'M80AttributedLabel'        #富文本Label
+pod 'MWPhotoBrowser'            #图片浏览

@@ -112,7 +112,7 @@ class SquareCell: UICollectionViewCell {
         self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.width / 2
         self.avatarImageView.layer.masksToBounds = true
         self.titleLabel = UILabel()
-        self.likeImageView = UIImageView(image: UIImage(named: "support"))
+        self.likeImageView = UIImageView(image: UIImage(named: "icon_tab_home_hot_favor"))
         self.numberOfLikers = UILabel()
         
         self.bringSubviewToFront(self.avatarImageView)

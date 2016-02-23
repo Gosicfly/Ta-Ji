@@ -14,6 +14,12 @@ import SwiftyJSON
 import CryptoSwift
 
 class PasswordInputController: UIViewController, TANavigationBarType, UIGestureRecognizerDelegate {
+    
+    private let reachability = ReachabilityManager.sharedManager()
+    
+    var mobile = ""
+    
+    var code = ""
     //TODO
     //增加左滑返回功能
     var passwordInputField: UITextField! {
@@ -120,7 +126,37 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
     }
     
     func next() {
-        
+        SVProgressHUD.show()
+        guard self.passwordInputField.text == self.confirmInputField.text else {
+            SVProgressHUD.showErrorWithStatus("输入密码不一致")
+            return
+        }
+        let password = self.passwordInputField.text!.md5()
+        print(password)
+        switch self.reachability.isReachable() {
+        case true:
+            Alamofire.request(.GET, "http://taji.whutech.com/User/register?mobile=\(mobile)&code=\(code)&password=\(password)").responseJSON(completionHandler: { response in
+                let json = JSON(response.result.value!)
+                print(json)
+                guard json["status"].string! == "200" else {
+                    SVProgressHUD.showErrorWithStatus("用户已存在")
+                    self.performSelector(Selector("dismiss"), withObject: nil, afterDelay: 0.5)
+                    return
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.dismiss()
+                    self.view.endEditing(true)
+                    UIApplication.sharedApplication().windows[0].rootViewController = TATabBarController()
+                })
+            })
+        case false:
+            SVProgressHUD.showErrorWithStatus("无网络连接")
+        }
+
+    }
+    
+    func dismiss() {
+        SVProgressHUD.dismiss()
     }
     
     func back() {

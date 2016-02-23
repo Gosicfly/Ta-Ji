@@ -10,11 +10,9 @@ import UIKit
 
 class FansController: UIViewController, TANavigationBarType {
 
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.registerNib(UINib(nibName: "SubscribeCell", bundle: nil), forCellReuseIdentifier: String(SubscribeCell))
+            tableView.registerNib(UINib(nibName: "SubscriberCell", bundle: nil), forCellReuseIdentifier: String(SubscriberCell))
             tableView.dataSource = self
             tableView.delegate = self
             tableView.rowHeight = UITableViewAutomaticDimension
@@ -22,8 +20,18 @@ class FansController: UIViewController, TANavigationBarType {
         }
     }
     
+    lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        return searchController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.definesPresentationContext = true
+        self.hidesBottomBarWhenPushed = true
+        self.view.addSubview(self.searchController.searchBar)
         self.setNavigationBar()
         // Do any additional setup after loading the view.
     }
@@ -38,6 +46,7 @@ class FansController: UIViewController, TANavigationBarType {
     }
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension FansController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +54,12 @@ extension FansController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(SubscribeCell)) as! SubscribeCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(SubscriberCell)) as! SubscriberCell
         return cell
     }
+}
+
+// MARK: - UISearchBarDelegate
+extension FansController: UISearchBarDelegate {
+    
 }

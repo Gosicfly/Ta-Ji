@@ -7,8 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FansController" customModule="Ta技" customModuleProvider="target">
             <connections>
-                <outlet property="searchBar" destination="6MG-BM-S3n" id="G8n-cH-1mz"/>
-                <outlet property="searchDisplayController" destination="QET-qe-zRW" id="lNm-Fi-6M7"/>
                 <outlet property="tableView" destination="lMl-tQ-QpC" id="K1u-sv-s0u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,34 +20,15 @@
                     <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6MG-BM-S3n">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="Oxq-i1-9Rk"/>
-                    </connections>
-                </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="lMl-tQ-QpC" firstAttribute="top" secondItem="6MG-BM-S3n" secondAttribute="bottom" id="68o-Ww-1Sj"/>
-                <constraint firstItem="lMl-tQ-QpC" firstAttribute="trailing" secondItem="6MG-BM-S3n" secondAttribute="trailing" id="SdD-79-Xf2"/>
-                <constraint firstItem="6MG-BM-S3n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TEw-Zf-45N"/>
-                <constraint firstItem="6MG-BM-S3n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X7I-vq-sVl"/>
+                <constraint firstAttribute="trailing" secondItem="lMl-tQ-QpC" secondAttribute="trailing" id="XEO-qR-cgQ"/>
                 <constraint firstAttribute="bottom" secondItem="lMl-tQ-QpC" secondAttribute="bottom" id="cAq-Qg-8GU"/>
-                <constraint firstItem="lMl-tQ-QpC" firstAttribute="leading" secondItem="6MG-BM-S3n" secondAttribute="leading" id="dfk-2W-VG3"/>
-                <constraint firstAttribute="trailing" secondItem="6MG-BM-S3n" secondAttribute="trailing" id="odh-bi-zsv"/>
+                <constraint firstItem="lMl-tQ-QpC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dEq-Pk-vUy"/>
+                <constraint firstItem="lMl-tQ-QpC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="qPP-E2-A0F"/>
             </constraints>
-            <point key="canvasLocation" x="712" y="333"/>
+            <point key="canvasLocation" x="797" y="331"/>
         </view>
-        <searchDisplayController id="QET-qe-zRW">
-            <connections>
-                <outlet property="delegate" destination="-1" id="aYH-dh-CZ6"/>
-                <outlet property="searchBar" destination="6MG-BM-S3n" id="EMF-6n-o6B"/>
-                <outlet property="searchContentsController" destination="-1" id="ilq-4U-njG"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="Mdj-Ur-77s"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="cN1-mD-tcN"/>
-            </connections>
-        </searchDisplayController>
     </objects>
 </document>

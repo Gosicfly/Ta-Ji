@@ -17,10 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: SCREEN_BOUNDS)
+        self.window?.backgroundColor = navigationBarColor
         self.setTabBar()
         self.setDefalutNavigationBarStyle()
-//        self.window?.rootViewController = UINavigationController(rootViewController: TelInputController())
+        self.window?.rootViewController = UINavigationController(rootViewController: TelInputController())
         self.window?.rootViewController = tabBarVC
+        self.window?.rootViewController = LoginController()
         self.window?.makeKeyAndVisible()
         return true
     }

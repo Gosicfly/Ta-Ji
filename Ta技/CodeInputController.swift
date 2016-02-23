@@ -5,8 +5,6 @@
 //  Created by Gosicfly on 16/1/26.
 //  Copyright © 2016年 Gosicfly. All rights reserved.
 //
-//短信验证码请求http://taji.whutech.com/sms.php?phone=手机号
-//验证码验证请求http://taji.whutech.com/sms_verify?phone=手机号&code=验证码
 
 import UIKit
 import SnapKit
@@ -22,7 +20,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
     
     var timer: NSTimer!
     
-    var telNumber: String = ""
+    var mobile: String = ""
     
     private var hintOne: UILabel! {
         didSet {
@@ -38,7 +36,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
             self.hintOne.textAlignment = .Center
             self.hintOne.font = UIFont.systemFontOfSize(19)
             self.hintOne.adjustsFontSizeToFitWidth = true
-            self.hintOne.text = "你的手机号：\(self.telNumber)"
+            self.hintOne.text = "你的手机号：\(self.mobile)"
         }
     }
     
@@ -165,7 +163,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
         switch self.reachability.isReachable() {
         case true:
             let code = self.codeInputField.text!.uppercaseString
-            Alamofire.request(.GET, "http://taji.whutech.com/sms_verify?phone=\(self.telNumber)&code=\(code)").responseJSON(completionHandler: { response in
+            Alamofire.request(.GET, "http://taji.whutech.com/Sms/verify_code?mobile=\(self.mobile)&code=\(code)").responseJSON(completionHandler: { response in
                 let json = JSON(response.result.value!)
                 print(json)
                 guard json["status"].string! == "200" else {
@@ -178,6 +176,8 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
                     self.dismiss()
                     self.codeInputField.endEditing(true)
                     let passwordInputController = PasswordInputController()
+                    passwordInputController.mobile = self.mobile
+                    passwordInputController.code = code
                     self.navigationController?.pushViewController(passwordInputController, animated: true)
                 })
             })
