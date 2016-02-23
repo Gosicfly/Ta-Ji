@@ -12,9 +12,7 @@ class ReachabilityManager {
     
     private static let reachability = try! Reachability.reachabilityForInternetConnection()
     
-    private init() {
-        
-    }
+    private init() {}
     
     class func sharedManager() -> Reachability {
         return ReachabilityManager.reachability

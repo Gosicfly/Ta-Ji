@@ -52,6 +52,8 @@
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3AF0B3A1C7B406300C3FD5B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B381C7B406300C3FD5B /* LoginController.swift */; };
 		A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AF0B391C7B406300C3FD5B /* LoginController.xib */; };
+		A3AF0B3D1C7C6F7A00C3FD5B /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B3C1C7C6F7A00C3FD5B /* UserInfoManager.swift */; };
+		A3AF0B3F1C7C7F3200C3FD5B /* TAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B3E1C7C7F3200C3FD5B /* TAManager.swift */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
 		A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709031C575D270055AD9D /* ReusedValues.swift */; };
@@ -119,6 +121,8 @@
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3AF0B381C7B406300C3FD5B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A3AF0B391C7B406300C3FD5B /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		A3AF0B3C1C7C6F7A00C3FD5B /* UserInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		A3AF0B3E1C7C7F3200C3FD5B /* TAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAManager.swift; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
 		A3D709031C575D270055AD9D /* ReusedValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusedValues.swift; sourceTree = "<group>"; };
@@ -255,7 +259,9 @@
 		A34242861C567AF400FAD46D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A3AF0B3E1C7C7F3200C3FD5B /* TAManager.swift */,
 				A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */,
+				A3AF0B3C1C7C6F7A00C3FD5B /* UserInfoManager.swift */,
 				A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */,
 			);
 			name = Utils;
@@ -628,7 +634,9 @@
 				A3AF0B3A1C7B406300C3FD5B /* LoginController.swift in Sources */,
 				A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */,
 				A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */,
+				A3AF0B3D1C7C6F7A00C3FD5B /* UserInfoManager.swift in Sources */,
 				A37795041C79EF8F0063EE09 /* PaintingVedioCell.swift in Sources */,
+				A3AF0B3F1C7C7F3200C3FD5B /* TAManager.swift in Sources */,
 				A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */,
 				A3DE3EF31C7848C500DD7313 /* SearchPageItem.swift in Sources */,
 				A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */,

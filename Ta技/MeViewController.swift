@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class MeViewController: UIViewController, TANavigationBarType, UIGestureRecognizerDelegate {
 
@@ -21,7 +22,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     @IBOutlet weak var avatar: UIImageView! 
     
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var school: UILabel!
     
@@ -57,6 +58,19 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
+        self.setUserInfo()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+    }
+    
+    func setUserInfo() {
+        let avatarURL = TAUtilsManager.userInfoManager.readAvatarURL()
+        let userName = TAUtilsManager.userInfoManager.readUserName()
+//        let sex = TAUtilsManager.userInfoManager.readSex()
+        self.avatar.kf_setImageWithURL(avatarURL, placeholderImage: Image(named: "no_avatar"))
+        self.userName.text = userName
     }
     
     func setNavigationBar() {

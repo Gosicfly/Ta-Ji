@@ -13,7 +13,7 @@
                 <outlet property="passwordInput" destination="rMl-ye-GFa" id="YCg-hp-wUh"/>
                 <outlet property="signIn" destination="iVe-5l-fJz" id="VS9-Vh-3dM"/>
                 <outlet property="signUp" destination="Imf-uA-Tc0" id="XRL-mx-rnN"/>
-                <outlet property="userInput" destination="Ljs-ea-Ydz" id="O4s-JE-9gU"/>
+                <outlet property="userNameInput" destination="Ljs-ea-Ydz" id="Peu-tU-U2u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

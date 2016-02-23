@@ -16,9 +16,9 @@ class LoginController: UIViewController {
     
     private let reachability = ReachabilityManager.sharedManager()
 
-    @IBOutlet weak var userInput: UITextField! {
+    @IBOutlet weak var userNameInput: UITextField! {
         didSet {
-            userInput.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
+            userNameInput.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
         }
     }
     
@@ -57,7 +57,7 @@ class LoginController: UIViewController {
                 SVProgressHUD.showErrorWithStatus("无网络连接")
                 return
             }
-            let mobile = userInput.text!
+            let mobile = userNameInput.text!
             let password = passwordInput.text!.md5()
             Alamofire.request(.GET, "http://taji.whutech.com/user/login?mobile=\(mobile)&password=\(password)").responseJSON(completionHandler: { (response) -> Void in
                 guard response.result.value != nil else {
@@ -65,12 +65,28 @@ class LoginController: UIViewController {
                     return
                 }
                 let json = JSON(response.result.value!)
-                print(json)
                 guard json["status"].string! == "200" else {
                     let errorInfo = json["msg"].string!
                     SVProgressHUD.showErrorWithStatus(errorInfo)
                     return
                 }
+                let userInfoManager = TAUtilsManager.userInfoManager
+                userInfoManager.writeState(true)
+                userInfoManager.writeID(userid: json["data"]["userid"].string!, openid: json["data"]["openid"].string!)
+                if json["data"]["username"].type == .Null {
+                    userInfoManager.writeUserName("Null")
+                } else {
+                    userInfoManager.writeUserName(json["data"]["username"].string!)
+                }
+                if json["data"]["sex"].type == .Null {
+                    userInfoManager.writeSex("男")
+                } else {
+                    userInfoManager.writeSex(json["data"]["sex"].string!)
+                }
+                userInfoManager.writeMobile(json["data"]["mobile"].string!)
+                userInfoManager.writeAvatarURL(NSURL(string: json["data"]["avatar"].string!)!)
+                userInfoManager.synchronize()
+                UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.tabBarController
             })
         default:
             break
@@ -83,11 +99,11 @@ class LoginController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         
-        userInput.borderStyle = .None
-        let maskPath1 = UIBezierPath(roundedRect: userInput.bounds, byRoundingCorners: [.TopLeft, .TopRight], cornerRadii: CGSize(width: 10, height: 10))
+        userNameInput.borderStyle = .None
+        let maskPath1 = UIBezierPath(roundedRect: userNameInput.bounds, byRoundingCorners: [.TopLeft, .TopRight], cornerRadii: CGSize(width: 10, height: 10))
         let maskLayer1 = CAShapeLayer()
         maskLayer1.path = maskPath1.CGPath
-        userInput.layer.mask = maskLayer1
+        userNameInput.layer.mask = maskLayer1
         
         passwordInput.borderStyle = .None
         let maskPath2 = UIBezierPath(roundedRect: passwordInput.bounds, byRoundingCorners: [.BottomLeft, .BottomRight], cornerRadii: CGSize(width: 10, height: 10))
@@ -96,13 +112,13 @@ class LoginController: UIViewController {
         passwordInput.layer.mask = maskLayer2
         
         let separatorPath = UIBezierPath()
-        separatorPath.moveToPoint(CGPoint(x: 0, y: userInput.frame.size.height))
-        separatorPath.addLineToPoint(CGPoint(x: userInput.frame.size.width, y: userInput.frame.size.height))
+        separatorPath.moveToPoint(CGPoint(x: 0, y: userNameInput.frame.size.height))
+        separatorPath.addLineToPoint(CGPoint(x: userNameInput.frame.size.width, y: userNameInput.frame.size.height))
         let separatorLayer = CAShapeLayer()
         separatorLayer.path = separatorPath.CGPath
         separatorLayer.strokeColor = UIColor.grayColor().CGColor
         separatorLayer.lineWidth = 0.5
-        userInput.layer.addSublayer(separatorLayer)
+        userNameInput.layer.addSublayer(separatorLayer)
         
         //设置按钮圆角
         signUp.layer.cornerRadius = signUp.frame.height / 4
