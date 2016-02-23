@@ -39,28 +39,55 @@
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
-                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <font key="NSFont" size="17" name="HelveticaNeue"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
+                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bEQ-Cz-oNB">
+                        <rect key="frame" x="16" y="357" width="210" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-T8-IUk">
+                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNy-J8-0IU">
+                                <rect key="frame" x="71" y="0.0" width="69" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znp-hZ-dOD">
+                                <rect key="frame" x="142" y="0.0" width="69" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="0.24705882352941178" green="0.18823529411764706" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="0sj-aa-laj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fja-6B-l2s"/>
+                <constraint firstAttribute="bottom" secondItem="bEQ-Cz-oNB" secondAttribute="bottom" constant="23" id="IxM-pY-KjM"/>
                 <constraint firstAttribute="trailing" secondItem="0sj-aa-laj" secondAttribute="trailing" id="SM7-Nx-joY"/>
+                <constraint firstItem="bEQ-Cz-oNB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="VgH-Iy-t4x"/>
                 <constraint firstItem="0sj-aa-laj" firstAttribute="top" secondItem="V06-r0-OGs" secondAttribute="bottom" constant="10" id="XpE-SO-jNf"/>
                 <constraint firstItem="KX9-2C-UUf" firstAttribute="leading" secondItem="V06-r0-OGs" secondAttribute="trailing" constant="16" id="bGz-6I-pEC"/>
+                <constraint firstAttribute="trailing" secondItem="bEQ-Cz-oNB" secondAttribute="trailing" constant="17" id="bx1-XH-ZLL"/>
+                <constraint firstItem="bEQ-Cz-oNB" firstAttribute="top" secondItem="0sj-aa-laj" secondAttribute="bottom" constant="44" id="e0x-oo-SZT"/>
                 <constraint firstItem="KX9-2C-UUf" firstAttribute="centerY" secondItem="V06-r0-OGs" secondAttribute="centerY" id="qgq-z4-hcE"/>
                 <constraint firstItem="V06-r0-OGs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" constant="6" id="vXC-oY-hs1"/>
                 <constraint firstItem="V06-r0-OGs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" constant="6" id="zb5-mE-eyO"/>
             </constraints>
             <size key="customSize" width="243" height="410"/>
-            <point key="canvasLocation" x="245.5" y="322"/>
+            <point key="canvasLocation" x="291.5" y="343"/>
         </collectionViewCell>
     </objects>
     <resources>

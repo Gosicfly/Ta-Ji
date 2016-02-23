@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 顶部menuView的cell
 class TAMenuItem: UICollectionViewCell {
     
     var titleLabel: UILabel! {

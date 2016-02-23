@@ -15,6 +15,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     @IBOutlet weak var blurEffectView: UIVisualEffectView!
     
+    @IBOutlet weak var stackViewOne: UIStackView!
+    
+    @IBOutlet weak var stackViewTwo: UIStackView!
+    
     @IBOutlet weak var avatar: UIImageView! 
     
     @IBOutlet weak var name: UILabel!

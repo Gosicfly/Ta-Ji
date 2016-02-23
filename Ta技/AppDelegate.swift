@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setDefalutNavigationBarStyle()
         self.window?.rootViewController = UINavigationController(rootViewController: TelInputController())
         self.window?.rootViewController = tabBarVC
-        self.window?.rootViewController = LoginController()
+//        self.window?.rootViewController = LoginController()
         self.window?.makeKeyAndVisible()
         return true
     }

@@ -17,6 +17,8 @@
                 <outlet property="numberOfSubscribers" destination="lO2-BU-paK" id="qA1-Iv-YQq"/>
                 <outlet property="school" destination="TPw-VJ-6E4" id="tbE-a8-22u"/>
                 <outlet property="signature" destination="o3C-p3-nfm" id="o7p-dQ-98s"/>
+                <outlet property="stackViewOne" destination="LA6-nx-Rra" id="9BO-l2-0Mg"/>
+                <outlet property="stackViewTwo" destination="syU-ag-HGA" id="0Hz-Pu-R5w"/>
                 <outlet property="tableView" destination="y7X-cs-bjK" id="Ae7-wq-LSF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -85,14 +87,20 @@
                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsI-a1-ZBp" userLabel="容器view">
                     <rect key="frame" x="0.0" y="171" width="320" height="129.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想学技能" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tw1-3k-lkx">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想学技能" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tw1-3k-lkx">
                             <rect key="frame" x="17" y="19" width="48" height="14.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="fi7-w4-dtx"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.56470588235294117" green="0.36078431372549019" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拥有技能" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wro-Gt-MPB">
                             <rect key="frame" x="17" y="43" width="48" height="14.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="Ycz-Bc-Smb"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.10588235294117647" green="0.6588235294117647" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -183,6 +191,28 @@
                                 <constraint firstAttribute="width" constant="30.5" id="kKY-ns-rgZ"/>
                             </constraints>
                         </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LA6-nx-Rra">
+                            <rect key="frame" x="75" y="16" width="70" height="19"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打牌" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDj-LP-ngA" customClass="TALabel" customModule="Ta技" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="2.5" width="24" height="14.5"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="0.40973678689999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掏鸟窝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-7l-5Wt" customClass="TALabel" customModule="Ta技" customModuleProvider="target">
+                                    <rect key="frame" x="34" y="2.5" width="36" height="14.5"/>
+                                    <color key="backgroundColor" red="0.56470588239999997" green="0.36078431370000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="syU-ag-HGA">
+                            <rect key="frame" x="75" y="40.5" width="215" height="19.5"/>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -192,6 +222,7 @@
                         <constraint firstItem="H2F-y0-iDd" firstAttribute="centerX" secondItem="rlQ-wU-YBZ" secondAttribute="centerX" id="62k-fJ-tQz"/>
                         <constraint firstItem="Sx3-OY-suk" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.56" id="6Bj-CP-Mhh"/>
                         <constraint firstItem="PvM-hR-GlJ" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.65" id="6OA-3b-K5a"/>
+                        <constraint firstItem="syU-ag-HGA" firstAttribute="height" secondItem="wro-Gt-MPB" secondAttribute="height" multiplier="1.3" id="7DT-SG-G7B"/>
                         <constraint firstAttribute="trailing" secondItem="Y8n-nR-eGI" secondAttribute="trailing" constant="17" id="7XG-8G-JYE"/>
                         <constraint firstItem="OMH-DL-cwQ" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.56" id="8Vi-Jm-3Rx"/>
                         <constraint firstItem="tw1-3k-lkx" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="0.4" id="ArZ-IQ-bxh"/>
@@ -199,24 +230,31 @@
                         <constraint firstItem="Sx3-OY-suk" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="0.25" id="Eak-12-6RO"/>
                         <constraint firstAttribute="trailing" secondItem="LjC-Ih-5qv" secondAttribute="trailing" constant="11.5" id="Gpw-Mf-M5p"/>
                         <constraint firstItem="YUr-dk-CGu" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="1.5" id="Hww-gW-Edm"/>
+                        <constraint firstItem="LA6-nx-Rra" firstAttribute="leading" secondItem="tw1-3k-lkx" secondAttribute="trailing" constant="10" id="JJz-hZ-KRG"/>
                         <constraint firstItem="Rkx-zl-XC7" firstAttribute="centerX" secondItem="OMH-DL-cwQ" secondAttribute="centerX" id="Jt2-xa-CAo"/>
                         <constraint firstItem="Y8n-nR-eGI" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" id="O8B-G8-OXJ"/>
                         <constraint firstItem="PvM-hR-GlJ" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="0.5" id="OFh-Wp-1je"/>
                         <constraint firstItem="lO2-BU-paK" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="1.25" id="VHy-Sg-UXH"/>
+                        <constraint firstItem="LA6-nx-Rra" firstAttribute="centerY" secondItem="tw1-3k-lkx" secondAttribute="centerY" id="WHg-U9-81b"/>
                         <constraint firstItem="te7-46-21b" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" id="Xo4-ta-pVs"/>
                         <constraint firstItem="Y8n-nR-eGI" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.3" id="Xyl-Ww-mZR"/>
                         <constraint firstItem="te7-46-21b" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.65" id="aq7-gM-yYI"/>
                         <constraint firstItem="H2F-y0-iDd" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.8" id="bEf-mt-oDH"/>
                         <constraint firstItem="Drk-Rz-aHe" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.8" id="cej-O4-Vi7"/>
+                        <constraint firstItem="syU-ag-HGA" firstAttribute="centerY" secondItem="wro-Gt-MPB" secondAttribute="centerY" id="dUf-fo-Hzq"/>
                         <constraint firstItem="wro-Gt-MPB" firstAttribute="leading" secondItem="zsI-a1-ZBp" secondAttribute="leading" constant="17" id="fcZ-by-q8N"/>
                         <constraint firstItem="Drk-Rz-aHe" firstAttribute="centerX" secondItem="lO2-BU-paK" secondAttribute="centerX" id="ftx-EM-tv9"/>
                         <constraint firstItem="lO2-BU-paK" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.56" id="g9o-MF-gmV"/>
                         <constraint firstItem="Gar-k6-rUD" firstAttribute="centerX" secondItem="Sx3-OY-suk" secondAttribute="centerX" id="hq2-7a-XSR"/>
+                        <constraint firstAttribute="trailing" secondItem="LA6-nx-Rra" secondAttribute="trailing" priority="750" constant="30" id="kud-aQ-wMx"/>
                         <constraint firstItem="rlQ-wU-YBZ" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.56" id="luK-li-zEQ"/>
+                        <constraint firstItem="syU-ag-HGA" firstAttribute="leading" secondItem="wro-Gt-MPB" secondAttribute="trailing" constant="10" id="o2R-iV-Lhx"/>
                         <constraint firstItem="wro-Gt-MPB" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="0.78" id="ouS-Vc-cUy"/>
                         <constraint firstItem="Gar-k6-rUD" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.8" id="pdx-8C-z8O"/>
                         <constraint firstItem="OMH-DL-cwQ" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="0.75" id="q4T-fc-jzq"/>
+                        <constraint firstItem="LA6-nx-Rra" firstAttribute="height" secondItem="tw1-3k-lkx" secondAttribute="height" multiplier="1.3" id="qgd-iI-o1J"/>
                         <constraint firstItem="tw1-3k-lkx" firstAttribute="leading" secondItem="zsI-a1-ZBp" secondAttribute="leading" constant="17" id="tcs-lt-lSt"/>
+                        <constraint firstAttribute="trailing" secondItem="syU-ag-HGA" secondAttribute="trailing" priority="750" constant="30" id="yOU-iG-fcz"/>
                         <constraint firstItem="Rkx-zl-XC7" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.8" id="zcQ-JM-ecq"/>
                     </constraints>
                 </view>

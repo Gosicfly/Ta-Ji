@@ -13,12 +13,19 @@ class TALabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.cornerRadius = self.bounds.width / 2
-        self.layer.masksToBounds = true
+        self.font = UIFont.systemFontOfSize(12)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.font = UIFont.systemFontOfSize(12)
+    }
+    
+    override func willMoveToSuperview(newSuperview: UIView?) {
+        self.text = "  " + self.text! + "  "
+    }
+    
+    override func layoutSubviews() {
         self.layer.cornerRadius = self.bounds.height / 2
         self.layer.masksToBounds = true
     }
