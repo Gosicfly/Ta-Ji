@@ -14,7 +14,7 @@ import CryptoSwift
 
 class LoginController: UIViewController {
     
-    private let reachability = ReachabilityManager.sharedManager()
+    private let reachability = TAUtilsManager.reachabilityManager
 
     @IBOutlet weak var userNameInput: UITextField! {
         didSet {
@@ -64,15 +64,16 @@ class LoginController: UIViewController {
                     SVProgressHUD.showErrorWithStatus("请检查网络状况")
                     return
                 }
-                let json = JSON(response.result.value!)
+                var json = JSON(response.result.value!)
                 guard json["status"].string! == "200" else {
                     let errorInfo = json["msg"].string!
                     SVProgressHUD.showErrorWithStatus(errorInfo)
                     return
                 }
                 let userInfoManager = TAUtilsManager.userInfoManager
-                userInfoManager.writeState(true)
-                userInfoManager.writeID(userid: json["data"]["userid"].string!, openid: json["data"]["openid"].string!)
+                userInfoManager.writeloginState(true)
+                let (userID, openID) = (json["data"]["userid"].string!, json["data"]["openid"].string!)
+                userInfoManager.writeID(userid: userID, openid: openID)
                 if json["data"]["username"].type == .Null {
                     userInfoManager.writeUserName("Null")
                 } else {
@@ -86,6 +87,30 @@ class LoginController: UIViewController {
                 userInfoManager.writeMobile(json["data"]["mobile"].string!)
                 userInfoManager.writeAvatarURL(NSURL(string: json["data"]["avatar"].string!)!)
                 userInfoManager.synchronize()
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(userID)&openid=\(openID)").responseJSON { (response) -> Void in
+                        json = JSON(response.result.value!)
+                        TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
+                        if json["data"]["school"].type == .Null {
+                            TAUtilsManager.userInfoManager.writeSchool("Null")
+                        } else {
+                            TAUtilsManager.userInfoManager.writeSchool(json["data"]["school"].string!)
+                        }
+                        TAUtilsManager.userInfoManager.synchronize()
+                        RCIM.sharedRCIM().initWithAppKey("pkfcgjstfb228")
+                        RCIM.sharedRCIM().connectWithToken(TAUtilsManager.userInfoManager.readRcToken(), success: { (userID) -> Void in
+                            print("登陆成功。当前登录的用户ID：\(userID)")
+                            }, error: { (status) -> Void in
+                                print("登陆的错误码为:\(status.rawValue)")
+                            }) { () -> Void in
+                                //token过期或者不正确。
+                                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                                print("token错误")
+                        }
+                    }
+                })
+                self.performSelector(Selector("dismissHUD"), withObject: nil, afterDelay: 0.5)
                 UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.tabBarController
             })
         default:
@@ -125,5 +150,9 @@ class LoginController: UIViewController {
         signUp.layer.masksToBounds = true
         signIn.layer.cornerRadius = signIn.frame.height / 4
         signIn.layer.masksToBounds = true
+    }
+    
+    func dismissHUD() {
+        SVProgressHUD.dismiss()
     }
 }

@@ -17,6 +17,7 @@
 
 import Foundation
 
+/// 这个类管理的是需要持久化的信息
 final class UserInfoManager {
     
     // 私有单例
@@ -46,7 +47,7 @@ final class UserInfoManager {
     }
     
     // MARK: - Write methods
-    func writeState(state: Bool) {
+    func writeloginState(state: Bool) {
         self.defaultPlist.setBool(state, forKey: "loginState")
     }
     
@@ -74,9 +75,19 @@ final class UserInfoManager {
         self.defaultPlist.setURL(url, forKey: "avatarURL")
     }
     
+    func writeRcToken(rcToken: String) {
+        //不知道这里要不要做对“\”的处理
+//        rcToken.stringByReplacingOccurrencesOfString("\\", withString: "")
+        self.defaultPlist.setValue(rcToken, forKey: "rcToken")
+    }
+    
+    func writeSchool(school: String) {
+        self.defaultPlist.setValue(school, forKey: "school")
+    }
+    
     // MARK: - Read methods
-    func readState() -> Bool {
-        return self.defaultPlist.boolForKey("state")
+    func readloginState() -> Bool {
+        return self.defaultPlist.boolForKey("loginState")
     }
     
     func readUserName() -> String {
@@ -99,6 +110,14 @@ final class UserInfoManager {
         return self.defaultPlist.URLForKey("avatarURL")!
     }
     
+    func readRcToken() -> String {
+        return self.defaultPlist.stringForKey("rcToken")!
+    }
+    
+    func readSchool() -> String {
+        return self.defaultPlist.stringForKey("school")!
+    }
+    
     // - MARK: Delete Method
     func delete(key: String) {
         guard key != "alreadyExist" else {
@@ -111,4 +130,9 @@ final class UserInfoManager {
     func synchronize() {
         self.defaultPlist.synchronize()
     }
+}
+
+/// 这个类管理的是动态变化的，不需要持久化的信息数据
+class UserDynamicInfo {
+    
 }

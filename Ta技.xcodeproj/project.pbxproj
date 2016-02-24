@@ -118,6 +118,7 @@
 		A37795091C79FBEB0063EE09 /* TAActionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAActionLabel.swift; sourceTree = "<group>"; };
 		A377950B1C79FCC90063EE09 /* TAPureLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAPureLabel.swift; sourceTree = "<group>"; };
 		A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextConvertHelper.swift; sourceTree = "<group>"; };
+		A3822AB91C7CACDE00177822 /* Ta技-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Ta技-Bridging-Header.h"; path = "Ta技/Ta技-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3AF0B381C7B406300C3FD5B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A3AF0B391C7B406300C3FD5B /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
@@ -238,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				A34242AE1C567EB800FAD46D /* Podfile */,
+				A3822AB91C7CACDE00177822 /* Ta技-Bridging-Header.h */,
 				A342427A1C567A4200FAD46D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -773,7 +775,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gosicfly.Ta-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ta技/Ta技-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -788,7 +790,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gosicfly.Ta-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ta技/Ta技-Bridging-Header.h";
 			};
 			name = Release;
 		};

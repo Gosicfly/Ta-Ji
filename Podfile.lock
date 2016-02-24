@@ -20,6 +20,7 @@ PODS:
   - Realm/Headers (0.97.0)
   - RealmSwift (0.97.0):
     - Realm (= 0.97.0)
+  - RongCloudIMKit (2.4.7)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - MWPhotoBrowser
   - ReachabilitySwift
   - RealmSwift
+  - RongCloudIMKit
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
@@ -56,6 +58,7 @@ SPEC CHECKSUMS:
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
   RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c
+  RongCloudIMKit: d24685a8f2ea63e79aa2653a3275d7c64ea611ac
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SnapKit: 57c00a21bac67a863f2192e816330f6665585938
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1

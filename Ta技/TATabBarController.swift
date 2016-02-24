@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class TATabBarController: UITabBarController {
     
@@ -41,7 +44,6 @@ class TATabBarController: UITabBarController {
         super.viewDidAppear(animated)
         self.addCenterButton()
     }
-    
     func setChildViewControllers() {
         self.addChildViewController(BaseHomeController(), title: "首页", image: "icon_tab_home")
         self.addChildViewController(CircleViewController(), title: "圈子", image: "icon_tab_circle")
