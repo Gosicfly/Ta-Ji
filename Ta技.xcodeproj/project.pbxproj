@@ -51,6 +51,8 @@
 		A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */; };
 		A3822ABF1C7D952000177822 /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822ABE1C7D952000177822 /* MessageListController.swift */; };
 		A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822AC11C7D95DC00177822 /* MessageController.swift */; };
+		A39D2B5A1C80AC3D00795B97 /* StudentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39D2B581C80AC3D00795B97 /* StudentsController.swift */; };
+		A39D2B5B1C80AC3D00795B97 /* StudentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39D2B591C80AC3D00795B97 /* StudentsController.xib */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3AF0B3A1C7B406300C3FD5B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B381C7B406300C3FD5B /* LoginController.swift */; };
 		A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AF0B391C7B406300C3FD5B /* LoginController.xib */; };
@@ -123,6 +125,8 @@
 		A3822AB91C7CACDE00177822 /* Ta技-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Ta技-Bridging-Header.h"; path = "Ta技/Ta技-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3822ABE1C7D952000177822 /* MessageListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
 		A3822AC11C7D95DC00177822 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		A39D2B581C80AC3D00795B97 /* StudentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsController.swift; sourceTree = "<group>"; };
+		A39D2B591C80AC3D00795B97 /* StudentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentsController.xib; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3AF0B381C7B406300C3FD5B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A3AF0B391C7B406300C3FD5B /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 		A37794EA1C78C0BD0063EE09 /* 标签栏 */ = {
 			isa = PBXGroup;
 			children = (
+				A39D2B581C80AC3D00795B97 /* StudentsController.swift */,
+				A39D2B591C80AC3D00795B97 /* StudentsController.xib */,
 				A37794EB1C78C11D0063EE09 /* SubscribeController.swift */,
 				A30C782B1C7F40E40002757B /* SubscriberController.xib */,
 				A37794F31C795F320063EE09 /* FansController.swift */,
@@ -552,6 +558,7 @@
 				A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */,
 				A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */,
 				A34242791C567A4200FAD46D /* LaunchScreen.storyboard in Resources */,
+				A39D2B5B1C80AC3D00795B97 /* StudentsController.xib in Resources */,
 				A37795051C79EF8F0063EE09 /* PaintingVedioCell.xib in Resources */,
 				A34242761C567A4200FAD46D /* Assets.xcassets in Resources */,
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
@@ -621,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */,
+				A39D2B5A1C80AC3D00795B97 /* StudentsController.swift in Sources */,
 				A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */,
 				A37795081C79F8840063EE09 /* TARichTextLabel.swift in Sources */,
 				A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */,

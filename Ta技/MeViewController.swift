@@ -38,10 +38,26 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         }
     }
     
+    @IBOutlet weak var numberOfSkills: UILabel! {
+        didSet {
+            numberOfSkills.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            numberOfSkills.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    
+    @IBOutlet weak var numberOfStudents: UILabel! {
+        didSet {
+            numberOfStudents.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            numberOfStudents.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    
     @IBOutlet weak var numberOfSubscribers: UILabel! {
         didSet {
             numberOfSubscribers.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushSubscribeController"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
             numberOfSubscribers.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -49,7 +65,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var numberOfFans: UILabel! {
         didSet {
             numberOfFans.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushFansController"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
             numberOfFans.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -62,60 +78,96 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if TAUtilsManager.reachabilityManager.isReachable() {
-            Alamofire.request(.GET, "http://taji.whutech.com/Follow/followList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
-                let json = JSON(response.result.value!)
-                if json["status"] == "200" {
-                    self.numberOfSubscribers.text = String(json["data"].array!.count)
-                    for (_, subJson) in json["data"] {
-                        let userName: String
-                        if subJson["username"].type == .Null {
-                            userName = "Null"
-                        } else {
-                            userName = subJson["username"].string!
-                        }
-                        let userID = subJson["userid"].string!
-                        let signature = subJson["signature"].string!
-                        let avatarURL = subJson["avatar"].string!
-                        
-                        let subscriberInfo = SubscriberInfo()
-                        subscriberInfo.userID = userID
-                        subscriberInfo.userName = userName
-                        subscriberInfo.signature = signature
-                        subscriberInfo.avatarURL = avatarURL
-                        try! realm.write({ () -> Void in
-                            realm.add(subscriberInfo, update: true)
-                        })
+        Alamofire.request(.GET, "http://taji.whutech.com//Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+            guard response.result.isSuccess else {
+                self.numberOfStudents.text = String(realm.objects(StudentInfo).count)
+                return
+            }
+            let json = JSON(response.result.value!)
+            if json["status"] == "200" {
+                self.numberOfStudents.text = String(json["data"].array!.count)
+                for (_, subJson) in json["data"] {
+                    let userName: String
+                    if subJson["username"].type == .Null {
+                        userName = "Null"
+                    } else {
+                        userName = subJson["username"].string!
                     }
+                    let userID = subJson["userid"].string!
+                    let signature = subJson["signature"].string!
+                    let avatarURL = subJson["avatar"].string!
+                    
+                    let studentInfo = StudentInfo()
+                    studentInfo.userID = userID
+                    studentInfo.userName = userName
+                    studentInfo.signature = signature
+                    studentInfo.avatarURL = avatarURL
+                    try! realm.write({ () -> Void in
+                        realm.add(studentInfo, update: true)
+                    })
                 }
             }
-            Alamofire.request(.GET, "http://taji.whutech.com/Follow/fansList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) -> Void in
-                let json = JSON(response.result.value!)
-                if json["status"] == "200" {
-                    self.numberOfFans.text = String(json["data"].array!.count)
-                    for (_, subJson) in json["data"] {
-                        let userName: String
-                        if subJson["username"].type == .Null {
-                            userName = "Null"
-                        } else {
-                            userName = subJson["username"].string!
-                        }
-                        let userID = subJson["userid"].string!
-                        let signature = subJson["signature"].string!
-                        let avatarURL = subJson["avatar"].string!
-                        
-                        let fansInfo = FansInfo()
-                        fansInfo.userID = userID
-                        fansInfo.userName = userName
-                        fansInfo.signature = signature
-                        fansInfo.avatarURL = avatarURL
-                        try! realm.write({ () -> Void in
-                            realm.add(fansInfo, update: true)
-                        })
-                    }
-                }
-            })
         }
+        Alamofire.request(.GET, "http://taji.whutech.com/Follow/followList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+            guard response.result.isSuccess else {
+                self.numberOfSubscribers.text = String(realm.objects(SubscriberInfo).count)
+                return
+            }
+            let json = JSON(response.result.value!)
+            if json["status"] == "200" {
+                self.numberOfSubscribers.text = String(json["data"].array!.count)
+                for (_, subJson) in json["data"] {
+                    let userName: String
+                    if subJson["username"].type == .Null {
+                        userName = "Null"
+                    } else {
+                        userName = subJson["username"].string!
+                    }
+                    let userID = subJson["userid"].string!
+                    let signature = subJson["signature"].string!
+                    let avatarURL = subJson["avatar"].string!
+                    
+                    let subscriberInfo = SubscriberInfo()
+                    subscriberInfo.userID = userID
+                    subscriberInfo.userName = userName
+                    subscriberInfo.signature = signature
+                    subscriberInfo.avatarURL = avatarURL
+                    try! realm.write({ () -> Void in
+                        realm.add(subscriberInfo, update: true)
+                    })
+                }
+            }
+        }
+        Alamofire.request(.GET, "http://taji.whutech.com/Follow/fansList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) -> Void in
+            guard response.result.isSuccess else {
+                self.numberOfFans.text = String(realm.objects(FansInfo).count)
+                return
+            }
+            let json = JSON(response.result.value!)
+            if json["status"] == "200" {
+                self.numberOfFans.text = String(json["data"].array!.count)
+                for (_, subJson) in json["data"] {
+                    let userName: String
+                    if subJson["username"].type == .Null {
+                        userName = "Null"
+                    } else {
+                        userName = subJson["username"].string!
+                    }
+                    let userID = subJson["userid"].string!
+                    let signature = subJson["signature"].string!
+                    let avatarURL = subJson["avatar"].string!
+                    
+                    let fansInfo = FansInfo()
+                    fansInfo.userID = userID
+                    fansInfo.userName = userName
+                    fansInfo.signature = signature
+                    fansInfo.avatarURL = avatarURL
+                    try! realm.write({ () -> Void in
+                        realm.add(fansInfo, update: true)
+                    })
+                }
+            }
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -147,6 +199,25 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     // MARK: - Selector
     func settings() {
         
+    }
+    
+    func pushAController(gesture: UITapGestureRecognizer) {
+        switch gesture.view! {
+        case self.numberOfSkills:
+//            TO DO...
+            break
+        case self.numberOfStudents:
+            let studentsController = StudentsController()
+            self.navigationController?.pushViewController(studentsController, animated: true)
+        case self.numberOfSubscribers:
+            let subscribeController = SubscriberController()
+            self.navigationController?.pushViewController(subscribeController, animated: true)
+        case self.numberOfFans:
+            let fansController = FansController()
+            self.navigationController?.pushViewController(fansController, animated: true)
+        default:
+            break
+        }
     }
     
     func pushSubscribeController() {

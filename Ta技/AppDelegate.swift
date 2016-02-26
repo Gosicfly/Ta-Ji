@@ -46,15 +46,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
         let userInfo = RCUserInfo()
         Alamofire.request(.GET, "http://taji.whutech.com/user/getAvatar?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&uid=\(userId)").responseJSON { (response) -> Void in
-            let json = JSON(response.result.value!)
-            userInfo.userId = json["data"]["uid"].string!
-            if json["data"]["username"].type == .Null {
-                userInfo.name = "Null"
-            } else {
-                userInfo.name = json["data"]["username"].string!
+            if response.result.isSuccess {
+                let json = JSON(response.result.value!)
+                userInfo.userId = json["data"]["uid"].string!
+                if json["data"]["username"].type == .Null {
+                    userInfo.name = "Null"
+                } else {
+                    userInfo.name = json["data"]["username"].string!
+                }
+                userInfo.portraitUri = json["data"]["avatar"].string!
+                completion(userInfo)
             }
-            userInfo.portraitUri = json["data"]["avatar"].string!
-            completion(userInfo)
         }
     }
     
