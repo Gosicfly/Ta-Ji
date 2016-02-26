@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		638C475D685BF472CB5F5538 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F13FDD73B62F3E08CF6566 /* Pods.framework */; };
+		A30C782C1C7F40E40002757B /* SubscriberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A30C782B1C7F40E40002757B /* SubscriberController.xib */; };
+		A30C782E1C7F49330002757B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C782D1C7F49330002757B /* Models.swift */; };
 		A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3252B581C6F4B7100022AC0 /* MeViewController.swift */; };
 		A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3252B591C6F4B7100022AC0 /* MeViewController.xib */; };
 		A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3252B5D1C6F50C600022AC0 /* PublishViewController.swift */; };
@@ -25,7 +27,6 @@
 		A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A01C567C8C00FAD46D /* ConcernViewController.swift */; };
 		A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A21C567CA400FAD46D /* ActivityViewController.swift */; };
 		A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A41C567CBA00FAD46D /* CircleViewController.swift */; };
-		A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A61C567CD300FAD46D /* MessageViewController.swift */; };
 		A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242AA1C567D0500FAD46D /* UIExtensions.swift */; };
 		A34242AF1C567EB800FAD46D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A34242AE1C567EB800FAD46D /* Podfile */; };
 		A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12051C724BDA005FAC9F /* TALabel.swift */; };
@@ -36,7 +37,6 @@
 		A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794E61C78AF740063EE09 /* MAndAController.swift */; };
 		A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794E71C78AF740063EE09 /* MAndAController.xib */; };
 		A37794ED1C78C11D0063EE09 /* SubscribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EB1C78C11D0063EE09 /* SubscribeController.swift */; };
-		A37794EE1C78C11D0063EE09 /* SubscriberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794EC1C78C11D0063EE09 /* SubscriberController.xib */; };
 		A37794F11C78C30D0063EE09 /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EF1C78C30D0063EE09 /* SubscriberCell.swift */; };
 		A37794F21C78C30D0063EE09 /* SubscriberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F01C78C30D0063EE09 /* SubscriberCell.xib */; };
 		A37794F51C795F320063EE09 /* FansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794F31C795F320063EE09 /* FansController.swift */; };
@@ -49,6 +49,8 @@
 		A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37795091C79FBEB0063EE09 /* TAActionLabel.swift */; };
 		A377950C1C79FCC90063EE09 /* TAPureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950B1C79FCC90063EE09 /* TAPureLabel.swift */; };
 		A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */; };
+		A3822ABF1C7D952000177822 /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822ABE1C7D952000177822 /* MessageListController.swift */; };
+		A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822AC11C7D95DC00177822 /* MessageController.swift */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
 		A3AF0B3A1C7B406300C3FD5B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B381C7B406300C3FD5B /* LoginController.swift */; };
 		A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AF0B391C7B406300C3FD5B /* LoginController.xib */; };
@@ -75,6 +77,8 @@
 /* Begin PBXFileReference section */
 		888C711AA3FE1361E7834B5F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8E2A27AB5A2023B99F6E93F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A30C782B1C7F40E40002757B /* SubscriberController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriberController.xib; sourceTree = "<group>"; };
+		A30C782D1C7F49330002757B /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A3252B581C6F4B7100022AC0 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		A3252B591C6F4B7100022AC0 /* MeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeViewController.xib; sourceTree = "<group>"; };
 		A3252B5D1C6F50C600022AC0 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +98,6 @@
 		A34242A01C567C8C00FAD46D /* ConcernViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcernViewController.swift; sourceTree = "<group>"; };
 		A34242A21C567CA400FAD46D /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		A34242A41C567CBA00FAD46D /* CircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
-		A34242A61C567CD300FAD46D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		A34242AA1C567D0500FAD46D /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		A34242AE1C567EB800FAD46D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A35A12051C724BDA005FAC9F /* TALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALabel.swift; sourceTree = "<group>"; };
@@ -105,7 +108,6 @@
 		A37794E61C78AF740063EE09 /* MAndAController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAndAController.swift; sourceTree = "<group>"; };
 		A37794E71C78AF740063EE09 /* MAndAController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAndAController.xib; sourceTree = "<group>"; };
 		A37794EB1C78C11D0063EE09 /* SubscribeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeController.swift; sourceTree = "<group>"; };
-		A37794EC1C78C11D0063EE09 /* SubscriberController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriberController.xib; sourceTree = "<group>"; };
 		A37794EF1C78C30D0063EE09 /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		A37794F01C78C30D0063EE09 /* SubscriberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriberCell.xib; sourceTree = "<group>"; };
 		A37794F31C795F320063EE09 /* FansController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FansController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,8 @@
 		A377950B1C79FCC90063EE09 /* TAPureLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAPureLabel.swift; sourceTree = "<group>"; };
 		A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextConvertHelper.swift; sourceTree = "<group>"; };
 		A3822AB91C7CACDE00177822 /* Ta技-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Ta技-Bridging-Header.h"; path = "Ta技/Ta技-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3822ABE1C7D952000177822 /* MessageListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
+		A3822AC11C7D95DC00177822 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 		A3AF0B381C7B406300C3FD5B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A3AF0B391C7B406300C3FD5B /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 				A3D709031C575D270055AD9D /* ReusedValues.swift */,
 				A3D709061C5795540055AD9D /* Protocols.swift */,
 				A34242AA1C567D0500FAD46D /* UIExtensions.swift */,
+				A30C782D1C7F49330002757B /* Models.swift */,
 			);
 			name = Reused;
 			sourceTree = "<group>";
@@ -313,7 +318,8 @@
 		A342428D1C567B7F00FAD46D /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
-				A34242A61C567CD300FAD46D /* MessageViewController.swift */,
+				A3822ABE1C7D952000177822 /* MessageListController.swift */,
+				A3822AC11C7D95DC00177822 /* MessageController.swift */,
 			);
 			name = "消息";
 			sourceTree = "<group>";
@@ -398,7 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				A37794EB1C78C11D0063EE09 /* SubscribeController.swift */,
-				A37794EC1C78C11D0063EE09 /* SubscriberController.xib */,
+				A30C782B1C7F40E40002757B /* SubscriberController.xib */,
 				A37794F31C795F320063EE09 /* FansController.swift */,
 				A37794F41C795F320063EE09 /* FansController.xib */,
 				A37794F71C795F4E0063EE09 /* CustomCells */,
@@ -542,7 +548,6 @@
 				A3252B601C6F50C600022AC0 /* PublishViewController.xib in Resources */,
 				A3DE3EEB1C77795E00DD7313 /* CircleCell.xib in Resources */,
 				A37794F21C78C30D0063EE09 /* SubscriberCell.xib in Resources */,
-				A37794EE1C78C11D0063EE09 /* SubscriberController.xib in Resources */,
 				A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */,
 				A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */,
 				A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */,
@@ -552,6 +557,7 @@
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
 				A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */,
+				A30C782C1C7F40E40002757B /* SubscriberController.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
 				A37794F61C795F320063EE09 /* FansController.xib in Resources */,
 				A34242741C567A4200FAD46D /* Main.storyboard in Resources */,
@@ -618,9 +624,11 @@
 				A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */,
 				A37795081C79F8840063EE09 /* TARichTextLabel.swift in Sources */,
 				A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */,
+				A30C782E1C7F49330002757B /* Models.swift in Sources */,
 				A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */,
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,
+				A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */,
 				A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */,
 				A3E03F1E1C65FB7F006BEF6F /* HotPageItem.swift in Sources */,
 				A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */,
@@ -639,9 +647,9 @@
 				A3AF0B3D1C7C6F7A00C3FD5B /* UserInfoManager.swift in Sources */,
 				A37795041C79EF8F0063EE09 /* PaintingVedioCell.swift in Sources */,
 				A3AF0B3F1C7C7F3200C3FD5B /* TAManager.swift in Sources */,
+				A3822ABF1C7D952000177822 /* MessageListController.swift in Sources */,
 				A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */,
 				A3DE3EF31C7848C500DD7313 /* SearchPageItem.swift in Sources */,
-				A34242A71C567CD300FAD46D /* MessageViewController.swift in Sources */,
 				A3DE3EEE1C7844C000DD7313 /* SearchController.swift in Sources */,
 				A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */,
 				A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */,
@@ -772,6 +780,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Ta技/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gosicfly.Ta-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -787,6 +796,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Ta技/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gosicfly.Ta-";
 				PRODUCT_NAME = "$(TARGET_NAME)";

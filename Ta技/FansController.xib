@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lMl-tQ-QpC">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lMl-tQ-QpC">
                     <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
@@ -28,7 +28,7 @@
                 <constraint firstItem="lMl-tQ-QpC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dEq-Pk-vUy"/>
                 <constraint firstItem="lMl-tQ-QpC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="qPP-E2-A0F"/>
             </constraints>
-            <point key="canvasLocation" x="797" y="331"/>
+            <point key="canvasLocation" x="816" y="299"/>
         </view>
     </objects>
 </document>

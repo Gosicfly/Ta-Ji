@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SubscriberController: UIViewController, TANavigationBarType {
+    
+    var subScriberInfos: Results<(SubscriberInfo)>
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -24,14 +27,23 @@ class SubscriberController: UIViewController, TANavigationBarType {
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        searchController.searchBar.searchBarStyle = .Minimal
+        searchController.hidesNavigationBarDuringPresentation = false
         return searchController
     }()
+    
+    init() {
+        self.subScriberInfos = realm.objects(SubscriberInfo)
+        super.init(nibName: nil, bundle: nil)
+        self.hidesBottomBarWhenPushed = true
+    }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.definesPresentationContext = true
-        self.hidesBottomBarWhenPushed = true
         self.setNavigationBar()
         self.view.addSubview(self.searchController.searchBar)
     }
@@ -50,7 +62,7 @@ class SubscriberController: UIViewController, TANavigationBarType {
 extension SubscriberController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.subScriberInfos.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

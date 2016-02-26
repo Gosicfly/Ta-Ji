@@ -14,24 +14,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="310" height="447"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TfY-yX-3if">
-                        <rect key="frame" x="0.0" y="0.0" width="310" height="447"/>
+                        <rect key="frame" x="0.0" y="44" width="310" height="403"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tableView>
+                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="6ng-5Q-i8i">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="44"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="0.93333333333333335" green="0.92156862745098034" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="TfY-yX-3if" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="C9W-YA-YQy"/>
-                <constraint firstItem="TfY-yX-3if" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="U83-Ej-9po"/>
-                <constraint firstAttribute="bottom" secondItem="TfY-yX-3if" secondAttribute="bottom" id="noP-eO-N2l"/>
-                <constraint firstAttribute="trailing" secondItem="TfY-yX-3if" secondAttribute="trailing" id="wUB-QF-TOb"/>
+                <constraint firstItem="6ng-5Q-i8i" firstAttribute="bottom" secondItem="TfY-yX-3if" secondAttribute="top" id="Vop-uN-vIV"/>
+                <constraint firstAttribute="bottom" secondItem="TfY-yX-3if" secondAttribute="bottom" id="bw8-tf-jdH"/>
+                <constraint firstItem="6ng-5Q-i8i" firstAttribute="trailing" secondItem="TfY-yX-3if" secondAttribute="trailing" id="o58-ic-sE0"/>
+                <constraint firstAttribute="trailing" secondItem="6ng-5Q-i8i" secondAttribute="trailing" id="olm-cE-tdg"/>
+                <constraint firstItem="6ng-5Q-i8i" firstAttribute="leading" secondItem="TfY-yX-3if" secondAttribute="leading" id="pJ8-ZQ-umv"/>
+                <constraint firstItem="6ng-5Q-i8i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qiq-SX-3Nx"/>
+                <constraint firstItem="6ng-5Q-i8i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="z0W-g7-Cks"/>
             </constraints>
             <size key="customSize" width="310" height="447"/>
             <connections>
+                <outlet property="searchBar" destination="6ng-5Q-i8i" id="M1i-cB-Niy"/>
                 <outlet property="tableView" destination="TfY-yX-3if" id="FhW-gY-Xqz"/>
             </connections>
-            <point key="canvasLocation" x="853" y="289.5"/>
+            <point key="canvasLocation" x="686" y="243.5"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -16,6 +16,8 @@ class SubscriberCell: UITableViewCell {
     
     @IBOutlet weak var signature: UILabel!
     
+    let separatorLine = CAShapeLayer()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,5 +33,12 @@ class SubscriberCell: UITableViewCell {
         layoutIfNeeded()
         self.avatar.layer.cornerRadius = self.avatar.bounds.width / 2
         self.avatar.layer.masksToBounds = true
+        let path = UIBezierPath()
+        path.moveToPoint(CGPoint(x: 10, y: self.contentView.bounds.height))
+        path.addLineToPoint(CGPoint(x: self.contentView.frame.width - 20, y: self.contentView.bounds.height))
+        separatorLine.path = path.CGPath
+        separatorLine.strokeColor = UIColor(red: 54/255, green: 69/255, blue: 89/255, alpha: 1).CGColor
+        separatorLine.lineWidth = 0.1
+        self.contentView.layer.addSublayer(separatorLine)
     }
 }

@@ -15,19 +15,26 @@ enum SearchPageItemType {
 
 class SearchPageItem: UICollectionViewCell {
 
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+            searchBar.showsCancelButton = true
+            searchBar.tintColor = navigationBarColor
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.bounces = false
-            tableView.tableHeaderView = self.searchController.searchBar
             tableView.tableFooterView = UIView()
         }
     }
     
-    lazy var searchController: UISearchController = {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.delegate = self
-        return searchController
-    }()
+//    lazy var searchController: UISearchController = {
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchBar.delegate = self
+//        return searchController
+//    }()
     
     weak var menuView: UICollectionView?
     
@@ -35,11 +42,11 @@ class SearchPageItem: UICollectionViewCell {
         didSet {
             switch(type) {
             case .People:
-                self.searchController.searchBar.placeholder = "Ta技用户昵称/手机号码"
+                self.searchBar.placeholder = "Ta技用户昵称/手机号码"
             case .Circle:
-                self.searchController.searchBar.placeholder = "圈子名称/圈子号"
+                self.searchBar.placeholder = "圈子名称/圈子号"
             case .Label:
-                self.searchController.searchBar.placeholder = "标签名称"
+                self.searchBar.placeholder = "标签名称"
             }
         }
     }
@@ -50,6 +57,7 @@ class SearchPageItem: UICollectionViewCell {
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print(1)
         self.endEditing(true)
     }
 }
@@ -58,20 +66,18 @@ extension SearchPageItem: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         
-        UIView.animateWithDuration(0.8) { () -> Void in
-            self.menuView?.alpha = 0
-        }
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        UIView.animateWithDuration(0.8) { () -> Void in
-            self.menuView?.alpha = 1
-        }
+        
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        UIView.animateWithDuration(0.8) { () -> Void in
-            self.menuView?.alpha = 1
-        }
+        self.searchBar.text = ""
+        self.searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
     }
 }

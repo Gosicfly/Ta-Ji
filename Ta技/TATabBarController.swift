@@ -38,6 +38,7 @@ class TATabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setChildViewControllers()
+        self.setRongCloudInfo()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,8 +49,25 @@ class TATabBarController: UITabBarController {
         self.addChildViewController(BaseHomeController(), title: "首页", image: "icon_tab_home")
         self.addChildViewController(CircleViewController(), title: "圈子", image: "icon_tab_circle")
         self.addChildViewController(UIViewController())
-        self.addChildViewController(MessageViewController(), title: "消息", image: "icon_tab_message")
+        self.addChildViewController(MessageListController(), title: "消息", image: "icon_tab_message")
         self.addChildViewController(MeViewController(), title: "我的", image: "icon_tab_me")
+    }
+    
+    func setRongCloudInfo() {
+        RCIM.sharedRCIM().initWithAppKey(appKey)
+        RCIM.sharedRCIM().connectWithToken(TAUtilsManager.userInfoManager.readRcToken(), success: { (userID) -> Void in
+            print("登陆成功。当前登录的用户ID：\(userID)")
+            }, error: { (status) -> Void in
+                print("登陆的错误码为:\(status.rawValue)")
+            }) { () -> Void in
+                //token过期或者不正确。
+                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                print("token错误")
+        }
+        RCIM.sharedRCIM().globalConversationAvatarStyle = .USER_AVATAR_CYCLE
+        RCIM.sharedRCIM().globalMessageAvatarStyle = .USER_AVATAR_CYCLE
+        RCIM.sharedRCIM().currentUserInfo = RCUserInfo(userId: TAUtilsManager.userInfoManager.readID().0, name: TAUtilsManager.userInfoManager.readUserName(), portrait: TAUtilsManager.userInfoManager.readAvatarURL().absoluteString)
     }
     
     func addCenterButton() {

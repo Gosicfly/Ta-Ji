@@ -9,16 +9,15 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import Alamofire
+import SwiftyJSON
+import RealmSwift
 
 class MeViewController: UIViewController, TANavigationBarType, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var blurBackgroundImageView: UIImageView!
     
     @IBOutlet weak var blurEffectView: UIVisualEffectView!
-    
-    @IBOutlet weak var stackViewOne: UIStackView!
-    
-    @IBOutlet weak var stackViewTwo: UIStackView!
     
     @IBOutlet weak var avatar: UIImageView! 
     
@@ -62,6 +61,64 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if TAUtilsManager.reachabilityManager.isReachable() {
+            Alamofire.request(.GET, "http://taji.whutech.com/Follow/followList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+                let json = JSON(response.result.value!)
+                if json["status"] == "200" {
+                    self.numberOfSubscribers.text = String(json["data"].array!.count)
+                    for (_, subJson) in json["data"] {
+                        let userName: String
+                        if subJson["username"].type == .Null {
+                            userName = "Null"
+                        } else {
+                            userName = subJson["username"].string!
+                        }
+                        let userID = subJson["userid"].string!
+                        let signature = subJson["signature"].string!
+                        let avatarURL = subJson["avatar"].string!
+                        
+                        let subscriberInfo = SubscriberInfo()
+                        subscriberInfo.userID = userID
+                        subscriberInfo.userName = userName
+                        subscriberInfo.signature = signature
+                        subscriberInfo.avatarURL = avatarURL
+                        try! realm.write({ () -> Void in
+                            realm.add(subscriberInfo, update: true)
+                        })
+                    }
+                }
+            }
+            Alamofire.request(.GET, "http://taji.whutech.com/Follow/fansList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) -> Void in
+                let json = JSON(response.result.value!)
+                if json["status"] == "200" {
+                    self.numberOfFans.text = String(json["data"].array!.count)
+                    for (_, subJson) in json["data"] {
+                        let userName: String
+                        if subJson["username"].type == .Null {
+                            userName = "Null"
+                        } else {
+                            userName = subJson["username"].string!
+                        }
+                        let userID = subJson["userid"].string!
+                        let signature = subJson["signature"].string!
+                        let avatarURL = subJson["avatar"].string!
+                        
+                        let fansInfo = FansInfo()
+                        fansInfo.userID = userID
+                        fansInfo.userName = userName
+                        fansInfo.signature = signature
+                        fansInfo.avatarURL = avatarURL
+                        try! realm.write({ () -> Void in
+                            realm.add(fansInfo, update: true)
+                        })
+                    }
+                }
+            })
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
     }
     

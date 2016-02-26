@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriberController" customModule="Ta技" customModuleProvider="target">
             <connections>
-                <outlet property="searchDisplayController" destination="JdB-0w-81o" id="hin-8G-WM3"/>
+                <outlet property="searchDisplayController" destination="jOI-FO-XYC" id="E9T-mL-dPM"/>
                 <outlet property="tableView" destination="ddA-Dk-eNP" id="EnY-0M-2Iv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ddA-Dk-eNP">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ddA-Dk-eNP">
                     <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="separatorColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,27 +25,19 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ddA-Dk-eNP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="3Ib-qb-KLb"/>
-                <constraint firstItem="ddA-Dk-eNP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PJI-iS-0Yd"/>
-                <constraint firstAttribute="trailing" secondItem="ddA-Dk-eNP" secondAttribute="trailing" id="VYM-3a-7Nv"/>
-                <constraint firstAttribute="bottom" secondItem="ddA-Dk-eNP" secondAttribute="bottom" id="n8I-8U-h7O"/>
+                <constraint firstItem="ddA-Dk-eNP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E4f-eu-GD9"/>
+                <constraint firstAttribute="bottom" secondItem="ddA-Dk-eNP" secondAttribute="bottom" id="Iuf-4T-5Yw"/>
+                <constraint firstAttribute="trailing" secondItem="ddA-Dk-eNP" secondAttribute="trailing" id="KgT-kN-zAQ"/>
+                <constraint firstItem="ddA-Dk-eNP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="fSE-IR-r3e"/>
             </constraints>
-            <point key="canvasLocation" x="804" y="289"/>
+            <point key="canvasLocation" x="880" y="221"/>
         </view>
-        <searchDisplayController id="kBE-AB-ltH">
+        <searchDisplayController id="jOI-FO-XYC">
             <connections>
-                <outlet property="delegate" destination="-1" id="2Hl-oa-lcJ"/>
-                <outlet property="searchContentsController" destination="-1" id="hMe-fv-mHj"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="oLh-gL-GnE"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="ncx-Oi-LvA"/>
-            </connections>
-        </searchDisplayController>
-        <searchDisplayController id="JdB-0w-81o">
-            <connections>
-                <outlet property="delegate" destination="-1" id="fQW-VH-THq"/>
-                <outlet property="searchContentsController" destination="-1" id="pWV-DE-1Rm"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="TkU-D8-6H2"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="72p-5V-MLl"/>
+                <outlet property="delegate" destination="-1" id="6vL-Ai-FDZ"/>
+                <outlet property="searchContentsController" destination="-1" id="1yJ-7w-9e0"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="2oC-qU-C01"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="W96-sI-J2v"/>
             </connections>
         </searchDisplayController>
     </objects>

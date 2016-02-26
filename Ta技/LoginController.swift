@@ -49,7 +49,7 @@ class LoginController: UIViewController {
         switch button {
         case signUp:
             let telInputController = UINavigationController(rootViewController: TelInputController())
-            telInputController.modalTransitionStyle = .FlipHorizontal
+            telInputController.modalTransitionStyle = .CrossDissolve
             self.presentViewController(telInputController, animated: true, completion: nil)
         case signIn:
             SVProgressHUD.show()
@@ -97,21 +97,10 @@ class LoginController: UIViewController {
                             TAUtilsManager.userInfoManager.writeSchool(json["data"]["school"].string!)
                         }
                         TAUtilsManager.userInfoManager.synchronize()
-                        RCIM.sharedRCIM().initWithAppKey("pkfcgjstfb228")
-                        RCIM.sharedRCIM().connectWithToken(TAUtilsManager.userInfoManager.readRcToken(), success: { (userID) -> Void in
-                            print("登陆成功。当前登录的用户ID：\(userID)")
-                            }, error: { (status) -> Void in
-                                print("登陆的错误码为:\(status.rawValue)")
-                            }) { () -> Void in
-                                //token过期或者不正确。
-                                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
-                                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
-                                print("token错误")
-                        }
+                        self.performSelector(Selector("dismissHUD"), withObject: nil, afterDelay: 0.5)
+                        UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.tabBarController
                     }
                 })
-                self.performSelector(Selector("dismissHUD"), withObject: nil, afterDelay: 0.5)
-                UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.tabBarController
             })
         default:
             break

@@ -33,7 +33,6 @@ class TelInputController: UIViewController, TANavigationBarType {
             self.telInputField.leftView = leftView
             self.telInputField.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
             self.telInputField.clearButtonMode = .WhileEditing
-            self.telInputField.becomeFirstResponder()
         }
     }
     

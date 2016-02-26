@@ -95,7 +95,7 @@ final class UserInfoManager {
     }
     
     func readID() -> (String, String) {
-        return (self.defaultPlist.stringForKey("useid")!, self.defaultPlist.stringForKey("openid")!)
+        return (self.defaultPlist.stringForKey("userid")!, self.defaultPlist.stringForKey("openid")!)
     }
     
     func readSex() -> String {

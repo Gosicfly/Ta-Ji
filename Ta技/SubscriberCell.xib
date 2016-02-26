@@ -47,13 +47,14 @@
                     <constraint firstItem="oHr-Ht-bhf" firstAttribute="leading" secondItem="nOn-Xe-9ga" secondAttribute="trailing" constant="16" id="oyw-dO-tbs"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="avatar" destination="nOn-Xe-9ga" id="gEV-Uf-eft"/>
                 <outlet property="name" destination="oHr-Ht-bhf" id="hqC-L1-sTf"/>
                 <outlet property="signature" destination="bF8-U4-NOu" id="trN-SI-Fdr"/>
             </connections>
-            <point key="canvasLocation" x="664" y="484.5"/>
+            <point key="canvasLocation" x="716" y="599.5"/>
         </tableViewCell>
     </objects>
     <resources>

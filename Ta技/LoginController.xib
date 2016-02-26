@@ -41,14 +41,14 @@
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imf-uA-Tc0">
-                    <rect key="frame" x="15" y="302" width="137.5" height="30"/>
+                    <rect key="frame" x="15" y="301" width="140" height="30"/>
                     <color key="backgroundColor" red="0.59215686270000001" green="0.57254901960000004" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="注册">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVe-5l-fJz">
-                    <rect key="frame" x="167" y="302" width="137.5" height="30"/>
+                    <rect key="frame" x="165" y="301" width="139.5" height="30"/>
                     <color key="backgroundColor" red="0.59215686270000001" green="0.57254901960000004" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="登陆">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,14 +94,16 @@
                 <constraint firstItem="krq-BO-xJd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0jR-Ty-ATH"/>
                 <constraint firstItem="bFq-Sk-JF5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1GY-pR-4Hv"/>
                 <constraint firstItem="rMl-ye-GFa" firstAttribute="top" secondItem="Ljs-ea-Ydz" secondAttribute="bottom" id="6uw-3V-Csp"/>
+                <constraint firstItem="iVe-5l-fJz" firstAttribute="height" secondItem="Imf-uA-Tc0" secondAttribute="height" id="9aR-9T-7ZQ"/>
                 <constraint firstItem="cuB-Ni-51j" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.76" id="ADC-D3-6Bf"/>
                 <constraint firstItem="sip-MH-Vs1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.285" id="AYw-jZ-lUQ"/>
-                <constraint firstItem="iVe-5l-fJz" firstAttribute="leading" secondItem="Imf-uA-Tc0" secondAttribute="trailing" constant="15" id="BdR-fY-neg"/>
+                <constraint firstItem="iVe-5l-fJz" firstAttribute="leading" secondItem="Imf-uA-Tc0" secondAttribute="trailing" constant="10" id="BdR-fY-neg"/>
                 <constraint firstItem="bFq-Sk-JF5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.39" id="H4o-oy-Y6I"/>
                 <constraint firstItem="cuB-Ni-51j" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.5" id="Lsj-46-Ooa"/>
                 <constraint firstItem="krq-BO-xJd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.57" id="N2Y-eY-gmG"/>
                 <constraint firstItem="Dqk-eo-V16" firstAttribute="centerY" secondItem="cuB-Ni-51j" secondAttribute="centerY" id="YSs-ln-FOY"/>
                 <constraint firstItem="e8Y-yQ-hcl" firstAttribute="centerY" secondItem="cuB-Ni-51j" secondAttribute="centerY" id="Zhr-gk-7Ss"/>
+                <constraint firstItem="Imf-uA-Tc0" firstAttribute="height" secondItem="rMl-ye-GFa" secondAttribute="height" multiplier="0.6" id="Zpe-mu-Icn"/>
                 <constraint firstItem="e8Y-yQ-hcl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cT8-QF-EbP"/>
                 <constraint firstItem="Imf-uA-Tc0" firstAttribute="leading" secondItem="rMl-ye-GFa" secondAttribute="leading" id="dqN-ZN-fKc"/>
                 <constraint firstItem="bFq-Sk-JF5" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.3" id="jdV-Rp-EC1"/>
@@ -119,7 +121,7 @@
                 <constraint firstItem="Ljs-ea-Ydz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.76" id="xsX-DE-S5c"/>
                 <constraint firstItem="iVe-5l-fJz" firstAttribute="trailing" secondItem="rMl-ye-GFa" secondAttribute="trailing" id="yhm-Qt-yXB"/>
             </constraints>
-            <point key="canvasLocation" x="313" y="255"/>
+            <point key="canvasLocation" x="380" y="234"/>
         </view>
     </objects>
     <resources>

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     
     var window: UIWindow?
     
@@ -24,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = LoginController()
         }
         self.window?.makeKeyAndVisible()
+        self.setRongCloudDataSource()
         return true
     }
     
@@ -34,6 +37,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = defaultTintColot
         UINavigationBar.appearance().translucent = false
         
+    }
+    
+    func setRongCloudDataSource() {
+        RCIM.sharedRCIM().userInfoDataSource = self
+    }
+    
+    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
+        let userInfo = RCUserInfo()
+        Alamofire.request(.GET, "http://taji.whutech.com/user/getAvatar?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&uid=\(userId)").responseJSON { (response) -> Void in
+            let json = JSON(response.result.value!)
+            userInfo.userId = json["data"]["uid"].string!
+            if json["data"]["username"].type == .Null {
+                userInfo.name = "Null"
+            } else {
+                userInfo.name = json["data"]["username"].string!
+            }
+            userInfo.portraitUri = json["data"]["avatar"].string!
+            completion(userInfo)
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {

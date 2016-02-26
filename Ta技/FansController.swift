@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FansController: UIViewController, TANavigationBarType {
+    
+    var fansInfos: Results<FansInfo>
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -23,17 +26,25 @@ class FansController: UIViewController, TANavigationBarType {
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        searchController.searchBar.searchBarStyle = .Minimal
+        searchController.hidesNavigationBarDuringPresentation = false
         return searchController
     }()
     
+    init() {
+        self.fansInfos = realm.objects(FansInfo)
+        super.init(nibName: nil, bundle: nil)
+        self.hidesBottomBarWhenPushed = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.definesPresentationContext = true
-        self.hidesBottomBarWhenPushed = true
         self.view.addSubview(self.searchController.searchBar)
         self.setNavigationBar()
-        // Do any additional setup after loading the view.
     }
     
     func setNavigationBar() {
@@ -50,7 +61,7 @@ class FansController: UIViewController, TANavigationBarType {
 extension FansController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.fansInfos.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
