@@ -58,6 +58,8 @@
 		A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AF0B391C7B406300C3FD5B /* LoginController.xib */; };
 		A3AF0B3D1C7C6F7A00C3FD5B /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B3C1C7C6F7A00C3FD5B /* UserInfoManager.swift */; };
 		A3AF0B3F1C7C7F3200C3FD5B /* TAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF0B3E1C7C7F3200C3FD5B /* TAManager.swift */; };
+		A3C1FA611C82D14E007CA284 /* AddLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1FA5F1C82D14E007CA284 /* AddLabelController.swift */; };
+		A3C1FA621C82D14E007CA284 /* AddLabelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3C1FA601C82D14E007CA284 /* AddLabelController.xib */; };
 		A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FB1C575ACF0055AD9D /* TelInputController.swift */; };
 		A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D708FD1C575B850055AD9D /* CodeInputController.swift */; };
 		A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D709031C575D270055AD9D /* ReusedValues.swift */; };
@@ -132,6 +134,8 @@
 		A3AF0B391C7B406300C3FD5B /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		A3AF0B3C1C7C6F7A00C3FD5B /* UserInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		A3AF0B3E1C7C7F3200C3FD5B /* TAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAManager.swift; sourceTree = "<group>"; };
+		A3C1FA5F1C82D14E007CA284 /* AddLabelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLabelController.swift; sourceTree = "<group>"; };
+		A3C1FA601C82D14E007CA284 /* AddLabelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLabelController.xib; sourceTree = "<group>"; };
 		A3D708FB1C575ACF0055AD9D /* TelInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelInputController.swift; sourceTree = "<group>"; };
 		A3D708FD1C575B850055AD9D /* CodeInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
 		A3D709031C575D270055AD9D /* ReusedValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusedValues.swift; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 				A3252B591C6F4B7100022AC0 /* MeViewController.xib */,
 				A35A12071C73863F005FAC9F /* MeMenuCell.swift */,
 				A35A12081C73863F005FAC9F /* MeMenuCell.xib */,
+				A3C1FA5F1C82D14E007CA284 /* AddLabelController.swift */,
+				A3C1FA601C82D14E007CA284 /* AddLabelController.xib */,
 				A37794EA1C78C0BD0063EE09 /* 标签栏 */,
 				A37794E01C78A97F0063EE09 /* 选项卡 */,
 			);
@@ -559,6 +565,7 @@
 				A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */,
 				A34242791C567A4200FAD46D /* LaunchScreen.storyboard in Resources */,
 				A39D2B5B1C80AC3D00795B97 /* StudentsController.xib in Resources */,
+				A3C1FA621C82D14E007CA284 /* AddLabelController.xib in Resources */,
 				A37795051C79EF8F0063EE09 /* PaintingVedioCell.xib in Resources */,
 				A34242761C567A4200FAD46D /* Assets.xcassets in Resources */,
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
@@ -633,6 +640,7 @@
 				A37795081C79F8840063EE09 /* TARichTextLabel.swift in Sources */,
 				A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */,
 				A30C782E1C7F49330002757B /* Models.swift in Sources */,
+				A3C1FA611C82D14E007CA284 /* AddLabelController.swift in Sources */,
 				A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */,
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,

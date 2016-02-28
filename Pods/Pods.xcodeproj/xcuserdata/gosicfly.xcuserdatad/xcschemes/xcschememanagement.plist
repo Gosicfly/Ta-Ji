@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FDStackView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,7 +112,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CF984060023EF813C2A2D94041C8C41</key>
+		<key>0731AE7F2B9050F79BFFE7FCB85F9A51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>131F51164603842E283E6DB33138A0EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,17 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2EDF9C2924C97EE325B19A9BC70E0FCB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>33928F5082A45E83016FC0FF3A3F831C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4078EC7D442E556BA038F094746BC61F</key>
+		<key>19C0DF4E1691836C9627E3B0BB3144CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,7 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>73B0E44D769BDF4BED0272C4E97A977A</key>
+		<key>79A762A725A431D5B241358DEF64A556</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,7 +172,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>874B9ADABC0BE5B5C6803525D1093600</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>94624EC6C9739263AA965CFE2D8933F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E02A474CC66ED7B211428701345C228</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B052E05295BE94030A4B2EA821BDD123</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,12 +197,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C13E291AED6ADAEE206B0F6B7D0420C2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C183944CEC5BFC4696D12988C65E384B</key>
+		<key>CB26443F0BCD37EDC85E4873D3145BA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,7 +207,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0AC7794A61A7FEE15BAF7636AC0FA08</key>
+		<key>DFB773F5A23AD9DDBD93E145EF3ED38D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
