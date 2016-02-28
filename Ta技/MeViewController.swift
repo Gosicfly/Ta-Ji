@@ -70,6 +70,11 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         }
     }
     
+    @IBAction func addLabel(sender: UIButton) {
+        let addLabelController = AddLabelController()
+        self.navigationController?.pushViewController(addLabelController, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()

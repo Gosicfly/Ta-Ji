@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLabelController" customModule="Ta技" customModuleProvider="target">
+            <connections>
+                <outlet property="submittingButton" destination="D6k-Cf-No4" id="xpt-Sc-RDP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你想添加的标签" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eg-g2-7rN">
+                    <rect key="frame" x="22" y="21" width="119" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.69411764705882351" green="0.69803921568627447" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBq-iz-Kqu">
+                    <rect key="frame" x="20" y="50" width="280" height="1"/>
+                    <color key="backgroundColor" red="0.30196078431372547" green="0.23921568627450979" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="eMI-cO-dA5"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#音乐#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glo-ih-qcR">
+                    <rect key="frame" x="22" y="68" width="49" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.25882352941176467" green="1" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#艺术#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="get-Lf-s99">
+                    <rect key="frame" x="22" y="380" width="49" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.25882352939999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#舞蹈#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZs-gL-Hnh">
+                    <rect key="frame" x="22" y="173" width="49" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.25882352939999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#运动#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKe-jh-ABn">
+                    <rect key="frame" x="22" y="275" width="49" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.25882352939999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lL-xf-iyw" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="26" y="99" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725490196072" green="0.38823529411764707" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="钢琴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46X-cz-snr" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="85" y="99" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吉他" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHe-aq-YnO" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="146" y="99" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="笛子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="887-jw-T4i" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="207" y="99" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="口琴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1b-Vf-UWz" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="266" y="99" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="架子鼓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1F-JP-W8S" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="19" y="133" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小提琴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSy-ZD-MPR" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="139" y="133" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="唱歌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6q-W3-abX" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="207" y="133" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="萨克斯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZO-YD-Fr9" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="78" y="133" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="舞蹈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQb-eH-VnE" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="26" y="204" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="现代舞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-gH-nec" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="78" y="204" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="机械舞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pau-GY-aWf" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="139" y="204" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交谊舞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-0N-NUl" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="259" y="204" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爵士" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOr-hH-34y" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="26" y="238" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广场舞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0L-yf-mEO" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="139" y="238" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="肚皮舞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHP-qM-PkV" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="78" y="238" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="运动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-l2-o1A" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="26" y="304" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="篮球" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb5-Dc-QLf" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="85" y="304" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="足球" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJV-fo-t6d" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="146" y="304" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滑板" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-oc-2t6" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="207" y="304" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游泳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPc-Qi-mIR" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="266" y="304" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="桌球" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSo-uR-rA5" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="26" y="338" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="羽毛球" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM5-7t-Akk" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="139" y="338" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网球" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evj-Zi-B3p" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="207" y="338" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="麻将" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzM-qi-GC8" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="85" y="338" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="艺术" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytf-Qt-stP" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="26" y="409" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画画" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBL-Qm-k1P" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="146" y="409" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手工" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g6-IN-mIn" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="207" y="409" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美甲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvK-6L-Ocl" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="266" y="409" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="涂鸦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67l-1h-Iqa" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="26" y="443" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="伦巴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpN-Uq-GL7" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="207" y="204" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设计" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JS-jU-GTy" customClass="TASelectedLabel" customModule="Ta技" customModuleProvider="target">
+                    <rect key="frame" x="85" y="409" width="28" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.64313725489999995" green="0.38823529410000002" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6k-Cf-No4">
+                    <rect key="frame" x="25" y="491" width="270" height="39"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="添加标签">
+                        <color key="titleColor" red="0.25882352939999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="submit:" destination="-1" eventType="touchUpInside" id="bhf-0N-6R2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.24705882352941178" green="0.1803921568627451" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="iHP-qM-PkV" firstAttribute="centerY" secondItem="UOr-hH-34y" secondAttribute="centerY" id="0Iv-Fh-5zF"/>
+                <constraint firstItem="HBL-Qm-k1P" firstAttribute="centerY" secondItem="8JS-jU-GTy" secondAttribute="centerY" id="0Nd-d7-XRw"/>
+                <constraint firstItem="5R1-0N-NUl" firstAttribute="centerY" secondItem="aQb-eH-VnE" secondAttribute="centerY" id="1LO-gL-gyE"/>
+                <constraint firstItem="9eg-g2-7rN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="1o9-CH-M8Q"/>
+                <constraint firstItem="D6k-Cf-No4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="41k-bd-UKw"/>
+                <constraint firstItem="0g6-IN-mIn" firstAttribute="centerX" secondItem="887-jw-T4i" secondAttribute="centerX" id="59e-8l-D6K"/>
+                <constraint firstItem="Y0L-yf-mEO" firstAttribute="centerY" secondItem="UOr-hH-34y" secondAttribute="centerY" id="5B0-UE-O5P"/>
+                <constraint firstAttribute="trailing" secondItem="nBq-iz-Kqu" secondAttribute="trailing" constant="20" id="5Lb-0u-bVL"/>
+                <constraint firstItem="G6q-W3-abX" firstAttribute="centerY" secondItem="z1F-JP-W8S" secondAttribute="centerY" id="5V1-sI-FFE"/>
+                <constraint firstItem="HvK-6L-Ocl" firstAttribute="centerX" secondItem="Q1b-Vf-UWz" secondAttribute="centerX" id="5W0-to-O9H"/>
+                <constraint firstItem="8JS-jU-GTy" firstAttribute="centerY" secondItem="ytf-Qt-stP" secondAttribute="centerY" id="66n-iD-ZrT"/>
+                <constraint firstItem="ytf-Qt-stP" firstAttribute="centerX" secondItem="4lL-xf-iyw" secondAttribute="centerX" id="8dN-f4-GMy"/>
+                <constraint firstItem="WpN-Uq-GL7" firstAttribute="centerX" secondItem="887-jw-T4i" secondAttribute="centerX" id="8nZ-yc-xTK"/>
+                <constraint firstItem="8JS-jU-GTy" firstAttribute="centerX" secondItem="46X-cz-snr" secondAttribute="centerX" id="9oA-fj-lDL"/>
+                <constraint firstItem="FHe-aq-YnO" firstAttribute="centerY" secondItem="4lL-xf-iyw" secondAttribute="centerY" id="A4q-Dy-HpU"/>
+                <constraint firstItem="Q1b-Vf-UWz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.75" id="C0f-Hq-2zk"/>
+                <constraint firstItem="Q1b-Vf-UWz" firstAttribute="centerY" secondItem="4lL-xf-iyw" secondAttribute="centerY" id="CEw-KV-lH5"/>
+                <constraint firstItem="9eg-g2-7rN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.11" id="ChW-Jm-hap"/>
+                <constraint firstItem="ytf-Qt-stP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.47" id="Dgj-Nb-DZ8"/>
+                <constraint firstItem="dPc-Qi-mIR" firstAttribute="centerX" secondItem="Q1b-Vf-UWz" secondAttribute="centerX" id="F51-i1-sxN"/>
+                <constraint firstItem="887-jw-T4i" firstAttribute="centerY" secondItem="4lL-xf-iyw" secondAttribute="centerY" id="FJJ-ZT-jWF"/>
+                <constraint firstItem="Vb5-Dc-QLf" firstAttribute="centerX" secondItem="46X-cz-snr" secondAttribute="centerX" id="GJV-pZ-UgE"/>
+                <constraint firstItem="aQb-eH-VnE" firstAttribute="centerX" secondItem="4lL-xf-iyw" secondAttribute="centerX" id="Gv8-yo-YS6"/>
+                <constraint firstItem="Glo-ih-qcR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.272" id="H3k-Yd-JFn"/>
+                <constraint firstItem="Evj-Zi-B3p" firstAttribute="centerX" secondItem="887-jw-T4i" secondAttribute="centerX" id="HFQ-Ix-rp9"/>
+                <constraint firstItem="BSo-uR-rA5" firstAttribute="centerX" secondItem="4lL-xf-iyw" secondAttribute="centerX" id="Hc8-s0-8rR"/>
+                <constraint firstItem="D6k-Cf-No4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="I0o-k2-be1"/>
+                <constraint firstItem="0g6-IN-mIn" firstAttribute="centerY" secondItem="HBL-Qm-k1P" secondAttribute="centerY" id="IkX-Ru-rj4"/>
+                <constraint firstItem="BSo-uR-rA5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.22" id="J6F-SQ-g1z"/>
+                <constraint firstItem="Glo-ih-qcR" firstAttribute="leading" secondItem="9eg-g2-7rN" secondAttribute="leading" id="KZ9-kt-lLF"/>
+                <constraint firstItem="PM5-7t-Akk" firstAttribute="centerY" secondItem="WzM-qi-GC8" secondAttribute="centerY" id="MUJ-tw-MPJ"/>
+                <constraint firstItem="PZO-YD-Fr9" firstAttribute="centerX" secondItem="46X-cz-snr" secondAttribute="centerX" id="MUm-J6-r5U"/>
+                <constraint firstItem="uSy-ZD-MPR" firstAttribute="centerX" secondItem="FHe-aq-YnO" secondAttribute="centerX" id="MtB-U0-l6T"/>
+                <constraint firstItem="Y0L-yf-mEO" firstAttribute="centerX" secondItem="FHe-aq-YnO" secondAttribute="centerX" id="NGT-ua-fmW"/>
+                <constraint firstItem="EJV-fo-t6d" firstAttribute="centerX" secondItem="FHe-aq-YnO" secondAttribute="centerX" id="Obr-lp-5gp"/>
+                <constraint firstItem="46X-cz-snr" firstAttribute="centerY" secondItem="4lL-xf-iyw" secondAttribute="centerY" id="Og9-cp-xYX"/>
+                <constraint firstItem="HBL-Qm-k1P" firstAttribute="centerX" secondItem="FHe-aq-YnO" secondAttribute="centerX" id="Q00-cx-lFp"/>
+                <constraint firstItem="z1F-JP-W8S" firstAttribute="centerX" secondItem="4lL-xf-iyw" secondAttribute="centerX" id="Q0W-6x-gzD"/>
+                <constraint firstItem="887-jw-T4i" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.38" id="Q9G-QC-iN0"/>
+                <constraint firstItem="dPc-Qi-mIR" firstAttribute="centerY" secondItem="qr3-oc-2t6" secondAttribute="centerY" id="QDs-n6-o9m"/>
+                <constraint firstItem="PM5-7t-Akk" firstAttribute="centerX" secondItem="FHe-aq-YnO" secondAttribute="centerX" id="RI2-2Q-j7L"/>
+                <constraint firstItem="46X-cz-snr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.62" id="SuN-yr-4Gi"/>
+                <constraint firstItem="Evj-Zi-B3p" firstAttribute="centerY" secondItem="PM5-7t-Akk" secondAttribute="centerY" id="TUg-am-YWE"/>
+                <constraint firstItem="HvK-6L-Ocl" firstAttribute="centerY" secondItem="0g6-IN-mIn" secondAttribute="centerY" id="Tae-kb-Pd1"/>
+                <constraint firstItem="Ax1-gH-nec" firstAttribute="centerX" secondItem="46X-cz-snr" secondAttribute="centerX" id="TiQ-1V-ZCc"/>
+                <constraint firstItem="FZs-gL-Hnh" firstAttribute="leading" secondItem="9eg-g2-7rN" secondAttribute="leading" id="Tu1-Qp-iJq"/>
+                <constraint firstItem="qr3-oc-2t6" firstAttribute="centerX" secondItem="887-jw-T4i" secondAttribute="centerX" id="Uie-zq-zk0"/>
+                <constraint firstItem="WpN-Uq-GL7" firstAttribute="centerY" secondItem="pau-GY-aWf" secondAttribute="centerY" id="V06-3g-oaC"/>
+                <constraint firstItem="Ax1-gH-nec" firstAttribute="centerY" secondItem="aQb-eH-VnE" secondAttribute="centerY" id="VeG-Lo-Djp"/>
+                <constraint firstItem="Vb5-Dc-QLf" firstAttribute="centerY" secondItem="rbm-l2-o1A" secondAttribute="centerY" id="ZTi-66-1DA"/>
+                <constraint firstItem="nBq-iz-Kqu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="apS-DO-UeZ"/>
+                <constraint firstItem="z1F-JP-W8S" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="bQo-i8-eby"/>
+                <constraint firstItem="67l-1h-Iqa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.59" id="ckk-Tr-KJ4"/>
+                <constraint firstItem="nBq-iz-Kqu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.18" id="coN-9T-UlE"/>
+                <constraint firstItem="EJV-fo-t6d" firstAttribute="centerY" secondItem="Vb5-Dc-QLf" secondAttribute="centerY" id="d1n-lv-UpN"/>
+                <constraint firstItem="get-Lf-s99" firstAttribute="leading" secondItem="9eg-g2-7rN" secondAttribute="leading" id="e9D-68-hoC"/>
+                <constraint firstItem="pau-GY-aWf" firstAttribute="centerX" secondItem="FHe-aq-YnO" secondAttribute="centerX" id="ehC-hY-vmu"/>
+                <constraint firstItem="uKe-jh-ABn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hS9-VJ-SRQ"/>
+                <constraint firstItem="FHe-aq-YnO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ilJ-b1-rCH"/>
+                <constraint firstItem="rbm-l2-o1A" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.1" id="ivt-9C-ojQ"/>
+                <constraint firstItem="67l-1h-Iqa" firstAttribute="centerX" secondItem="4lL-xf-iyw" secondAttribute="centerX" id="jia-je-laT"/>
+                <constraint firstItem="G6q-W3-abX" firstAttribute="centerX" secondItem="887-jw-T4i" secondAttribute="centerX" id="jyw-YW-K72"/>
+                <constraint firstItem="D6k-Cf-No4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.8" id="mO7-AJ-eYp"/>
+                <constraint firstItem="get-Lf-s99" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.37" id="msG-7n-DAV"/>
+                <constraint firstItem="iHP-qM-PkV" firstAttribute="centerX" secondItem="46X-cz-snr" secondAttribute="centerX" id="o1a-ut-7Lv"/>
+                <constraint firstItem="5R1-0N-NUl" firstAttribute="centerX" secondItem="Q1b-Vf-UWz" secondAttribute="centerX" id="oPd-ih-mNl"/>
+                <constraint firstItem="WzM-qi-GC8" firstAttribute="centerX" secondItem="46X-cz-snr" secondAttribute="centerX" id="ocl-ba-dn0"/>
+                <constraint firstItem="PZO-YD-Fr9" firstAttribute="centerY" secondItem="z1F-JP-W8S" secondAttribute="centerY" id="ocn-xY-rer"/>
+                <constraint firstItem="UOr-hH-34y" firstAttribute="centerX" secondItem="4lL-xf-iyw" secondAttribute="centerX" id="qJP-9k-Dhz"/>
+                <constraint firstItem="FZs-gL-Hnh" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.64" id="sIr-jM-atV"/>
+                <constraint firstItem="WzM-qi-GC8" firstAttribute="centerY" secondItem="BSo-uR-rA5" secondAttribute="centerY" id="sbo-mA-Rk9"/>
+                <constraint firstItem="4lL-xf-iyw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.25" id="tRZ-Nh-6Ol"/>
+                <constraint firstItem="UOr-hH-34y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.87" id="tZJ-yO-gDU"/>
+                <constraint firstItem="uKe-jh-ABn" firstAttribute="leading" secondItem="9eg-g2-7rN" secondAttribute="leading" id="u2n-w5-hCj"/>
+                <constraint firstItem="4lL-xf-iyw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.38" id="uf7-ia-daR"/>
+                <constraint firstItem="uSy-ZD-MPR" firstAttribute="centerY" secondItem="z1F-JP-W8S" secondAttribute="centerY" id="uii-xt-nsh"/>
+                <constraint firstItem="pau-GY-aWf" firstAttribute="centerY" secondItem="Ax1-gH-nec" secondAttribute="centerY" id="waP-Zn-i0F"/>
+                <constraint firstItem="rbm-l2-o1A" firstAttribute="centerX" secondItem="4lL-xf-iyw" secondAttribute="centerX" id="xGI-Ma-9nM"/>
+                <constraint firstItem="aQb-eH-VnE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.75" id="xzT-Pd-VDs"/>
+                <constraint firstItem="qr3-oc-2t6" firstAttribute="centerY" secondItem="EJV-fo-t6d" secondAttribute="centerY" id="z6c-EV-lux"/>
+            </constraints>
+            <point key="canvasLocation" x="307" y="290"/>
+        </view>
+    </objects>
+</document>
