@@ -16,4 +16,3 @@ pod 'M80AttributedLabel'        #富文本Label
 pod 'MWPhotoBrowser'            #图片浏览
 pod 'RongCloudIMKit'            #即时通讯
 pod 'YYText'                    #富文本
-pod 'FDStackView'
