@@ -83,9 +83,11 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.numberOfStudents.text = String(realm.objects(StudentInfo).count)
+        self.numberOfSubscribers.text = String(realm.objects(SubscriberInfo).count)
+        self.numberOfFans.text = String(realm.objects(FansInfo).count)
         Alamofire.request(.GET, "http://taji.whutech.com//Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
-                self.numberOfStudents.text = String(realm.objects(StudentInfo).count)
                 return
             }
             let json = JSON(response.result.value!)
@@ -115,7 +117,6 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         }
         Alamofire.request(.GET, "http://taji.whutech.com/Follow/followList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
-                self.numberOfSubscribers.text = String(realm.objects(SubscriberInfo).count)
                 return
             }
             let json = JSON(response.result.value!)
@@ -145,7 +146,6 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         }
         Alamofire.request(.GET, "http://taji.whutech.com/Follow/fansList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) -> Void in
             guard response.result.isSuccess else {
-                self.numberOfFans.text = String(realm.objects(FansInfo).count)
                 return
             }
             let json = JSON(response.result.value!)

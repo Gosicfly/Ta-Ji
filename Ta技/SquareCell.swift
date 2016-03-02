@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var a = 1
 class SquareCell: UICollectionViewCell {
     
     var showImageView: UIImageView! {
@@ -88,7 +88,6 @@ class SquareCell: UICollectionViewCell {
             self.numberOfLikers.textColor = defaultTintColot
             self.numberOfLikers.font = UIFont.systemFontOfSize(12)
         }
-        
     }
     
     override init(frame: CGRect) {
@@ -104,18 +103,17 @@ class SquareCell: UICollectionViewCell {
         self.showImageView = UIImageView(image: UIImage(named: "loading"))
         self.avatarImageView = UIImageView(image: UIImage(named: "loading"))
         self.squareMaskView = UIView()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layoutIfNeeded()
-        self.avatarImageView.gf_addCorner(radius: self.avatarImageView.bounds.width / 2)
         self.titleLabel = UILabel()
         self.likeImageView = UIImageView(image: UIImage(named: "icon_tab_home_hot_favor"))
         self.numberOfLikers = UILabel()
         
         self.bringSubviewToFront(self.avatarImageView)
         self.bringSubviewToFront(self.titleLabel)
+    }
+    
+    override func layoutSubviews() {
+        self.layoutIfNeeded()
+        self.avatarImageView.gf_addCorner(radius: self.avatarImageView.bounds.width / 2)
     }
     
 }
