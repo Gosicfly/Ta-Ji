@@ -54,3 +54,18 @@ class StudentInfo: Object {
         return "userID"
     }
 }
+
+class TeacherInfo: Object {
+    
+    dynamic var userID: String = ""
+    
+    dynamic var userName: String = "Null"
+    
+    dynamic var signature: String = ""
+    
+    dynamic var avatarURL: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "userID"
+    }
+}

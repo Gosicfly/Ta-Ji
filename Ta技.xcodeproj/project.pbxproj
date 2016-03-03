@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		638C475D685BF472CB5F5538 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F13FDD73B62F3E08CF6566 /* Pods.framework */; };
-		A30C782C1C7F40E40002757B /* SubscriberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A30C782B1C7F40E40002757B /* SubscriberController.xib */; };
+		A30C782C1C7F40E40002757B /* SubscribersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A30C782B1C7F40E40002757B /* SubscribersController.xib */; };
 		A30C782E1C7F49330002757B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C782D1C7F49330002757B /* Models.swift */; };
 		A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3252B581C6F4B7100022AC0 /* MeViewController.swift */; };
 		A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3252B591C6F4B7100022AC0 /* MeViewController.xib */; };
 		A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3252B5D1C6F50C600022AC0 /* PublishViewController.swift */; };
 		A3252B601C6F50C600022AC0 /* PublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3252B5E1C6F50C600022AC0 /* PublishViewController.xib */; };
+		A3272D961C882288006D94DE /* TeachersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3272D941C882288006D94DE /* TeachersController.swift */; };
+		A3272D971C882288006D94DE /* TeachersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3272D951C882288006D94DE /* TeachersController.xib */; };
 		A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */; };
 		A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342426E1C567A4200FAD46D /* AppDelegate.swift */; };
 		A34242741C567A4200FAD46D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34242721C567A4200FAD46D /* Main.storyboard */; };
@@ -36,7 +38,7 @@
 		A37794E51C78AAAC0063EE09 /* MAndACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794E31C78AAAC0063EE09 /* MAndACell.xib */; };
 		A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794E61C78AF740063EE09 /* MAndAController.swift */; };
 		A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794E71C78AF740063EE09 /* MAndAController.xib */; };
-		A37794ED1C78C11D0063EE09 /* SubscribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EB1C78C11D0063EE09 /* SubscribeController.swift */; };
+		A37794ED1C78C11D0063EE09 /* SubscribersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EB1C78C11D0063EE09 /* SubscribersController.swift */; };
 		A37794F11C78C30D0063EE09 /* SubscriberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794EF1C78C30D0063EE09 /* SubscriberCell.swift */; };
 		A37794F21C78C30D0063EE09 /* SubscriberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794F01C78C30D0063EE09 /* SubscriberCell.xib */; };
 		A37794F51C795F320063EE09 /* FansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794F31C795F320063EE09 /* FansController.swift */; };
@@ -81,12 +83,14 @@
 /* Begin PBXFileReference section */
 		888C711AA3FE1361E7834B5F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8E2A27AB5A2023B99F6E93F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A30C782B1C7F40E40002757B /* SubscriberController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriberController.xib; sourceTree = "<group>"; };
+		A30C782B1C7F40E40002757B /* SubscribersController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribersController.xib; sourceTree = "<group>"; };
 		A30C782D1C7F49330002757B /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A3252B581C6F4B7100022AC0 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		A3252B591C6F4B7100022AC0 /* MeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeViewController.xib; sourceTree = "<group>"; };
 		A3252B5D1C6F50C600022AC0 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		A3252B5E1C6F50C600022AC0 /* PublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublishViewController.xib; sourceTree = "<group>"; };
+		A3272D941C882288006D94DE /* TeachersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersController.swift; sourceTree = "<group>"; };
+		A3272D951C882288006D94DE /* TeachersController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachersController.xib; sourceTree = "<group>"; };
 		A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		A342426B1C567A4200FAD46D /* Ta技.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ta技.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A342426E1C567A4200FAD46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +115,7 @@
 		A37794E31C78AAAC0063EE09 /* MAndACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAndACell.xib; sourceTree = "<group>"; };
 		A37794E61C78AF740063EE09 /* MAndAController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAndAController.swift; sourceTree = "<group>"; };
 		A37794E71C78AF740063EE09 /* MAndAController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAndAController.xib; sourceTree = "<group>"; };
-		A37794EB1C78C11D0063EE09 /* SubscribeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeController.swift; sourceTree = "<group>"; };
+		A37794EB1C78C11D0063EE09 /* SubscribersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribersController.swift; sourceTree = "<group>"; };
 		A37794EF1C78C30D0063EE09 /* SubscriberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberCell.swift; sourceTree = "<group>"; };
 		A37794F01C78C30D0063EE09 /* SubscriberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriberCell.xib; sourceTree = "<group>"; };
 		A37794F31C795F320063EE09 /* FansController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FansController.swift; sourceTree = "<group>"; };
@@ -395,6 +399,8 @@
 			isa = PBXGroup;
 			children = (
 				A37794E11C78A9BB0063EE09 /* 师徒圈 */,
+				A3272D941C882288006D94DE /* TeachersController.swift */,
+				A3272D951C882288006D94DE /* TeachersController.xib */,
 			);
 			name = "选项卡";
 			sourceTree = "<group>";
@@ -415,8 +421,8 @@
 			children = (
 				A39D2B581C80AC3D00795B97 /* StudentsController.swift */,
 				A39D2B591C80AC3D00795B97 /* StudentsController.xib */,
-				A37794EB1C78C11D0063EE09 /* SubscribeController.swift */,
-				A30C782B1C7F40E40002757B /* SubscriberController.xib */,
+				A37794EB1C78C11D0063EE09 /* SubscribersController.swift */,
+				A30C782B1C7F40E40002757B /* SubscribersController.xib */,
 				A37794F31C795F320063EE09 /* FansController.swift */,
 				A37794F41C795F320063EE09 /* FansController.xib */,
 				A37794F71C795F4E0063EE09 /* CustomCells */,
@@ -559,6 +565,7 @@
 			files = (
 				A3252B601C6F50C600022AC0 /* PublishViewController.xib in Resources */,
 				A3DE3EEB1C77795E00DD7313 /* CircleCell.xib in Resources */,
+				A3272D971C882288006D94DE /* TeachersController.xib in Resources */,
 				A37794F21C78C30D0063EE09 /* SubscriberCell.xib in Resources */,
 				A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */,
 				A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */,
@@ -571,7 +578,7 @@
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
 				A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */,
-				A30C782C1C7F40E40002757B /* SubscriberController.xib in Resources */,
+				A30C782C1C7F40E40002757B /* SubscribersController.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
 				A37794F61C795F320063EE09 /* FansController.xib in Resources */,
 				A34242741C567A4200FAD46D /* Main.storyboard in Resources */,
@@ -638,6 +645,7 @@
 				A39D2B5A1C80AC3D00795B97 /* StudentsController.swift in Sources */,
 				A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */,
 				A37795081C79F8840063EE09 /* TARichTextLabel.swift in Sources */,
+				A3272D961C882288006D94DE /* TeachersController.swift in Sources */,
 				A342429D1C567C5F00FAD46D /* HotViewController.swift in Sources */,
 				A30C782E1C7F49330002757B /* Models.swift in Sources */,
 				A3C1FA651C82DB85007CA284 /* AddLabelController.swift in Sources */,
@@ -673,7 +681,7 @@
 				A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */,
 				A34242991C567C2A00FAD46D /* BaseHomeController.swift in Sources */,
 				A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */,
-				A37794ED1C78C11D0063EE09 /* SubscribeController.swift in Sources */,
+				A37794ED1C78C11D0063EE09 /* SubscribersController.swift in Sources */,
 				A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */,
 				A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */,
 				A377950C1C79FCC90063EE09 /* TAPureLabel.swift in Sources */,

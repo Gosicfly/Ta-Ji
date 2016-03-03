@@ -173,6 +173,35 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                 }
             }
         })
+        //选项卡相关数据请求
+        Alamofire.request(.GET, "http://taji.whutech.com/Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+            guard response.result.isSuccess else {
+                return
+            }
+            let json = JSON(response.result.value!)
+            if json["status"] == "200" {
+                for (_, subJson) in json["data"] {
+                    let userName: String
+                    if subJson["username"].type == .Null {
+                        userName = "Null"
+                    } else {
+                        userName = subJson["username"].string!
+                    }
+                    let userID = subJson["userid"].string!
+                    let signature = subJson["signature"].string!
+                    let avatarURL = subJson["avatar"].string!
+                    
+                    let teacherInfo = TeacherInfo()
+                    teacherInfo.userID = userID
+                    teacherInfo.userName = userName
+                    teacherInfo.signature = signature
+                    teacherInfo.avatarURL = avatarURL
+                    try! realm.write({ () -> Void in
+                        realm.add(teacherInfo, update: true)
+                    })
+                }
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -215,7 +244,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             let studentsController = StudentsController()
             self.navigationController?.pushViewController(studentsController, animated: true)
         case self.numberOfSubscribers:
-            let subscribeController = SubscriberController()
+            let subscribeController = SubscribersController()
             self.navigationController?.pushViewController(subscribeController, animated: true)
         case self.numberOfFans:
             let fansController = FansController()
@@ -223,17 +252,6 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         default:
             break
         }
-    }
-    
-    func pushSubscribeController() {
-        let subscribeController = SubscriberController()
-        self.navigationController?.pushViewController(subscribeController, animated: true)
-
-    }
-    
-    func pushFansController() {
-        let fansController = FansController()
-        self.navigationController?.pushViewController(fansController, animated: true)
     }
 }
 
@@ -293,6 +311,21 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             return 1
         default:
             return 1
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch (indexPath.section, indexPath.row) {
+        case (0,0):
+            break
+        case (0, 1):
+            self.navigationController?.pushViewController(TeachersController(), animated: true)
+        case (1,0):
+            break
+        case (1, 1):
+            break
+        default:
+            break
         }
     }
 }

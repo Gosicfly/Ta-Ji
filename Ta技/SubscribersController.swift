@@ -9,9 +9,9 @@
 import UIKit
 import RealmSwift
 
-class SubscriberController: UIViewController, TANavigationBarType {
+class SubscribersController: UIViewController, TANavigationBarType {
     
-    var subScriberInfos: Results<(SubscriberInfo)>
+    var subscriberInfos: Results<(SubscriberInfo)>
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -33,7 +33,7 @@ class SubscriberController: UIViewController, TANavigationBarType {
     }()
     
     init() {
-        self.subScriberInfos = realm.objects(SubscriberInfo)
+        self.subscriberInfos = realm.objects(SubscriberInfo)
         super.init(nibName: nil, bundle: nil)
         self.hidesBottomBarWhenPushed = true
     }
@@ -59,10 +59,10 @@ class SubscriberController: UIViewController, TANavigationBarType {
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
-extension SubscriberController: UITableViewDataSource, UITableViewDelegate {
+extension SubscribersController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.subScriberInfos.count
+        return self.subscriberInfos.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -71,6 +71,6 @@ extension SubscriberController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension SubscriberController: UISearchBarDelegate {
+extension SubscribersController: UISearchBarDelegate {
     
 }
