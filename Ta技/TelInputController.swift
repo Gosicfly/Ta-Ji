@@ -65,7 +65,7 @@ class TelInputController: UIViewController, TANavigationBarType {
             self.signInButton.backgroundColor = UIColor.clearColor()
             self.signInButton.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
             self.signInButton.setTitle("已有账号登录", forState: .Normal)
-            self.signInButton.addTarget(self, action: Selector(""), forControlEvents: .TouchUpInside)
+            self.signInButton.addTarget(self, action: Selector("cancel"), forControlEvents: .TouchUpInside)
         }
     }
     

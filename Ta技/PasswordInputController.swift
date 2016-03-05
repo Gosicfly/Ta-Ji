@@ -135,18 +135,59 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
         print(password)
         switch self.reachability.isReachable() {
         case true:
+            self.view.endEditing(true)
             Alamofire.request(.GET, "http://taji.whutech.com/User/register?mobile=\(mobile)&code=\(code)&password=\(password)").responseJSON(completionHandler: { response in
                 let json = JSON(response.result.value!)
-                print(json)
+                debugPrint(json)
                 guard json["status"].string! == "200" else {
                     SVProgressHUD.showErrorWithStatus("用户已存在")
                     self.performSelector(Selector("dismiss"), withObject: nil, afterDelay: 0.5)
                     return
                 }
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.dismiss()
-                    self.view.endEditing(true)
-                    UIApplication.sharedApplication().windows[0].rootViewController = TATabBarController()
+                    Alamofire.request(.GET, "http://taji.whutech.com/user/login?mobile=\(self.mobile)&password=\(password)").responseJSON(completionHandler: { (response) -> Void in
+                        guard response.result.value != nil else {
+                            SVProgressHUD.showErrorWithStatus("请检查网络状况")
+                            return
+                        }
+                        var json = JSON(response.result.value!)
+                        guard json["status"].string! == "200" else {
+                            let errorInfo = json["msg"].string!
+                            SVProgressHUD.showErrorWithStatus(errorInfo)
+                            return
+                        }
+                        let userInfoManager = TAUtilsManager.userInfoManager
+                        userInfoManager.writeloginState(true)
+                        let (userID, openID) = (json["data"]["userid"].string!, json["data"]["openid"].string!)
+                        userInfoManager.writeID(userid: userID, openid: openID)
+                        if json["data"]["username"].type == .Null {
+                            userInfoManager.writeUserName("Null")
+                        } else {
+                            userInfoManager.writeUserName(json["data"]["username"].string!)
+                        }
+                        if json["data"]["sex"].type == .Null {
+                            userInfoManager.writeSex("男")
+                        } else {
+                            userInfoManager.writeSex(json["data"]["sex"].string!)
+                        }
+                        userInfoManager.writeMobile(json["data"]["mobile"].string!)
+                        userInfoManager.writeAvatarURL(NSURL(string: json["data"]["avatar"].string!)!)
+                        userInfoManager.synchronize()
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(userID)&openid=\(openID)").responseJSON { (response) -> Void in
+                                json = JSON(response.result.value!)
+                                TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
+                                if json["data"]["school"].type == .Null {
+                                    TAUtilsManager.userInfoManager.writeSchool("Null")
+                                } else {
+                                    TAUtilsManager.userInfoManager.writeSchool(json["data"]["school"].string!)
+                                }
+                                TAUtilsManager.userInfoManager.synchronize()
+                                self.dismiss()
+                                UIApplication.sharedApplication().windows[0].rootViewController = TATabBarController()
+                            }
+                        })
+                    })
                 })
             })
         case false:

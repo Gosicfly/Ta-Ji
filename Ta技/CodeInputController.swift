@@ -75,6 +75,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
             self.codeInputField.autocorrectionType = .No
             self.codeInputField.spellCheckingType = .No
             self.codeInputField.returnKeyType = .Done
+            self.codeInputField.keyboardType = .NumberPad
             self.codeInputField.delegate = self
             self.codeInputField.placeholder = "输入短信验证码"
             //这个地方console会输出一个警告，不明白是为什么
