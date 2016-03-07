@@ -66,6 +66,9 @@ extension FansController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(String(SubscriberCell)) as! SubscriberCell
+        cell.avatar.kf_setImageWithURL(self.fansInfos[indexPath.row].avatarURL.convertToURL()!)
+        cell.name.text = self.fansInfos[indexPath.row].userName
+        cell.signature.text = self.fansInfos[indexPath.row].signature
         return cell
     }
 }

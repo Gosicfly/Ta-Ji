@@ -44,6 +44,7 @@ extension UIImageView {
 }
 
 extension UIImage {
+    
     func gf_drawRectWithRoundedCorner(radius radius: CGFloat, _ sizetoFit: CGSize) -> UIImage {
         let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: sizetoFit)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
@@ -54,5 +55,12 @@ extension UIImage {
         let output = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return output
+    }
+}
+
+extension String {
+    
+    func convertToURL() -> NSURL? {
+        return NSURL(string: self)
     }
 }

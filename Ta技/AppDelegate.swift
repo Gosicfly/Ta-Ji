@@ -31,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     }
     
     func setDefalutNavigationBarStyle() {
+        let colorfulLayer = CAGradientLayer()
+        colorfulLayer.colors = [UIColor.yellowColor().CGColor, UIColor.blueColor().CGColor]
+//        colorfulLayer.locations = [NSNumber(double: 0.0), NSNumber(double: 1.0)]
+        colorfulLayer.startPoint = CGPoint(x: 0, y: 0)
+        colorfulLayer.endPoint = CGPoint(x: 1, y: 1)
+        colorfulLayer.frame = UINavigationBar.appearance().bounds
+//        UINavigationBar.appearance().layer.addSublayer(colorfulLayer)
+        UINavigationBar.appearance().layer.insertSublayer(colorfulLayer, atIndex: 0)
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UINavigationBar.appearance().barTintColor = navigationBarColor

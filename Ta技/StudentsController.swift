@@ -65,7 +65,11 @@ extension StudentsController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return SubscriberCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(SubscriberCell)) as! SubscriberCell
+        cell.avatar.kf_setImageWithURL(self.studentInfos[indexPath.row].avatarURL.convertToURL()!)
+        cell.name.text = self.studentInfos[indexPath.row].userName
+        cell.signature.text = self.studentInfos[indexPath.row].signature
+        return cell
     }
 }
 
