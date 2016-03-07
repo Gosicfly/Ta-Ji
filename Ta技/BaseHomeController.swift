@@ -29,7 +29,6 @@ class BaseHomeController: UIViewController, TANavigationBarType {
     func setNavigationBar() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: Selector("search"))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.barTintColor = navigationBarColor
         let titleView = HomeTitleView()
         titleView.delegate = self
         self.navigationItem.titleView = titleView
