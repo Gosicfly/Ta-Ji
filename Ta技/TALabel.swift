@@ -30,7 +30,6 @@ class TALabel: UILabel {
     
     override func layoutSubviews() {
         self.layer.cornerRadius = self.bounds.height / 2
-        self.layer.masksToBounds = true
     }
     
     func setHighightedColor(backgruodColor: UIColor, textColor: UIColor) {
@@ -50,14 +49,17 @@ class TASelectedLabel: TALabel {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("selectLabel")))
         self.layer.borderWidth = 0.7
         self.layer.borderColor = UIColor(red: 165/255, green: 104/255, blue: 175/255, alpha: 1).CGColor
+        self.gf_addCorner(radius: self.bounds.height / 2, borderWidth: 0, backgroundColor: UIColor.whiteColor(), borderColor: UIColor.clearColor())
+        //此处直接设为clearColor会不起效果，应在下面一句设为clearColor
+        (self.subviews[0] as! UIImageView).tintColor = UIColor.clearColor()
     }
     
     func selectLabel() {
         self.highlighted = !self.highlighted
         if highlighted {
-            self.backgroundColor = self.highlightedBackgroundColor
+            (self.subviews[0] as! UIImageView).tintColor = self.highlightedBackgroundColor
         } else {
-            self.backgroundColor = UIColor.clearColor()
+            (self.subviews[0] as! UIImageView).tintColor = UIColor.clearColor()
         }
     }
 }
