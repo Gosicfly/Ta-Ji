@@ -41,4 +41,8 @@ let appKey = "pkfcgjstfb228"
 
 let realm = try! Realm()
 
+let defaultSignature = "该同学比较懒，什么都没说"
+
+let defaultAvatarURL = NSBundle.mainBundle().pathForResource("no_avatar", ofType: ".png")!
+
 

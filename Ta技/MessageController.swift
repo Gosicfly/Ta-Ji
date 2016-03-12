@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class MessageController: RCConversationViewController, RCIMUserInfoDataSource {
+class MessageController: RCConversationViewController {
     
-    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
-        
-    }
 }

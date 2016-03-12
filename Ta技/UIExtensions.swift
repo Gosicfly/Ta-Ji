@@ -16,6 +16,7 @@ private func roundbyunit(num: Double, inout _ unit: Double) -> Double {
         return floorbyunit(num, &unit)
     }
 }
+
 private func ceilbyunit(num: Double, inout _ unit: Double) -> Double {
     return num - modf(num, &unit) + unit
 }
@@ -86,6 +87,7 @@ extension UIImage {
 }
 
 extension UIView {
+    
     func gf_addCorner(radius radius: CGFloat) {
         self.gf_addCorner(radius: radius, borderWidth: 1, backgroundColor: UIColor.clearColor(), borderColor: UIColor.blackColor())
     }

@@ -121,7 +121,7 @@
                 <constraint firstItem="Ljs-ea-Ydz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.76" id="xsX-DE-S5c"/>
                 <constraint firstItem="iVe-5l-fJz" firstAttribute="trailing" secondItem="rMl-ye-GFa" secondAttribute="trailing" id="yhm-Qt-yXB"/>
             </constraints>
-            <point key="canvasLocation" x="380" y="234"/>
+            <point key="canvasLocation" x="43" y="204"/>
         </view>
     </objects>
     <resources>

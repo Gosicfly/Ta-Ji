@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Alamofire
+import SwiftyJSON
 
 class MessageListController: RCConversationListViewController, TANavigationBarType {
     
@@ -77,7 +79,7 @@ class MessageListController: RCConversationListViewController, TANavigationBarTy
     }
     
     func setNavigationBar() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "聊天", style: .Plain, target: self, action: Selector(""))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "聊天", style: .Plain, target: self, action: Selector("startNewConservation"))
     }
     
     func setRongCloud() {
@@ -105,10 +107,38 @@ class MessageListController: RCConversationListViewController, TANavigationBarTy
         //打开会话界面
         let chat = MessageController(conversationType: model.conversationType, targetId: model.targetId)
         chat.title = model.conversationTitle
-//        chat.defaultInputType = .Text
         chat.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(chat, animated: true)
     }
     
+    // MARK: - Selector
+    func startNewConservation() {
+        let alertView = UIAlertController(title: "请输入联系人ID", message: "", preferredStyle: .Alert)
+        alertView.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "输入ID"
+        }
+        let OKButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) -> Void in
+            let id = alertView.textFields![0].text!
+            let chat = MessageController()
+            chat.conversationType = .ConversationType_PRIVATE
+            chat.targetId = id
+            Alamofire.request(.GET, "http://taji.whutech.com/user/getAvatar?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&uid=\(id)").responseJSON { (response) -> Void in
+                if response.result.isSuccess {
+                    let json = JSON(response.result.value!)
+                    if json["data"]["username"].type == .Null {
+                        chat.title = "Null"
+                    } else {
+                        chat.title = json["data"]["username"].string!
+                    }
+                }
+            }
+            chat.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(chat, animated: true)
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertView.addAction(cancelButton)
+        alertView.addAction(OKButton)
+        self.presentViewController(alertView, animated: true, completion: nil)
+    }
     
 }

@@ -16,6 +16,7 @@
 		A3252B601C6F50C600022AC0 /* PublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3252B5E1C6F50C600022AC0 /* PublishViewController.xib */; };
 		A3272D961C882288006D94DE /* TeachersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3272D941C882288006D94DE /* TeachersController.swift */; };
 		A3272D971C882288006D94DE /* TeachersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3272D951C882288006D94DE /* TeachersController.xib */; };
+		A32C71E61C942AB8002668C2 /* no_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A32C71E51C942AB8002668C2 /* no_avatar.png */; };
 		A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */; };
 		A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342426E1C567A4200FAD46D /* AppDelegate.swift */; };
 		A34242741C567A4200FAD46D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34242721C567A4200FAD46D /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		A3252B5E1C6F50C600022AC0 /* PublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublishViewController.xib; sourceTree = "<group>"; };
 		A3272D941C882288006D94DE /* TeachersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersController.swift; sourceTree = "<group>"; };
 		A3272D951C882288006D94DE /* TeachersController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachersController.xib; sourceTree = "<group>"; };
+		A32C71E51C942AB8002668C2 /* no_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_avatar.png; path = Assets.xcassets/no_avatar.imageset/no_avatar.png; sourceTree = "<group>"; };
 		A33B52B51C64711A007AEE0D /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		A342426B1C567A4200FAD46D /* Ta技.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ta技.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A342426E1C567A4200FAD46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 		A34242881C567B0500FAD46D /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				A32C71E51C942AB8002668C2 /* no_avatar.png */,
 				A34242751C567A4200FAD46D /* Assets.xcassets */,
 			);
 			name = Pictures;
@@ -567,6 +570,7 @@
 				A3DE3EEB1C77795E00DD7313 /* CircleCell.xib in Resources */,
 				A3272D971C882288006D94DE /* TeachersController.xib in Resources */,
 				A37794F21C78C30D0063EE09 /* SubscriberCell.xib in Resources */,
+				A32C71E61C942AB8002668C2 /* no_avatar.png in Resources */,
 				A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */,
 				A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */,
 				A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */,
@@ -803,6 +807,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Ta技/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -819,6 +824,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Ta技/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -67,7 +67,11 @@ extension SubscribersController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(String(SubscriberCell)) as! SubscriberCell
-        cell.avatar.kf_setImageWithURL(self.subscriberInfos[indexPath.row].avatarURL.convertToURL()!)
+        if self.subscriberInfos[indexPath.row].avatarURL == defaultAvatarURL {
+            cell.avatar.image = UIImage(contentsOfFile: defaultAvatarURL)
+        } else {
+            cell.avatar.kf_setImageWithURL(self.subscriberInfos[indexPath.row].avatarURL.convertToURL()!)
+        }
         cell.name.text = self.subscriberInfos[indexPath.row].userName
         cell.signature.text = self.subscriberInfos[indexPath.row].signature
         return cell

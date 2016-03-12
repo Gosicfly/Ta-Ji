@@ -54,7 +54,7 @@
                 <outlet property="name" destination="oHr-Ht-bhf" id="hqC-L1-sTf"/>
                 <outlet property="signature" destination="bF8-U4-NOu" id="trN-SI-Fdr"/>
             </connections>
-            <point key="canvasLocation" x="716" y="599.5"/>
+            <point key="canvasLocation" x="782" y="637.5"/>
         </tableViewCell>
     </objects>
     <resources>

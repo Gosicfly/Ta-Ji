@@ -46,11 +46,26 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         }
     }
     
+    @IBOutlet weak var skillLabel: UILabel! {
+        didSet {
+            skillLabel.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            skillLabel.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    
     @IBOutlet weak var numberOfStudents: UILabel! {
         didSet {
             numberOfStudents.userInteractionEnabled = true
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
             numberOfStudents.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    @IBOutlet weak var studentLabel: UILabel! {
+        didSet {
+            studentLabel.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            studentLabel.addGestureRecognizer(tapGestureRecognizer)
         }
     }
     
@@ -62,11 +77,27 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         }
     }
     
+    @IBOutlet weak var subscriberLabel: UILabel! {
+        didSet {
+            subscriberLabel.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            subscriberLabel.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    
     @IBOutlet weak var numberOfFans: UILabel! {
         didSet {
             numberOfFans.userInteractionEnabled = true
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
             numberOfFans.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    
+    @IBOutlet weak var fansLabel: UILabel! {
+        didSet {
+            fansLabel.userInteractionEnabled = true
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            fansLabel.addGestureRecognizer(tapGestureRecognizer)
         }
     }
     
@@ -101,9 +132,18 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                         userName = subJson["username"].string!
                     }
                     let userID = subJson["userid"].string!
-                    let signature = subJson["signature"].string!
-                    let avatarURL = subJson["avatar"].string!
-                    
+                    let signature: String
+                    if subJson["signature"].type == .Null {
+                        signature = defaultSignature
+                    } else {
+                        signature = subJson["signature"].string!
+                    }
+                    let avatarURL: String
+                    if subJson["avatar"].type == .Null {
+                        avatarURL = defaultAvatarURL
+                    } else {
+                        avatarURL = subJson["avatar"].string!
+                    }
                     let studentInfo = StudentInfo()
                     studentInfo.userID = userID
                     studentInfo.userName = userName
@@ -130,9 +170,18 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                         userName = subJson["username"].string!
                     }
                     let userID = subJson["userid"].string!
-                    let signature = subJson["signature"].string!
-                    let avatarURL = subJson["avatar"].string!
-                    
+                    let signature: String
+                    if subJson["signature"].type == .Null {
+                        signature = defaultSignature
+                    } else {
+                        signature = subJson["signature"].string!
+                    }
+                    let avatarURL: String
+                    if subJson["avatar"].type == .Null {
+                        avatarURL = defaultAvatarURL
+                    } else {
+                        avatarURL = subJson["avatar"].string!
+                    }
                     let subscriberInfo = SubscriberInfo()
                     subscriberInfo.userID = userID
                     subscriberInfo.userName = userName
@@ -159,8 +208,18 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                         userName = subJson["username"].string!
                     }
                     let userID = subJson["userid"].string!
-                    let signature = subJson["signature"].string!
-                    let avatarURL = subJson["avatar"].string!
+                    let signature: String
+                    if subJson["signature"].type == .Null {
+                        signature = defaultSignature
+                    } else {
+                        signature = subJson["signature"].string!
+                    }
+                    let avatarURL: String
+                    if subJson["avatar"].type == .Null {
+                        avatarURL = defaultAvatarURL
+                    } else {
+                        avatarURL = subJson["avatar"].string!
+                    }
                     
                     let fansInfo = FansInfo()
                     fansInfo.userID = userID
@@ -188,8 +247,18 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                         userName = subJson["username"].string!
                     }
                     let userID = subJson["userid"].string!
-                    let signature = subJson["signature"].string!
-                    let avatarURL = subJson["avatar"].string!
+                    let signature: String
+                    if subJson["signature"].type == .Null {
+                        signature = defaultSignature
+                    } else {
+                        signature = subJson["signature"].string!
+                    }
+                    let avatarURL: String
+                    if subJson["avatar"].type == .Null {
+                        avatarURL = defaultAvatarURL
+                    } else {
+                        avatarURL = subJson["avatar"].string!
+                    }
                     
                     let teacherInfo = TeacherInfo()
                     teacherInfo.userID = userID
@@ -237,15 +306,23 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     func pushAController(gesture: UITapGestureRecognizer) {
         switch gesture.view! {
-        case self.numberOfSkills:
-//            TO DO...
-            break
+//        case self.skillLabel:
+//            fallthrough
+//        case self.numberOfSkills:
+////            TO DO...
+//            break
+        case self.studentLabel:
+            fallthrough
         case self.numberOfStudents:
             let studentsController = StudentsController()
             self.navigationController?.pushViewController(studentsController, animated: true)
+        case self.subscriberLabel:
+            fallthrough
         case self.numberOfSubscribers:
             let subscribeController = SubscribersController()
             self.navigationController?.pushViewController(subscribeController, animated: true)
+        case self.fansLabel:
+            fallthrough
         case self.numberOfFans:
             let fansController = FansController()
             self.navigationController?.pushViewController(fansController, animated: true)
