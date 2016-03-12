@@ -281,7 +281,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         let avatarURL = TAUtilsManager.userInfoManager.readAvatarURL()
         let userName = TAUtilsManager.userInfoManager.readUserName()
 //        let sex = TAUtilsManager.userInfoManager.readSex()
-        self.avatar.kf_setImageWithURL(avatarURL, placeholderImage: Image(named: "no_avatar"))
+        self.avatar.kf_setImageWithURL(avatarURL, placeholderImage: Image(contentsOfFile: defaultAvatarURL))
         self.userName.text = userName
     }
     
