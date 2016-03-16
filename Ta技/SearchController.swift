@@ -64,7 +64,7 @@ class SearchController: UIViewController, TANavigationBarType {
             _pageViewLayout.minimumInteritemSpacing = 0
             _pageViewLayout.minimumLineSpacing = 0
             _pageViewLayout.scrollDirection = .Horizontal;
-            _pageViewLayout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGTH - self._menuView.bounds.height-(self.navigationController?.navigationBar.bounds.height)!-UIApplication.sharedApplication().statusBarFrame.height-(self.tabBarController?.tabBar.bounds.height)!)
+            _pageViewLayout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGTH - self._menuView.bounds.height-(self.navigationController?.navigationBar.bounds.height)!-UIApplication.sharedApplication().statusBarFrame.height)
         }
     }
     
@@ -82,6 +82,15 @@ class SearchController: UIViewController, TANavigationBarType {
         }
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.hidesBottomBarWhenPushed = true
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()

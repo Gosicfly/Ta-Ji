@@ -283,6 +283,8 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
 //        let sex = TAUtilsManager.userInfoManager.readSex()
         self.avatar.kf_setImageWithURL(avatarURL, placeholderImage: Image(contentsOfFile: defaultAvatarURL))
         self.userName.text = userName
+        self.signature.text = TAUtilsManager.userInfoManager.readSignature()
+        self.school.text = TAUtilsManager.userInfoManager.readSchool()
     }
     
     func setNavigationBar() {

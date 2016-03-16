@@ -54,6 +54,9 @@
 		A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */; };
 		A3822ABF1C7D952000177822 /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822ABE1C7D952000177822 /* MessageListController.swift */; };
 		A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822AC11C7D95DC00177822 /* MessageController.swift */; };
+		A399D3E31C9835660007AE82 /* SkillChangingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399D3E11C9835660007AE82 /* SkillChangingCell.swift */; };
+		A399D3E41C9835660007AE82 /* SkillChangingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A399D3E21C9835660007AE82 /* SkillChangingCell.xib */; };
+		A399D3E61C98393B0007AE82 /* SkillChangingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399D3E51C98393B0007AE82 /* SkillChangingView.swift */; };
 		A39D2B5A1C80AC3D00795B97 /* StudentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39D2B581C80AC3D00795B97 /* StudentsController.swift */; };
 		A39D2B5B1C80AC3D00795B97 /* StudentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39D2B591C80AC3D00795B97 /* StudentsController.xib */; };
 		A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */; };
@@ -133,6 +136,9 @@
 		A3822AB91C7CACDE00177822 /* Ta技-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Ta技-Bridging-Header.h"; path = "Ta技/Ta技-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3822ABE1C7D952000177822 /* MessageListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
 		A3822AC11C7D95DC00177822 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		A399D3E11C9835660007AE82 /* SkillChangingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillChangingCell.swift; sourceTree = "<group>"; };
+		A399D3E21C9835660007AE82 /* SkillChangingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillChangingCell.xib; sourceTree = "<group>"; };
+		A399D3E51C98393B0007AE82 /* SkillChangingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillChangingView.swift; sourceTree = "<group>"; };
 		A39D2B581C80AC3D00795B97 /* StudentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsController.swift; sourceTree = "<group>"; };
 		A39D2B591C80AC3D00795B97 /* StudentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentsController.xib; sourceTree = "<group>"; };
 		A3A07F9B1C6A0D4F00E893D8 /* SquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
@@ -335,6 +341,7 @@
 		A342428D1C567B7F00FAD46D /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
+				A399D3E01C9834AF0007AE82 /* 技能交换 */,
 				A3822ABE1C7D952000177822 /* MessageListController.swift */,
 				A3822AC11C7D95DC00177822 /* MessageController.swift */,
 			);
@@ -450,6 +457,16 @@
 				A37795091C79FBEB0063EE09 /* TAActionLabel.swift */,
 			);
 			name = TARichTextLabel;
+			sourceTree = "<group>";
+		};
+		A399D3E01C9834AF0007AE82 /* 技能交换 */ = {
+			isa = PBXGroup;
+			children = (
+				A399D3E51C98393B0007AE82 /* SkillChangingView.swift */,
+				A399D3E11C9835660007AE82 /* SkillChangingCell.swift */,
+				A399D3E21C9835660007AE82 /* SkillChangingCell.xib */,
+			);
+			name = "技能交换";
 			sourceTree = "<group>";
 		};
 		A3D708FA1C575AB30055AD9D /* 注册 */ = {
@@ -574,6 +591,7 @@
 				A3AF0B3B1C7B406300C3FD5B /* LoginController.xib in Resources */,
 				A37794E91C78AF740063EE09 /* MAndAController.xib in Resources */,
 				A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */,
+				A399D3E41C9835660007AE82 /* SkillChangingCell.xib in Resources */,
 				A34242791C567A4200FAD46D /* LaunchScreen.storyboard in Resources */,
 				A39D2B5B1C80AC3D00795B97 /* StudentsController.xib in Resources */,
 				A3C1FA661C82DB85007CA284 /* AddLabelController.xib in Resources */,
@@ -656,6 +674,7 @@
 				A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */,
 				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,
+				A399D3E61C98393B0007AE82 /* SkillChangingView.swift in Sources */,
 				A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */,
 				A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */,
 				A3E03F1E1C65FB7F006BEF6F /* HotPageItem.swift in Sources */,
@@ -682,6 +701,7 @@
 				A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */,
 				A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */,
 				A3A07F9D1C6A0D4F00E893D8 /* SquareCell.swift in Sources */,
+				A399D3E31C9835660007AE82 /* SkillChangingCell.swift in Sources */,
 				A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */,
 				A34242991C567C2A00FAD46D /* BaseHomeController.swift in Sources */,
 				A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */,

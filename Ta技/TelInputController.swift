@@ -105,7 +105,7 @@ class TelInputController: UIViewController, TANavigationBarType {
                 let json = JSON(response.result.value!)
                 print(json)
                 guard json["status"].string! == "200" else {
-                    SVProgressHUD.showErrorWithStatus("请检查手机号码")
+                    SVProgressHUD.showErrorWithStatus(json["msg"].string!)
                     return
                 }
                 dispatch_async(dispatch_get_main_queue(), {

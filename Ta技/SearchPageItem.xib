@@ -39,7 +39,7 @@
                 <outlet property="searchBar" destination="6ng-5Q-i8i" id="M1i-cB-Niy"/>
                 <outlet property="tableView" destination="TfY-yX-3if" id="FhW-gY-Xqz"/>
             </connections>
-            <point key="canvasLocation" x="686" y="243.5"/>
+            <point key="canvasLocation" x="438" y="67.5"/>
         </collectionViewCell>
     </objects>
 </document>

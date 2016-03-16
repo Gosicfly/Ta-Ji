@@ -182,6 +182,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
                                 } else {
                                     TAUtilsManager.userInfoManager.writeSchool(json["data"]["school"].string!)
                                 }
+                                TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
                                 TAUtilsManager.userInfoManager.synchronize()
                                 self.dismiss()
                                 UIApplication.sharedApplication().windows[0].rootViewController = TATabBarController()

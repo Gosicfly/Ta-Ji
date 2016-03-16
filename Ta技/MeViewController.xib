@@ -48,20 +48,20 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="涂书" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICC-qT-CM9">
-                                <rect key="frame" x="147" y="88" width="26" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="146" y="86" width="28" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="摄影记录人生，希望和大家多多交流" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3C-p3-nfm">
-                                <rect key="frame" x="80" y="126" width="160" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="72" y="139" width="176" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉理工大学" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPw-VJ-6E4">
-                                <rect key="frame" x="130" y="109" width="60" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="127" y="117.5" width="66" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -76,12 +76,12 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="axW-Uz-jMj" firstAttribute="top" secondItem="I7R-dO-fgE" secondAttribute="top" constant="15" id="19R-bP-UsA"/>
-                            <constraint firstItem="TPw-VJ-6E4" firstAttribute="top" secondItem="ICC-qT-CM9" secondAttribute="bottom" constant="5" id="3Mk-56-IOm"/>
                             <constraint firstItem="o3C-p3-nfm" firstAttribute="centerX" secondItem="I7R-dO-fgE" secondAttribute="centerX" id="9iJ-OW-2nj"/>
-                            <constraint firstItem="o3C-p3-nfm" firstAttribute="top" secondItem="TPw-VJ-6E4" secondAttribute="bottom" constant="5" id="IQ6-t3-4Ty"/>
-                            <constraint firstItem="ICC-qT-CM9" firstAttribute="top" secondItem="axW-Uz-jMj" secondAttribute="bottom" constant="7" id="M8d-Eg-kNR"/>
+                            <constraint firstItem="o3C-p3-nfm" firstAttribute="centerY" secondItem="I7R-dO-fgE" secondAttribute="centerY" multiplier="1.7" id="B3G-xy-Qec"/>
+                            <constraint firstItem="TPw-VJ-6E4" firstAttribute="centerY" secondItem="I7R-dO-fgE" secondAttribute="centerY" multiplier="1.45" id="N7t-ia-8rb"/>
                             <constraint firstItem="ICC-qT-CM9" firstAttribute="centerX" secondItem="I7R-dO-fgE" secondAttribute="centerX" id="PyO-WO-Eet"/>
                             <constraint firstItem="axW-Uz-jMj" firstAttribute="centerY" secondItem="I7R-dO-fgE" secondAttribute="centerY" multiplier="0.56" id="Zag-vQ-tyc"/>
+                            <constraint firstItem="ICC-qT-CM9" firstAttribute="centerY" secondItem="I7R-dO-fgE" secondAttribute="centerY" multiplier="1.1" id="d5J-ma-kna"/>
                             <constraint firstAttribute="trailing" secondItem="C5U-dD-QPi" secondAttribute="trailing" constant="12" id="gqD-MB-Tsl"/>
                             <constraint firstItem="TPw-VJ-6E4" firstAttribute="centerX" secondItem="I7R-dO-fgE" secondAttribute="centerX" id="hgX-t4-IlN"/>
                             <constraint firstItem="axW-Uz-jMj" firstAttribute="centerX" secondItem="I7R-dO-fgE" secondAttribute="centerX" id="qqh-kN-sY2"/>
@@ -262,7 +262,7 @@
                 <constraint firstAttribute="trailing" secondItem="zsI-a1-ZBp" secondAttribute="trailing" id="uwW-Br-WLR"/>
                 <constraint firstItem="zsI-a1-ZBp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vir-Ci-ofr"/>
             </constraints>
-            <point key="canvasLocation" x="1296" y="-59"/>
+            <point key="canvasLocation" x="1353" y="-67"/>
         </view>
     </objects>
     <resources>

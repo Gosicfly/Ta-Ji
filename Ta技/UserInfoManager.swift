@@ -42,6 +42,7 @@ final class UserInfoManager {
         self.defaultPlist.setValue("", forKey: "openid")
         self.defaultPlist.setValue("男", forKey: "sex")
         self.defaultPlist.setValue("", forKey: "mobile")
+        self.defaultPlist.setValue("这个人很懒，什么都没说!", forKey: "signature")
         self.defaultPlist.setURL(NSURL(string: "http://taji.whutech.com/uploads/no_avatar.png"), forKey: "avatarURL")
         self.defaultPlist.synchronize()
     }
@@ -69,6 +70,10 @@ final class UserInfoManager {
     
     func writeMobile(mobile: String) {
         self.defaultPlist.setValue(mobile, forKey: "mobile")
+    }
+    
+    func writeSignature(signature: String) {
+        self.defaultPlist.setValue(signature, forKey: "signature")
     }
     
     func writeAvatarURL(url: NSURL) {
@@ -104,6 +109,10 @@ final class UserInfoManager {
     
     func readMobile() -> String {
         return self.defaultPlist.stringForKey("mobile")!
+    }
+    
+    func readSignature() -> String {
+        return self.defaultPlist.stringForKey("signature")!
     }
     
     func readAvatarURL() -> NSURL {

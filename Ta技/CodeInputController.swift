@@ -168,7 +168,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
                 let json = JSON(response.result.value!)
                 print(json)
                 guard json["status"].string! == "200" else {
-                    SVProgressHUD.showErrorWithStatus("验证码错误")
+                    SVProgressHUD.showErrorWithStatus(json["msg"].string!)
                     self.performSelector(Selector("dismiss"), withObject: nil, afterDelay: 0.5)
                     self.performSelector(Selector("becomeFirstResponderAfterSecond"), withObject: nil, afterDelay: 0.6)
                     return

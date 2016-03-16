@@ -66,7 +66,7 @@ extension StudentsController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(String(SubscriberCell)) as! SubscriberCell
-        if self.studentInfos[indexPath.row].avatarURL == defaultAvatarURL {
+        if self.studentInfos[indexPath.row].avatarURL.hasPrefix("/var/mobile/") || self.studentInfos[indexPath.row].avatarURL.hasPrefix("/Users/") {
             cell.avatar.image = UIImage(contentsOfFile: defaultAvatarURL)
         } else {
             cell.avatar.kf_setImageWithURL(self.studentInfos[indexPath.row].avatarURL.convertToURL()!)

@@ -24,6 +24,7 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var passwordInput: UITextField! {
         didSet {
+            passwordInput.delegate = self
             passwordInput.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
         }
     }
@@ -52,6 +53,7 @@ class LoginController: UIViewController {
             telInputController.modalTransitionStyle = .CrossDissolve
             self.presentViewController(telInputController, animated: true, completion: nil)
         case signIn:
+            self.view.endEditing(true)
             SVProgressHUD.show()
             guard self.reachability.isReachable() == true else {
                 SVProgressHUD.showErrorWithStatus("无网络连接")
@@ -68,6 +70,11 @@ class LoginController: UIViewController {
                 guard json["status"].string! == "200" else {
                     let errorInfo = json["msg"].string!
                     SVProgressHUD.showErrorWithStatus(errorInfo)
+                    if errorInfo.containsString("用户") {
+                        self.userNameInput.becomeFirstResponder()
+                    } else {
+                        self.passwordInput.becomeFirstResponder()
+                    }
                     return
                 }
                 let userInfoManager = TAUtilsManager.userInfoManager
@@ -96,6 +103,7 @@ class LoginController: UIViewController {
                         } else {
                             TAUtilsManager.userInfoManager.writeSchool(json["data"]["school"].string!)
                         }
+                        TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
                         TAUtilsManager.userInfoManager.synchronize()
                         self.performSelector(Selector("dismissHUD"), withObject: nil, afterDelay: 0.5)
                         UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.tabBarController
@@ -143,5 +151,22 @@ class LoginController: UIViewController {
     
     func dismissHUD() {
         SVProgressHUD.dismiss()
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
+
+extension LoginController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case self.passwordInput:
+            self.buttonTaped(self.signIn)
+        default:
+            break
+        }
+        return true
     }
 }

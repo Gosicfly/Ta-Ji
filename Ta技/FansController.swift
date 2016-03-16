@@ -66,7 +66,7 @@ extension FansController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(String(SubscriberCell)) as! SubscriberCell
-        if self.fansInfos[indexPath.row].avatarURL == defaultAvatarURL {
+        if self.fansInfos[indexPath.row].avatarURL.hasPrefix("/var/mobile/") || self.fansInfos[indexPath.row].avatarURL.hasPrefix("/Users/") {
             cell.avatar.image = UIImage(contentsOfFile: defaultAvatarURL)
         } else {
             cell.avatar.kf_setImageWithURL(self.fansInfos[indexPath.row].avatarURL.convertToURL()!)

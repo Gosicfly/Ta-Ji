@@ -20,6 +20,8 @@ class TeachersController: UIViewController, TANavigationBarType {
             tableView.delegate = self
             tableView.rowHeight = UITableViewAutomaticDimension
             tableView.estimatedRowHeight = 50
+            tableView.tableFooterView = UIView()
+            tableView.separatorStyle = .None
         }
     }
     
