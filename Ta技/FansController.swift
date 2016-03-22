@@ -49,7 +49,7 @@ class FansController: UIViewController, TANavigationBarType {
     
     func setNavigationBar() {
         self.title = "被订阅"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: Selector("back"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: #selector(FansController.back))
     }
     
     func back() {

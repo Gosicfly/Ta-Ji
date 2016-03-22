@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HotPageItem: UICollectionViewCell {
+class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
     
     var layout: UICollectionViewFlowLayout! {
         didSet {
@@ -34,6 +34,7 @@ class HotPageItem: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setSubViews()
+        self.setHeaderWithRefreshingBlock(nil)
     }
 
     required init?(coder aDecoder: NSCoder) {

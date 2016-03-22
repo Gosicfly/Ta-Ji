@@ -44,11 +44,11 @@ class PublishViewController: UIViewController, TANavigationBarType {
 
     func setNavigationBar() {
         self.title = "发布技能"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: Selector("dismiss"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: #selector(PublishViewController.dismiss))
         let button = UIButton(type: .Custom)
         button.setAttributedTitle(NSAttributedString(string: "草稿箱", attributes: [NSForegroundColorAttributeName: defaultTintColot, NSFontAttributeName: UIFont.systemFontOfSize(14)]), forState: .Normal)
         button.setImage(UIImage(named: "icon_tab_publish_delete"), forState: .Normal)
-        button.addTarget(self, action: Selector("dismiss"), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(PublishViewController.dismiss), forControlEvents: .TouchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 70, height: 44)
         let rightBarButtonItem = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = rightBarButtonItem

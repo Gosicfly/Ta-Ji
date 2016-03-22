@@ -44,9 +44,9 @@ class HomeTitleView: UIView, ItemSelectable {
         //        self.secondBtn.setAttributedTitle(NSAttributedString(string: "关注", attributes: [NSForegroundColorAttributeName: selectedColor]), forState: .Selected)
         //        self.thirdBtn.setAttributedTitle(NSAttributedString(string: "广场", attributes: [NSForegroundColorAttributeName: selectedColor]), forState: .Selected)
         
-        self.firstBtn.addTarget(self, action: Selector("btnSelect:"), forControlEvents: .TouchUpInside)
-        self.secondBtn.addTarget(self, action: Selector("btnSelect:"), forControlEvents: .TouchUpInside)
-        self.thirdBtn.addTarget(self, action: Selector("btnSelect:"), forControlEvents: .TouchUpInside)
+        self.firstBtn.addTarget(self, action: #selector(HomeTitleView.btnSelect(_:)), forControlEvents: .TouchUpInside)
+        self.secondBtn.addTarget(self, action: #selector(HomeTitleView.btnSelect(_:)), forControlEvents: .TouchUpInside)
+        self.thirdBtn.addTarget(self, action: #selector(HomeTitleView.btnSelect(_:)), forControlEvents: .TouchUpInside)
         
         self.addSubview(firstBtn)
         self.addSubview(secondBtn)

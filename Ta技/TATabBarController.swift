@@ -20,7 +20,7 @@ class TATabBarController: UITabBarController {
         button.layer.shadowColor = UIColor.blackColor().CGColor
         button.layer.shadowOpacity = 0.4
         button.layer.shadowPath = UIBezierPath(roundedRect: CGRectInset(button.bounds, -5, 1), cornerRadius: 0).CGPath
-        button.addTarget(self, action: Selector("presentPublishViewController"), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(TATabBarController.presentPublishViewController), forControlEvents: .TouchUpInside)
         return button
     }()
     

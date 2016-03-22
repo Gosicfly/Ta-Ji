@@ -79,7 +79,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
             self.codeInputField.delegate = self
             self.codeInputField.placeholder = "输入短信验证码"
             //这个地方console会输出一个警告，不明白是为什么
-            performSelector(Selector("becomeFirstResponderAfterSecond"), withObject: nil, afterDelay: 0.6)
+            performSelector(#selector(CodeInputController.becomeFirstResponderAfterSecond), withObject: nil, afterDelay: 0.6)
         }
     }
     
@@ -100,7 +100,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
             self.requestAgainButton.enabled = false
             self.requestAgainButton.setTitle("重新获取(\(self.i)秒)", forState: .Disabled)
             self.requestAgainButton.setTitle("重新获取", forState: .Normal)
-            self.requestAgainButton.addTarget(self, action: Selector("requestAgain"), forControlEvents: .TouchUpInside)
+            self.requestAgainButton.addTarget(self, action: #selector(CodeInputController.requestAgain), forControlEvents: .TouchUpInside)
         }
     }
     
@@ -117,7 +117,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
             self.nextButton.layer.cornerRadius = 5
             self.nextButton.tintColor = defaultTintColot
             self.nextButton.setTitle("继续", forState: .Normal)
-            self.nextButton.addTarget(self, action: Selector("next"), forControlEvents: .TouchUpInside)
+            self.nextButton.addTarget(self, action: #selector(CodeInputController.next), forControlEvents: .TouchUpInside)
         }
     }
     
@@ -126,12 +126,12 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
         self.view.backgroundColor = UIColor(red: 225/255, green: 223/255, blue: 231/255, alpha: 1)
         self.setNavigationBar()
         self.setSubViews()
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("oneMinute"), userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(CodeInputController.oneMinute), userInfo: nil, repeats: true)
     }
     
     func setNavigationBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: defaultTintColot]
-        let backBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: Selector("back"))
+        let backBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: #selector(CodeInputController.back))
         self.navigationItem.leftBarButtonItem = backBarButtonItem
         self.navigationItem.title = "短信验证"
         //左滑返回
@@ -169,8 +169,8 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
                 print(json)
                 guard json["status"].string! == "200" else {
                     SVProgressHUD.showErrorWithStatus(json["msg"].string!)
-                    self.performSelector(Selector("dismiss"), withObject: nil, afterDelay: 0.5)
-                    self.performSelector(Selector("becomeFirstResponderAfterSecond"), withObject: nil, afterDelay: 0.6)
+                    self.performSelector(#selector(CodeInputController.dismiss), withObject: nil, afterDelay: 0.5)
+                    self.performSelector(#selector(CodeInputController.becomeFirstResponderAfterSecond), withObject: nil, afterDelay: 0.6)
                     return
                 }
                 dispatch_async(dispatch_get_main_queue(), {

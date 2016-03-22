@@ -40,8 +40,8 @@ class AddLabelController: UIViewController, TANavigationBarType {
 
     func setNavigationBar() {
         self.title = "添加标签"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: Selector("back"))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+自定义", style: .Plain, target: self, action: Selector("addCustomLabel"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: #selector(AddLabelController.back))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+自定义", style: .Plain, target: self, action: #selector(AddLabelController.addCustomLabel))
     }
 
     // MARK: - Selector

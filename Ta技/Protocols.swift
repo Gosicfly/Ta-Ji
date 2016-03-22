@@ -23,7 +23,22 @@ protocol TANavigationBarType: class {
     func setNavigationBar()
 }
 
+protocol TATableViewType: class {
+    
+    var tableView: UITableView! { get set }
+}
+
+protocol TACollectionViewType: class {
+    
+    var collectionView: UICollectionView! { get set }
+}
+
 // 提供默认下拉刷新动作
 protocol TARefreshable: class {
     
+    func setHeaderWithRefreshingBlock(block: (() -> Void)?)
+    
+//    func setfooterWithRefreshingBlock(block: (() -> Void)?)
+//    
+//    func beginRefreshing()
 }

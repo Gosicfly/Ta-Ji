@@ -41,8 +41,8 @@ class LoginController: UIViewController {
     }
 
     private func addTargets() {
-        signUp.addTarget(self, action: Selector("buttonTaped:"), forControlEvents: .TouchUpInside)
-        signIn.addTarget(self, action: Selector("buttonTaped:"), forControlEvents: .TouchUpInside)
+        signUp.addTarget(self, action: #selector(LoginController.buttonTaped(_:)), forControlEvents: .TouchUpInside)
+        signIn.addTarget(self, action: #selector(LoginController.buttonTaped(_:)), forControlEvents: .TouchUpInside)
     }
     
     // MARK : - Selector
@@ -105,7 +105,7 @@ class LoginController: UIViewController {
                         }
                         TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
                         TAUtilsManager.userInfoManager.synchronize()
-                        self.performSelector(Selector("dismissHUD"), withObject: nil, afterDelay: 0.5)
+                        self.performSelector(#selector(LoginController.dismissHUD), withObject: nil, afterDelay: 0.5)
                         UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.tabBarController
                     }
                 })

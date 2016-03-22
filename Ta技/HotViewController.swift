@@ -114,7 +114,7 @@ extension HotViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if (collectionView == self._menuView) {
-            if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? TAMenuItem {
+            if let _ = collectionView.cellForItemAtIndexPath(indexPath) as? TAMenuItem {
                 self._menuView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
                 self._pageView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
             } else {

@@ -51,7 +51,7 @@ class TeachersController: UIViewController, TANavigationBarType {
     
     func setNavigationBar() {
         self.title = "我的师傅"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: Selector("back"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: #selector(TeachersController.back))
     }
     
     func back() {

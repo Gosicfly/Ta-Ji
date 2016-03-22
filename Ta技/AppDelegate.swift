@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
         self.window = UIWindow(frame: SCREEN_BOUNDS)
         self.window?.backgroundColor = navigationBarColor
         self.setDefalutNavigationBarStyle()
-        self.window?.rootViewController = UINavigationController(rootViewController: TelInputController())
         if TAUtilsManager.userInfoManager.readloginState() == true {
             self.window?.rootViewController = TAVCManager.tabBarController
         } else {

@@ -78,7 +78,7 @@ class GFCycleScrollView: UICollectionReusableView {
         self.layout = UICollectionViewFlowLayout()
         self.collectionView = UICollectionView(frame: self.frame, collectionViewLayout: self.layout)
         self.pageControl = UIPageControl()
-        self.timer = NSTimer(timeInterval: 3.4, target: self, selector: Selector("scrollImages"), userInfo: nil, repeats: true)
+        self.timer = NSTimer(timeInterval: 3.4, target: self, selector: #selector(GFCycleScrollView.scrollImages), userInfo: nil, repeats: true)
     }
     
     override func layoutSubviews() {

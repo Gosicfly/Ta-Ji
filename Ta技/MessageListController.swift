@@ -79,7 +79,7 @@ class MessageListController: RCConversationListViewController, TANavigationBarTy
     }
     
     func setNavigationBar() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "聊天", style: .Plain, target: self, action: Selector("startNewConservation"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "聊天", style: .Plain, target: self, action: #selector(MessageListController.startNewConservation))
     }
     
     func setRongCloud() {
@@ -100,7 +100,7 @@ class MessageListController: RCConversationListViewController, TANavigationBarTy
     
     func setSubViews() {
         // heaView的frame必须在初始化的时候设置，不然的话会遮挡住tableViewCell
-        self.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGTH * 0.16))
+        self.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGTH * 0.15))
     }
     
     override func onSelectedTableRow(conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, atIndexPath indexPath: NSIndexPath!) {

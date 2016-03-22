@@ -21,14 +21,20 @@ class TAVCManager {
     
     private init() {}
     
+    static func resetAllControllers() {
+        TAVCManager.tabBarController = TATabBarController()
+        TAVCManager.loginController = LoginController()
+        TAVCManager.searchController = SearchController()
+    }
+    
     // 主框架控制器
-    static let tabBarController = TATabBarController()
+    private(set) static var tabBarController = TATabBarController()
     
     // 登陆视图控制器
-    static let loginController = LoginController()
+    private(set) static var loginController = LoginController()
     
     // 搜索视图控制器
-    static let searchController = SearchController()
+    private(set) static var searchController = SearchController()
     
 }
 

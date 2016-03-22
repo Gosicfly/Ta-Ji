@@ -30,8 +30,10 @@
 		A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A01C567C8C00FAD46D /* ConcernViewController.swift */; };
 		A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A21C567CA400FAD46D /* ActivityViewController.swift */; };
 		A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242A41C567CBA00FAD46D /* CircleViewController.swift */; };
-		A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242AA1C567D0500FAD46D /* UIExtensions.swift */; };
+		A34242AB1C567D0500FAD46D /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34242AA1C567D0500FAD46D /* ClassExtensions.swift */; };
 		A34242AF1C567EB800FAD46D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A34242AE1C567EB800FAD46D /* Podfile */; };
+		A34EFE821C9953E700A74263 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EFE811C9953E700A74263 /* SettingsController.swift */; };
+		A34EFE841C9BE57600A74263 /* ProtocolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EFE831C9BE57600A74263 /* ProtocolExtensions.swift */; };
 		A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12051C724BDA005FAC9F /* TALabel.swift */; };
 		A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12071C73863F005FAC9F /* MeMenuCell.swift */; };
 		A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A35A12081C73863F005FAC9F /* MeMenuCell.xib */; };
@@ -111,8 +113,10 @@
 		A34242A01C567C8C00FAD46D /* ConcernViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcernViewController.swift; sourceTree = "<group>"; };
 		A34242A21C567CA400FAD46D /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		A34242A41C567CBA00FAD46D /* CircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
-		A34242AA1C567D0500FAD46D /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		A34242AA1C567D0500FAD46D /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		A34242AE1C567EB800FAD46D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A34EFE811C9953E700A74263 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		A34EFE831C9BE57600A74263 /* ProtocolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolExtensions.swift; sourceTree = "<group>"; };
 		A35A12051C724BDA005FAC9F /* TALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALabel.swift; sourceTree = "<group>"; };
 		A35A12071C73863F005FAC9F /* MeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMenuCell.swift; sourceTree = "<group>"; };
 		A35A12081C73863F005FAC9F /* MeMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeMenuCell.xib; sourceTree = "<group>"; };
@@ -277,7 +281,8 @@
 				A342429E1C567C7600FAD46D /* TAMenuItem.swift */,
 				A3D709031C575D270055AD9D /* ReusedValues.swift */,
 				A3D709061C5795540055AD9D /* Protocols.swift */,
-				A34242AA1C567D0500FAD46D /* UIExtensions.swift */,
+				A34242AA1C567D0500FAD46D /* ClassExtensions.swift */,
+				A34EFE831C9BE57600A74263 /* ProtocolExtensions.swift */,
 				A30C782D1C7F49330002757B /* Models.swift */,
 			);
 			name = Reused;
@@ -328,6 +333,7 @@
 				A35A12051C724BDA005FAC9F /* TALabel.swift */,
 				A3252B581C6F4B7100022AC0 /* MeViewController.swift */,
 				A3252B591C6F4B7100022AC0 /* MeViewController.xib */,
+				A34EFE811C9953E700A74263 /* SettingsController.swift */,
 				A3C1FA631C82DB85007CA284 /* AddLabelController.swift */,
 				A3C1FA641C82DB85007CA284 /* AddLabelController.xib */,
 				A35A12071C73863F005FAC9F /* MeMenuCell.swift */,
@@ -665,6 +671,7 @@
 			files = (
 				A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */,
 				A39D2B5A1C80AC3D00795B97 /* StudentsController.swift in Sources */,
+				A34EFE821C9953E700A74263 /* SettingsController.swift in Sources */,
 				A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */,
 				A37795081C79F8840063EE09 /* TARichTextLabel.swift in Sources */,
 				A3272D961C882288006D94DE /* TeachersController.swift in Sources */,
@@ -672,7 +679,7 @@
 				A30C782E1C7F49330002757B /* Models.swift in Sources */,
 				A3C1FA651C82DB85007CA284 /* AddLabelController.swift in Sources */,
 				A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */,
-				A34242AB1C567D0500FAD46D /* UIExtensions.swift in Sources */,
+				A34242AB1C567D0500FAD46D /* ClassExtensions.swift in Sources */,
 				A34242A51C567CBA00FAD46D /* CircleViewController.swift in Sources */,
 				A399D3E61C98393B0007AE82 /* SkillChangingView.swift in Sources */,
 				A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */,
@@ -681,6 +688,7 @@
 				A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */,
 				A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */,
 				A342429F1C567C7600FAD46D /* TAMenuItem.swift in Sources */,
+				A34EFE841C9BE57600A74263 /* ProtocolExtensions.swift in Sources */,
 				A34242911C567BB400FAD46D /* TATabBarController.swift in Sources */,
 				A34242A31C567CA400FAD46D /* ActivityViewController.swift in Sources */,
 				A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */,

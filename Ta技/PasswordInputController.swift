@@ -38,7 +38,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
             self.passwordInputField.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
             self.passwordInputField.delegate = self
             self.passwordInputField.placeholder = "输入密码"
-            performSelector(Selector("becomeFirstResponderAfterSecond"), withObject: nil, afterDelay: 0.6)
+            performSelector(#selector(PasswordInputController.becomeFirstResponderAfterSecond), withObject: nil, afterDelay: 0.6)
         }
     }
     
@@ -74,7 +74,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
             self.nextButton.backgroundColor = navigationBarColor
             self.nextButton.tintColor = defaultTintColot
             self.nextButton.setTitle("注册", forState: .Normal)
-            self.nextButton.addTarget(self, action: Selector("next"), forControlEvents: .TouchUpInside)
+            self.nextButton.addTarget(self, action: #selector(PasswordInputController.next), forControlEvents: .TouchUpInside)
         }
     }
     
@@ -112,7 +112,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
     func setNavigationBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: defaultTintColot]
         self.navigationItem.title = "设置密码"
-        let backBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: Selector("back"))
+        let backBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: #selector(PasswordInputController.back))
         self.navigationItem.leftBarButtonItem = backBarButtonItem
         //左滑返回
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -141,7 +141,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
                 debugPrint(json)
                 guard json["status"].string! == "200" else {
                     SVProgressHUD.showErrorWithStatus("用户已存在")
-                    self.performSelector(Selector("dismiss"), withObject: nil, afterDelay: 0.5)
+                    self.performSelector(#selector(PasswordInputController.dismiss), withObject: nil, afterDelay: 0.5)
                     return
                 }
                 dispatch_async(dispatch_get_main_queue(), {

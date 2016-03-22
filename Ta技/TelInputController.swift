@@ -50,7 +50,7 @@ class TelInputController: UIViewController, TANavigationBarType {
             self.nextButton.backgroundColor = navigationBarColor
             self.nextButton.tintColor = defaultTintColot
             self.nextButton.setTitle("继续", forState: .Normal)
-            self.nextButton.addTarget(self, action: Selector("next"), forControlEvents: .TouchUpInside)
+            self.nextButton.addTarget(self, action: #selector(TelInputController.next), forControlEvents: .TouchUpInside)
         }
     }
     
@@ -66,7 +66,7 @@ class TelInputController: UIViewController, TANavigationBarType {
             self.signInButton.backgroundColor = UIColor.clearColor()
             self.signInButton.tintColor = UIColor(red: 166/255, green: 104/255, blue: 175/255, alpha: 1)
             self.signInButton.setTitle("已有账号登录", forState: .Normal)
-            self.signInButton.addTarget(self, action: Selector("cancel"), forControlEvents: .TouchUpInside)
+            self.signInButton.addTarget(self, action: #selector(TelInputController.cancel), forControlEvents: .TouchUpInside)
         }
     }
     
@@ -80,7 +80,7 @@ class TelInputController: UIViewController, TANavigationBarType {
     func setNavigationBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: defaultTintColot]
         self.navigationItem.title = "你的手机号"
-        let cancelBarButton = UIBarButtonItem(image: UIImage(named: "icon_register_first_back"), style: .Plain, target: self, action: Selector("cancel"))
+        let cancelBarButton = UIBarButtonItem(image: UIImage(named: "icon_register_first_back"), style: .Plain, target: self, action: #selector(TelInputController.cancel))
         self.navigationItem.leftBarButtonItem = cancelBarButton
         
         
@@ -102,19 +102,21 @@ class TelInputController: UIViewController, TANavigationBarType {
         case true:      //有网络连接时
             let moblie = self.telInputField.text!
             Alamofire.request(.GET, "http://taji.whutech.com/Sms/get_code?mobile=\(moblie)").responseJSON { response in
-                let json = JSON(response.result.value!)
-                print(json)
-                guard json["status"].string! == "200" else {
-                    SVProgressHUD.showErrorWithStatus(json["msg"].string!)
-                    return
+                if response.result.isSuccess {
+                    let json = JSON(response.result.value!)
+                    print(json)
+                    guard json["status"].string! == "200" else {
+                        SVProgressHUD.showErrorWithStatus(json["msg"].string!)
+                        return
+                    }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.dismiss()
+                        self.telInputField.resignFirstResponder()
+                        let vc = CodeInputController()
+                        vc.mobile = self.telInputField.text!
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    })
                 }
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.dismiss()
-                    self.telInputField.resignFirstResponder()
-                    let vc = CodeInputController()
-                    vc.mobile = self.telInputField.text!
-                    self.navigationController?.pushViewController(vc, animated: true)
-                })
             }
         case false:     //无网络连接时
             SVProgressHUD.showErrorWithStatus("无网络连接")

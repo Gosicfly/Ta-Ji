@@ -23,7 +23,7 @@ class TAActionLabel: UILabel {
     }
     
     override func willMoveToSuperview(newSuperview: UIView?) {
-        let gesture = UITapGestureRecognizer(target: self, action: Selector("performAction"))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(TAActionLabel.performAction))
         self.addGestureRecognizer(gesture)
     }
     

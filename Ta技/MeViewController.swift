@@ -41,7 +41,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var numberOfSkills: UILabel! {
         didSet {
             numberOfSkills.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             numberOfSkills.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -49,7 +49,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var skillLabel: UILabel! {
         didSet {
             skillLabel.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             skillLabel.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -57,14 +57,14 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var numberOfStudents: UILabel! {
         didSet {
             numberOfStudents.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             numberOfStudents.addGestureRecognizer(tapGestureRecognizer)
         }
     }
     @IBOutlet weak var studentLabel: UILabel! {
         didSet {
             studentLabel.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             studentLabel.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -72,7 +72,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var numberOfSubscribers: UILabel! {
         didSet {
             numberOfSubscribers.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             numberOfSubscribers.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -80,7 +80,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var subscriberLabel: UILabel! {
         didSet {
             subscriberLabel.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             subscriberLabel.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -88,7 +88,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var numberOfFans: UILabel! {
         didSet {
             numberOfFans.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             numberOfFans.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -96,7 +96,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     @IBOutlet weak var fansLabel: UILabel! {
         didSet {
             fansLabel.userInteractionEnabled = true
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("pushAController:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MeViewController.pushAController(_:)))
             fansLabel.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -123,6 +123,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
             let json = JSON(response.result.value!)
             if json["status"] == "200" {
+                try! realm.write({ 
+                    let infos = realm.objects(StudentInfo)
+                    realm.delete(infos)
+                })
                 self.numberOfStudents.text = String(json["data"].array!.count)
                 for (_, subJson) in json["data"] {
                     let userName: String
@@ -161,6 +165,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
             let json = JSON(response.result.value!)
             if json["status"] == "200" {
+                try! realm.write({
+                    let infos = realm.objects(SubscriberInfo)
+                    realm.delete(infos)
+                })
                 self.numberOfSubscribers.text = String(json["data"].array!.count)
                 for (_, subJson) in json["data"] {
                     let userName: String
@@ -199,6 +207,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
             let json = JSON(response.result.value!)
             if json["status"] == "200" {
+                try! realm.write({
+                    let infos = realm.objects(FansInfo)
+                    realm.delete(infos)
+                })
                 self.numberOfFans.text = String(json["data"].array!.count)
                 for (_, subJson) in json["data"] {
                     let userName: String
@@ -239,6 +251,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
             let json = JSON(response.result.value!)
             if json["status"] == "200" {
+                try! realm.write({
+                    let infos = realm.objects(TeacherInfo)
+                    realm.delete(infos)
+                })
                 for (_, subJson) in json["data"] {
                     let userName: String
                     if subJson["username"].type == .Null {
@@ -288,7 +304,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     }
     
     func setNavigationBar() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "设置"), style: .Plain, target: self, action: Selector("settings"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "设置"), style: .Plain, target: self, action: #selector(MeViewController.settings))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = navigationBarColor
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -303,7 +319,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     // MARK: - Selector
     func settings() {
-        
+        self.navigationController?.pushViewController(SettingsController(), animated: true)
     }
     
     func pushAController(gesture: UITapGestureRecognizer) {

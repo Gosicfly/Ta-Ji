@@ -99,7 +99,7 @@ class SearchController: UIViewController, TANavigationBarType {
 
     func setNavigationBar() {
         self.title = "搜索"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: Selector("back"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_register_second_back"), style: .Plain, target: self, action: #selector(SearchController.back))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = navigationBarColor
     }
@@ -154,7 +154,7 @@ extension SearchController: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if (collectionView == self._menuView) {
-            if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? TAMenuItem {
+            if let _ = collectionView.cellForItemAtIndexPath(indexPath) as? TAMenuItem {
                 self._menuView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
                 self._pageView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
             } else {

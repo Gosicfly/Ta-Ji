@@ -27,7 +27,7 @@ class BaseHomeController: UIViewController, TANavigationBarType {
     }
     
     func setNavigationBar() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: Selector("search"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: #selector(BaseHomeController.search))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         let titleView = HomeTitleView()
         titleView.delegate = self
@@ -53,6 +53,7 @@ class BaseHomeController: UIViewController, TANavigationBarType {
     
 }
 
+// MARK: - HomeTitleViewDelegate
 extension BaseHomeController: HomeTitleViewDelegate {
     
     func transition(fromeViewController  fromeViewController: UIViewController, toViewController: UIViewController, completion: ((Bool) -> Void)?) {

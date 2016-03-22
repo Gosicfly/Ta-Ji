@@ -46,7 +46,7 @@ class TASelectedLabel: TALabel {
         self.userInteractionEnabled = true
         self.highlightedTextColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
         self.highlightedBackgroundColor = UIColor(red: 165/255, green: 104/255, blue: 175/255, alpha: 1)
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("selectLabel")))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TASelectedLabel.selectLabel)))
         self.layer.borderWidth = 0.7
         self.layer.borderColor = UIColor(red: 165/255, green: 104/255, blue: 175/255, alpha: 1).CGColor
         self.gf_addCorner(radius: self.bounds.height / 2, borderWidth: 0, backgroundColor: UIColor.whiteColor(), borderColor: UIColor.clearColor())

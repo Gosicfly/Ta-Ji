@@ -14,7 +14,7 @@ enum RecommendPageItemType {
     case Mine
 }
 
-class RecommendPageItem: UICollectionViewCell {
+class RecommendPageItem: UICollectionViewCell, TATableViewType, TARefreshable {
     
     var type: RecommendPageItemType = .Hot
     
@@ -33,6 +33,7 @@ class RecommendPageItem: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setSubviews()
+        self.setHeaderWithRefreshingBlock(nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
