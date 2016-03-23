@@ -56,7 +56,16 @@ class BaseHomeController: UIViewController, TANavigationBarType {
 // MARK: - HomeTitleViewDelegate
 extension BaseHomeController: HomeTitleViewDelegate {
     
-    func transition(fromeViewController  fromeViewController: UIViewController, toViewController: UIViewController, completion: ((Bool) -> Void)?) {
-        self.transitionFromViewController(fromeViewController, toViewController: toViewController, duration: 0, options: UIViewAnimationOptions.TransitionNone, animations: nil, completion: completion)
+    func transition(fromeViewController  fromeViewController: UIViewController, toViewController: UIViewController) {
+        self.nextChildViewController.view.alpha = 0
+        self.transitionFromViewController(fromeViewController,
+                                          toViewController: toViewController,
+                                          duration: 0.22,
+                                          options: .CurveEaseIn,
+                                          animations: {
+            self.currentChildViewController.view.alpha = 0
+            self.nextChildViewController.view.alpha = 1
+            },
+                                          completion: nil)
     }
 }

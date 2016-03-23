@@ -20,6 +20,7 @@ class StudentsController: UIViewController, TANavigationBarType {
             tableView.delegate = self
             tableView.rowHeight = UITableViewAutomaticDimension
             tableView.estimatedRowHeight = 50
+            tableView.tableHeaderView = searchController.searchBar
             tableView.tableFooterView = UIView()
         }
     }
@@ -45,7 +46,6 @@ class StudentsController: UIViewController, TANavigationBarType {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
-        self.view.addSubview(self.searchController.searchBar)
     }
     
     func setNavigationBar() {

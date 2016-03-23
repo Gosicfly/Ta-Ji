@@ -127,6 +127,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                     let infos = realm.objects(StudentInfo)
                     realm.delete(infos)
                 })
+                guard json["data"].type == .Array else {
+                    self.numberOfStudents.text = "0"
+                    return
+                }
                 self.numberOfStudents.text = String(json["data"].array!.count)
                 for (_, subJson) in json["data"] {
                     let userName: String
@@ -169,6 +173,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                     let infos = realm.objects(SubscriberInfo)
                     realm.delete(infos)
                 })
+                guard json["data"].type == .Array else {
+                    self.numberOfSubscribers.text = "0"
+                    return
+                }
                 self.numberOfSubscribers.text = String(json["data"].array!.count)
                 for (_, subJson) in json["data"] {
                     let userName: String
@@ -211,6 +219,10 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                     let infos = realm.objects(FansInfo)
                     realm.delete(infos)
                 })
+                guard json["data"].type == .Array else {
+                    self.numberOfFans.text = "0"
+                    return
+                }
                 self.numberOfFans.text = String(json["data"].array!.count)
                 for (_, subJson) in json["data"] {
                     let userName: String
@@ -245,7 +257,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
         })
         //选项卡相关数据请求
-        Alamofire.request(.GET, "http://taji.whutech.com/Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://taji.whutech.com/Master/masterList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }
@@ -255,6 +267,9 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                     let infos = realm.objects(TeacherInfo)
                     realm.delete(infos)
                 })
+                guard json["data"].type == .Array else {
+                    return
+                }
                 for (_, subJson) in json["data"] {
                     let userName: String
                     if subJson["username"].type == .Null {

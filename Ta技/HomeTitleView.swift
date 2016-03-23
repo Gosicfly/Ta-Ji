@@ -74,7 +74,7 @@ class HomeTitleView: UIView, ItemSelectable {
             default:
                 break
             }
-            delegate.transition(fromeViewController: delegate.currentChildViewController, toViewController: delegate.nextChildViewController, completion: nil)
+            delegate.transition(fromeViewController: delegate.currentChildViewController, toViewController: delegate.nextChildViewController)
             delegate.currentChildViewController = delegate.nextChildViewController
         }
         self.selectedItem = button

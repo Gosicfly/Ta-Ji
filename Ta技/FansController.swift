@@ -20,6 +20,7 @@ class FansController: UIViewController, TANavigationBarType {
             tableView.delegate = self
             tableView.rowHeight = UITableViewAutomaticDimension
             tableView.estimatedRowHeight = 50
+            tableView.tableHeaderView = searchController.searchBar
         }
     }
     
@@ -43,7 +44,6 @@ class FansController: UIViewController, TANavigationBarType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(self.searchController.searchBar)
         self.setNavigationBar()
     }
     
@@ -80,4 +80,11 @@ extension FansController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - UISearchBarDelegate
 extension FansController: UISearchBarDelegate {
     
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if self.view.hitTest(CGPoint(x:0, y:tableView.bounds.size.height-2), withEvent: nil) == self.tableView {
+            if scrollView.contentOffset.y > 0 {
+                scrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
+            }
+        }
+    }
 }
