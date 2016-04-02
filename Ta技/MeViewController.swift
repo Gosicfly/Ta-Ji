@@ -514,7 +514,6 @@ extension MeViewController: UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case self.wantedSkillContainer:
-            print(self.interests.count)
             return self.interests.count
         case self.ownedSkillContainer:
             return self.skills.count

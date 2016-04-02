@@ -71,7 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     func updateUserInfo() {
         Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             let json = JSON(response.result.value!)
-            print(json)
             TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
             if json["data"]["school"].type == .Null {
                 TAUtilsManager.userInfoManager.writeSchool("Null")

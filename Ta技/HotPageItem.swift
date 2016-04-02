@@ -14,7 +14,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
         didSet {
             self.layout.scrollDirection = .Vertical
             self.layout.itemSize = CGSize(width: SCREEN_WIDTH / 2, height: SCREEN_HEIGTH / 3)
-            self.layout.headerReferenceSize = CGSize(width: SCREEN_WIDTH, height: 110)
+            self.layout.headerReferenceSize = CGSize(width: SCREEN_WIDTH, height: SCREEN_HEIGTH / 4.6)
             self.layout.minimumInteritemSpacing = 0
             self.layout.minimumLineSpacing = 0
         }
@@ -28,6 +28,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
             self.collectionView.dataSource = self
             self.collectionView.delegate = self
             self.collectionView.backgroundColor = defaultBackgroundColor
+            
         }
     }
 
@@ -69,8 +70,6 @@ extension HotPageItem: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: String(GFCycleScrollView), forIndexPath: indexPath) as! GFCycleScrollView
         view.imageArray = [UIImage(named: "1")!, UIImage(named: "2")!, UIImage(named: "3")!, UIImage(named: "4")!]
-        view.layer.cornerRadius = 10
-        view.layer.masksToBounds = true
         return view
     }
 }

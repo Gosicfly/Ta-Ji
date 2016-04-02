@@ -11,6 +11,7 @@ import SnapKit
 import Alamofire
 import Kingfisher
 import SwiftyJSON
+import SnapKit
 
 /// 无限轮播图
 class GFCycleScrollView: UICollectionReusableView {
@@ -46,7 +47,7 @@ class GFCycleScrollView: UICollectionReusableView {
             self.pageControl.currentPage = 0
             self.addSubview(self.pageControl)
             self.pageControl.snp_makeConstraints { (make) -> Void in
-                make.bottom.equalTo(self).offset(-5)
+                make.bottom.equalTo(self).offset(-8)
                 make.height.equalTo(10)
                 make.centerX.equalTo(self)
             }

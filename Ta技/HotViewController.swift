@@ -47,7 +47,6 @@ class HotViewController: UIViewController {
             self._menuView.dataSource = self
             self._menuView.scrollEnabled = true
             self._menuView.showsHorizontalScrollIndicator = false
-            self._menuView.bounces = false
             self._menuView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width * 2, height: 0)
             self._menuView.backgroundColor = UIColor(red: 63/255, green: 48/255, blue: 81/255, alpha: 1)
             self._menuView.selectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: true, scrollPosition: .Left)
@@ -71,7 +70,7 @@ class HotViewController: UIViewController {
             self._pageView.scrollEnabled = true
             self._pageView.pagingEnabled = true
             self._pageView.contentSize = CGSize(width: SCREEN_WIDTH * 2, height: SCREEN_HEIGTH - self._menuView.bounds.height)
-            self._pageView.bounces = false
+            self._pageView.backgroundColor = UIColor(red: 78/255, green: 60/255, blue: 101/255, alpha: 1)
             self._pageView.showsHorizontalScrollIndicator = false
             self._pageView.registerClass(HotPageItem.self, forCellWithReuseIdentifier: String(HotPageItem))
             self.view.addSubview(self._pageView)
