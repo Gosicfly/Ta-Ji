@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		638C475D685BF472CB5F5538 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F13FDD73B62F3E08CF6566 /* Pods.framework */; };
+		A3028E5D1CAFD1B70054A232 /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3028E5C1CAFD1B70054A232 /* SkillCell.swift */; };
 		A30C782C1C7F40E40002757B /* SubscribersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A30C782B1C7F40E40002757B /* SubscribersController.xib */; };
 		A30C782E1C7F49330002757B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C782D1C7F49330002757B /* Models.swift */; };
 		A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3252B581C6F4B7100022AC0 /* MeViewController.swift */; };
@@ -37,6 +38,10 @@
 		A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12051C724BDA005FAC9F /* TALabel.swift */; };
 		A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12071C73863F005FAC9F /* MeMenuCell.swift */; };
 		A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A35A12081C73863F005FAC9F /* MeMenuCell.xib */; };
+		A36E32511CAE2CCE001E7D77 /* ImageSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36E32501CAE2CCE001E7D77 /* ImageSelectedView.swift */; };
+		A36E32571CAEB426001E7D77 /* LabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36E32561CAEB426001E7D77 /* LabelController.swift */; };
+		A36E325A1CAEBCFB001E7D77 /* LabelControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36E32581CAEBCFB001E7D77 /* LabelControllerCell.swift */; };
+		A36E325B1CAEBCFB001E7D77 /* LabelControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A36E32591CAEBCFB001E7D77 /* LabelControllerCell.xib */; };
 		A37794E41C78AAAC0063EE09 /* MAndACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794E21C78AAAC0063EE09 /* MAndACell.swift */; };
 		A37794E51C78AAAC0063EE09 /* MAndACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37794E31C78AAAC0063EE09 /* MAndACell.xib */; };
 		A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37794E61C78AF740063EE09 /* MAndAController.swift */; };
@@ -89,6 +94,7 @@
 /* Begin PBXFileReference section */
 		888C711AA3FE1361E7834B5F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8E2A27AB5A2023B99F6E93F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A3028E5C1CAFD1B70054A232 /* SkillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
 		A30C782B1C7F40E40002757B /* SubscribersController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribersController.xib; sourceTree = "<group>"; };
 		A30C782D1C7F49330002757B /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A3252B581C6F4B7100022AC0 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +126,10 @@
 		A35A12051C724BDA005FAC9F /* TALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALabel.swift; sourceTree = "<group>"; };
 		A35A12071C73863F005FAC9F /* MeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMenuCell.swift; sourceTree = "<group>"; };
 		A35A12081C73863F005FAC9F /* MeMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeMenuCell.xib; sourceTree = "<group>"; };
+		A36E32501CAE2CCE001E7D77 /* ImageSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectedView.swift; sourceTree = "<group>"; };
+		A36E32561CAEB426001E7D77 /* LabelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelController.swift; sourceTree = "<group>"; };
+		A36E32581CAEBCFB001E7D77 /* LabelControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelControllerCell.swift; sourceTree = "<group>"; };
+		A36E32591CAEBCFB001E7D77 /* LabelControllerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelControllerCell.xib; sourceTree = "<group>"; };
 		A37794E21C78AAAC0063EE09 /* MAndACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAndACell.swift; sourceTree = "<group>"; };
 		A37794E31C78AAAC0063EE09 /* MAndACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAndACell.xib; sourceTree = "<group>"; };
 		A37794E61C78AF740063EE09 /* MAndAController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAndAController.swift; sourceTree = "<group>"; };
@@ -200,13 +210,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A3252B5C1C6F509E00022AC0 /* 发布技能 */ = {
+		A3252B5C1C6F509E00022AC0 /* 发布 */ = {
 			isa = PBXGroup;
 			children = (
 				A3252B5D1C6F50C600022AC0 /* PublishViewController.swift */,
 				A3252B5E1C6F50C600022AC0 /* PublishViewController.xib */,
 			);
-			name = "发布技能";
+			name = "发布";
 			sourceTree = "<group>";
 		};
 		A34242621C567A4200FAD46D = {
@@ -234,6 +244,7 @@
 			children = (
 				A342426E1C567A4200FAD46D /* AppDelegate.swift */,
 				A34242801C567A9000FAD46D /* 界面 */,
+				A36E324D1CAE2B84001E7D77 /* 控件 */,
 				A34242841C567ADF00FAD46D /* Reused */,
 				A34242861C567AF400FAD46D /* Utils */,
 				A34242871C567AFA00FAD46D /* Storyboards */,
@@ -249,7 +260,7 @@
 				A342428B1C567B6A00FAD46D /* 登陆 */,
 				A342428F1C567B8F00FAD46D /* 首页 */,
 				A342428E1C567B8900FAD46D /* 圈子 */,
-				A3252B5C1C6F509E00022AC0 /* 发布技能 */,
+				A3252B5C1C6F509E00022AC0 /* 发布 */,
 				A342428D1C567B7F00FAD46D /* 消息 */,
 				A342428C1C567B7100FAD46D /* 我的 */,
 			);
@@ -331,8 +342,12 @@
 			isa = PBXGroup;
 			children = (
 				A35A12051C724BDA005FAC9F /* TALabel.swift */,
+				A36E32561CAEB426001E7D77 /* LabelController.swift */,
+				A36E32581CAEBCFB001E7D77 /* LabelControllerCell.swift */,
+				A36E32591CAEBCFB001E7D77 /* LabelControllerCell.xib */,
 				A3252B581C6F4B7100022AC0 /* MeViewController.swift */,
 				A3252B591C6F4B7100022AC0 /* MeViewController.xib */,
+				A3028E5C1CAFD1B70054A232 /* SkillCell.swift */,
 				A34EFE811C9953E700A74263 /* SettingsController.swift */,
 				A3C1FA631C82DB85007CA284 /* AddLabelController.swift */,
 				A3C1FA641C82DB85007CA284 /* AddLabelController.xib */,
@@ -409,6 +424,14 @@
 				A34242A21C567CA400FAD46D /* ActivityViewController.swift */,
 			);
 			name = "活动";
+			sourceTree = "<group>";
+		};
+		A36E324D1CAE2B84001E7D77 /* 控件 */ = {
+			isa = PBXGroup;
+			children = (
+				A36E32501CAE2CCE001E7D77 /* ImageSelectedView.swift */,
+			);
+			name = "控件";
 			sourceTree = "<group>";
 		};
 		A37794E01C78A97F0063EE09 /* 选项卡 */ = {
@@ -605,6 +628,7 @@
 				A34242761C567A4200FAD46D /* Assets.xcassets in Resources */,
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
+				A36E325B1CAEBCFB001E7D77 /* LabelControllerCell.xib in Resources */,
 				A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */,
 				A30C782C1C7F40E40002757B /* SubscribersController.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
@@ -696,6 +720,9 @@
 				A37794F51C795F320063EE09 /* FansController.swift in Sources */,
 				A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */,
 				A37795001C79EF7A0063EE09 /* PaintingPictureCell.swift in Sources */,
+				A3028E5D1CAFD1B70054A232 /* SkillCell.swift in Sources */,
+				A36E32511CAE2CCE001E7D77 /* ImageSelectedView.swift in Sources */,
+				A36E32571CAEB426001E7D77 /* LabelController.swift in Sources */,
 				A3AF0B3A1C7B406300C3FD5B /* LoginController.swift in Sources */,
 				A3252B5F1C6F50C600022AC0 /* PublishViewController.swift in Sources */,
 				A3D709091C5A77310055AD9D /* TelLeftView.swift in Sources */,
@@ -719,6 +746,7 @@
 				A377950C1C79FCC90063EE09 /* TAPureLabel.swift in Sources */,
 				A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */,
 				A3D709071C5795540055AD9D /* Protocols.swift in Sources */,
+				A36E325A1CAEBCFB001E7D77 /* LabelControllerCell.swift in Sources */,
 				A37794F11C78C30D0063EE09 /* SubscriberCell.swift in Sources */,
 				A3DE3EEA1C77795E00DD7313 /* CircleCell.swift in Sources */,
 				A342429B1C567C4000FAD46D /* HomeTitleView.swift in Sources */,

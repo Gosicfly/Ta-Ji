@@ -11,7 +11,7 @@ import RealmSwift
 
 class SubscribersController: UIViewController, TANavigationBarType {
     
-    var subscriberInfos: Results<(SubscriberInfo)>
+    var subscriberInfos: Results<SubscriberInfo>
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {

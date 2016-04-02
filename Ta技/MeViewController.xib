@@ -13,18 +13,22 @@
                 <outlet property="blurBackgroundImageView" destination="jHi-mM-mPn" id="Hb9-Ec-Eaz"/>
                 <outlet property="blurEffectView" destination="wL5-rh-Ko9" id="Qg0-hq-fco"/>
                 <outlet property="fansLabel" destination="H2F-y0-iDd" id="3m9-OK-YTJ"/>
+                <outlet property="interestLayout" destination="vKo-un-BCD" id="Nwm-Xr-qgI"/>
                 <outlet property="numberOfFans" destination="rlQ-wU-YBZ" id="3YQ-TZ-NUW"/>
                 <outlet property="numberOfSkills" destination="Sx3-OY-suk" id="vEL-qO-T4j"/>
                 <outlet property="numberOfStudents" destination="OMH-DL-cwQ" id="3N2-tZ-JT9"/>
                 <outlet property="numberOfSubscribers" destination="lO2-BU-paK" id="qA1-Iv-YQq"/>
+                <outlet property="ownedSkillContainer" destination="Hh1-v5-Y4S" id="ezH-e9-fri"/>
                 <outlet property="school" destination="TPw-VJ-6E4" id="tbE-a8-22u"/>
                 <outlet property="signature" destination="o3C-p3-nfm" id="o7p-dQ-98s"/>
                 <outlet property="skillLabel" destination="Gar-k6-rUD" id="AEZ-e9-5Iw"/>
+                <outlet property="skillLayout" destination="DvT-YY-g4L" id="Z3p-iu-DTW"/>
                 <outlet property="studentLabel" destination="Rkx-zl-XC7" id="hxh-6z-eKZ"/>
                 <outlet property="subscriberLabel" destination="Drk-Rz-aHe" id="Op0-Mn-bLE"/>
                 <outlet property="tableView" destination="y7X-cs-bjK" id="Ae7-wq-LSF"/>
                 <outlet property="userName" destination="ICC-qT-CM9" id="Fam-x6-ZHg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wantedSkillContainer" destination="Aot-ad-mep" id="c1n-7P-g3b"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -60,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉理工大学" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPw-VJ-6E4">
-                                <rect key="frame" x="127" y="117.5" width="66" height="13.5"/>
+                                <rect key="frame" x="127" y="117" width="66" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -103,7 +107,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拥有技能" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wro-Gt-MPB">
-                            <rect key="frame" x="17" y="43" width="48" height="14.5"/>
+                            <rect key="frame" x="17" y="51" width="48" height="14.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="48" id="Ycz-Bc-Smb"/>
                             </constraints>
@@ -191,7 +195,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhM-zO-Miz">
-                            <rect key="frame" x="277.5" y="23" width="30.5" height="38.5"/>
+                            <rect key="frame" x="277" y="23" width="30.5" height="38.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30.5" id="KQs-cU-CJ7"/>
                                 <constraint firstAttribute="height" constant="38.5" id="gyU-qe-z2E"/>
@@ -201,11 +205,33 @@
                                 <action selector="addLabel:" destination="-1" eventType="touchUpInside" id="jPw-hH-MJd"/>
                             </connections>
                         </button>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Aot-ad-mep">
+                            <rect key="frame" x="79" y="16.5" width="196" height="18.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vKo-un-BCD">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-v5-Y4S">
+                            <rect key="frame" x="79" y="49.5" width="196" height="19"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DvT-YY-g4L">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="XhM-zO-Miz" firstAttribute="leading" secondItem="Hh1-v5-Y4S" secondAttribute="trailing" constant="2" id="07J-AC-mnp"/>
                         <constraint firstItem="YUr-dk-CGu" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.65" id="0gG-27-cuZ"/>
                         <constraint firstItem="Y8n-nR-eGI" firstAttribute="leading" secondItem="zsI-a1-ZBp" secondAttribute="leading" constant="17" id="3cs-dc-O3H"/>
+                        <constraint firstItem="Aot-ad-mep" firstAttribute="height" secondItem="tw1-3k-lkx" secondAttribute="height" multiplier="1.3" id="3kF-Lg-1eg"/>
                         <constraint firstItem="H2F-y0-iDd" firstAttribute="centerX" secondItem="rlQ-wU-YBZ" secondAttribute="centerX" id="62k-fJ-tQz"/>
                         <constraint firstAttribute="trailing" secondItem="XhM-zO-Miz" secondAttribute="trailing" constant="12" id="62l-fW-CB7"/>
                         <constraint firstItem="Sx3-OY-suk" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.56" id="6Bj-CP-Mhh"/>
@@ -219,6 +245,7 @@
                         <constraint firstItem="Rkx-zl-XC7" firstAttribute="centerX" secondItem="OMH-DL-cwQ" secondAttribute="centerX" id="Jt2-xa-CAo"/>
                         <constraint firstItem="Y8n-nR-eGI" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" id="O8B-G8-OXJ"/>
                         <constraint firstItem="PvM-hR-GlJ" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="0.5" id="OFh-Wp-1je"/>
+                        <constraint firstItem="Aot-ad-mep" firstAttribute="centerY" secondItem="tw1-3k-lkx" secondAttribute="centerY" id="OV7-6w-s6F"/>
                         <constraint firstItem="XhM-zO-Miz" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="0.65" id="T17-ZN-Mpq"/>
                         <constraint firstItem="lO2-BU-paK" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="1.25" id="VHy-Sg-UXH"/>
                         <constraint firstItem="te7-46-21b" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" id="Xo4-ta-pVs"/>
@@ -229,12 +256,17 @@
                         <constraint firstItem="wro-Gt-MPB" firstAttribute="leading" secondItem="zsI-a1-ZBp" secondAttribute="leading" constant="17" id="fcZ-by-q8N"/>
                         <constraint firstItem="Drk-Rz-aHe" firstAttribute="centerX" secondItem="lO2-BU-paK" secondAttribute="centerX" id="ftx-EM-tv9"/>
                         <constraint firstItem="lO2-BU-paK" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.56" id="g9o-MF-gmV"/>
+                        <constraint firstItem="Aot-ad-mep" firstAttribute="leading" secondItem="tw1-3k-lkx" secondAttribute="trailing" constant="14" id="gL3-Ri-h8a"/>
+                        <constraint firstItem="Hh1-v5-Y4S" firstAttribute="leading" secondItem="wro-Gt-MPB" secondAttribute="trailing" constant="14" id="glD-gT-3F3"/>
                         <constraint firstItem="Gar-k6-rUD" firstAttribute="centerX" secondItem="Sx3-OY-suk" secondAttribute="centerX" id="hq2-7a-XSR"/>
                         <constraint firstItem="rlQ-wU-YBZ" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.56" id="luK-li-zEQ"/>
-                        <constraint firstItem="wro-Gt-MPB" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="0.78" id="ouS-Vc-cUy"/>
+                        <constraint firstItem="XhM-zO-Miz" firstAttribute="leading" secondItem="Aot-ad-mep" secondAttribute="trailing" constant="2" id="ocl-by-1nJ"/>
+                        <constraint firstItem="Hh1-v5-Y4S" firstAttribute="centerY" secondItem="wro-Gt-MPB" secondAttribute="centerY" id="ofh-8z-cTG"/>
+                        <constraint firstItem="wro-Gt-MPB" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="0.9" id="ouS-Vc-cUy"/>
                         <constraint firstItem="Gar-k6-rUD" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.8" id="pdx-8C-z8O"/>
                         <constraint firstItem="OMH-DL-cwQ" firstAttribute="centerX" secondItem="zsI-a1-ZBp" secondAttribute="centerX" multiplier="0.75" id="q4T-fc-jzq"/>
                         <constraint firstItem="tw1-3k-lkx" firstAttribute="leading" secondItem="zsI-a1-ZBp" secondAttribute="leading" constant="17" id="tcs-lt-lSt"/>
+                        <constraint firstItem="Hh1-v5-Y4S" firstAttribute="height" secondItem="wro-Gt-MPB" secondAttribute="height" multiplier="1.3" id="vGy-Xh-uK6"/>
                         <constraint firstItem="Rkx-zl-XC7" firstAttribute="centerY" secondItem="zsI-a1-ZBp" secondAttribute="centerY" multiplier="1.8" id="zcQ-JM-ecq"/>
                     </constraints>
                 </view>

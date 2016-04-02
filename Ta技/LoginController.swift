@@ -97,11 +97,22 @@ class LoginController: UIViewController {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(userID)&openid=\(openID)").responseJSON { (response) -> Void in
                         json = JSON(response.result.value!)
+                        print(json)
                         TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
                         if json["data"]["school"].type == .Null {
                             TAUtilsManager.userInfoManager.writeSchool("Null")
                         } else {
                             TAUtilsManager.userInfoManager.writeSchool(json["data"]["school"].string!)
+                        }
+                        if json["data"]["skill"].type == .Null {
+                            
+                        } else {
+                            TAUtilsManager.userInfoManager.writeSkill(json["data"]["skill"].string!)
+                        }
+                        if json["data"]["interest"].type == .Null {
+                            
+                        } else {
+                            TAUtilsManager.userInfoManager.writeInterest(json["data"]["interest"].string!)
                         }
                         TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
                         TAUtilsManager.userInfoManager.synchronize()

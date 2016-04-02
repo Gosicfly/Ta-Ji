@@ -44,6 +44,8 @@ final class UserInfoManager {
         self.defaultPlist.setValue("", forKey: "mobile")
         self.defaultPlist.setValue("这个人很懒，什么都没说!", forKey: "signature")
         self.defaultPlist.setURL(NSURL(string: "http://taji.whutech.com/uploads/no_avatar.png"), forKey: "avatarURL")
+        self.defaultPlist.setValue("暂无", forKey: "interest")
+        self.defaultPlist.setValue("暂无", forKey: "skill")
         self.defaultPlist.synchronize()
     }
     
@@ -90,6 +92,14 @@ final class UserInfoManager {
         self.defaultPlist.setValue(school, forKey: "school")
     }
     
+    func writeInterest(interest: String) {
+        self.defaultPlist.setValue(interest, forKey: "interest")
+    }
+    
+    func writeSkill(skill: String) {
+        self.defaultPlist.setValue(skill, forKey: "skill")
+    }
+    
     // MARK: - Read methods
     func readloginState() -> Bool {
         return self.defaultPlist.boolForKey("loginState")
@@ -125,6 +135,14 @@ final class UserInfoManager {
     
     func readSchool() -> String {
         return self.defaultPlist.stringForKey("school")!
+    }
+    
+    func readInterest() -> String {
+        return self.defaultPlist.stringForKey("interest")!
+    }
+    
+    func readSkill() -> String {
+        return  self.defaultPlist.stringForKey("skill")!
     }
     
     // - MARK: Delete Method

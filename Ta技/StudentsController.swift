@@ -11,7 +11,7 @@ import RealmSwift
 
 class StudentsController: UIViewController, TANavigationBarType {
     
-    var studentInfos: Results<(StudentInfo)>
+    var studentInfos: Results<StudentInfo>
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {

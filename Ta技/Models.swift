@@ -69,3 +69,16 @@ class TeacherInfo: Object {
         return "userID"
     }
 }
+
+class LabelInfo: Object {
+    
+    dynamic var id = ""
+    
+    dynamic var skill = ""
+    
+    dynamic var imageURL: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "skill"
+    }
+}

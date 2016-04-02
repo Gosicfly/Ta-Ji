@@ -14,6 +14,14 @@ import SwiftyJSON
 import RealmSwift
 
 class MeViewController: UIViewController, TANavigationBarType, UIGestureRecognizerDelegate {
+    
+    var skills = TAUtilsManager.userInfoManager.readSkill().characters.split(".").map { subSequence in
+        return String(subSequence)
+    }
+    
+    var interests = TAUtilsManager.userInfoManager.readInterest().characters.split(".").map { subSequence in
+        return String(subSequence)
+    }
 
     @IBOutlet weak var blurBackgroundImageView: UIImageView!
     
@@ -37,6 +45,26 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             tableView.registerNib(UINib(nibName: "MeMenuCell", bundle: nil), forCellReuseIdentifier: String(MeMenuCell))
         }
     }
+    
+    @IBOutlet weak var wantedSkillContainer: UICollectionView! {
+        didSet {
+            wantedSkillContainer.dataSource = self
+            wantedSkillContainer.delegate = self
+            wantedSkillContainer.registerClass(SkillCell.self, forCellWithReuseIdentifier: String(SkillCell))
+        }
+    }
+    
+    @IBOutlet weak var interestLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var ownedSkillContainer: UICollectionView! {
+        didSet {
+            ownedSkillContainer.dataSource = self
+            ownedSkillContainer.delegate = self
+            ownedSkillContainer.registerClass(SkillCell.self, forCellWithReuseIdentifier: String(SkillCell))
+        }
+    }
+    
+    @IBOutlet weak var skillLayout: UICollectionViewFlowLayout!
     
     @IBOutlet weak var numberOfSkills: UILabel! {
         didSet {
@@ -102,7 +130,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     }
     
     @IBAction func addLabel(sender: UIButton) {
-        let addLabelController = AddLabelController()
+        let addLabelController = LabelController(type: .Interest)
         self.navigationController?.pushViewController(addLabelController, animated: true)
     }
     
@@ -114,6 +142,12 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.interestLayout.itemSize = CGSize(width: wantedSkillContainer.bounds.width / 4.5, height: wantedSkillContainer.bounds.height)
+        self.skillLayout.itemSize = CGSize(width: wantedSkillContainer.bounds.width / 4.5, height: wantedSkillContainer.bounds.height)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.numberOfStudents.text = String(realm.objects(StudentInfo).count)
         self.numberOfSubscribers.text = String(realm.objects(SubscriberInfo).count)
         self.numberOfFans.text = String(realm.objects(FansInfo).count)
@@ -302,10 +336,44 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                 }
             }
         }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
+        //请求可添加的标签数据
+        Alamofire.request(.GET, "http://taji.whutech.com/Skill/skill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) in
+            if response.result.isSuccess {
+                let json = JSON(response.result.value!)
+                if json["status"] == "200" {
+                    try! realm.write({
+                        let infos = realm.objects(LabelInfo)
+                        realm.delete(infos)
+                    })
+                    guard json["data"].type == .Array else {
+                        return
+                    }
+                    for (_, subJson) in json["data"] {
+                        let id = subJson["id"].string!
+                        let skill = subJson["skill"].string!
+                        let imageURL = subJson["pic"].string!
+                        
+                        let info = LabelInfo()
+                        info.id = id
+                        info.skill = skill
+                        info.imageURL = imageURL
+                        try! realm.write({ () -> Void in
+                            realm.add(info, update: true)
+                        })
+                    }
+                }
+            }
+        }
+        (UIApplication.sharedApplication().delegate as! AppDelegate).updateUserInfo()
+        skills = TAUtilsManager.userInfoManager.readSkill().characters.split(".").map { subSequence in
+            return String(subSequence)
+        }
         
+        interests = TAUtilsManager.userInfoManager.readInterest().characters.split(".").map { subSequence in
+            return String(subSequence)
+        }
+        self.wantedSkillContainer.reloadData()
+        self.ownedSkillContainer.reloadData()
     }
     
     func setUserInfo() {
@@ -437,5 +505,49 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             break
         }
+    }
+}
+
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+extension MeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch collectionView {
+        case self.wantedSkillContainer:
+            print(self.interests.count)
+            return self.interests.count
+        case self.ownedSkillContainer:
+            return self.skills.count
+        default:
+            return 0
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        switch collectionView {
+        case self.wantedSkillContainer:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(SkillCell), forIndexPath: indexPath) as! SkillCell
+            cell.skillName = self.interests[indexPath.row]
+            cell.skillLabel.backgroundColor = UIColor(red: 144/255, green: 92/255, blue: 152/255, alpha: 1)
+            return cell
+        case self.ownedSkillContainer:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(SkillCell), forIndexPath: indexPath) as! SkillCell
+            cell.skillName = self.skills[indexPath.row]
+            cell.skillLabel.backgroundColor = UIColor(red: 20/255, green: 139/255, blue: 136/255, alpha: 1)
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if collectionView == self.wantedSkillContainer {
+            let labelController = LabelController(type: .Interest)
+            self.navigationController?.pushViewController(labelController, animated: true)
+        } else {
+            let labelController = LabelController(type: .Skill)
+            self.navigationController?.pushViewController(labelController, animated: true)
+        }
+        return
     }
 }

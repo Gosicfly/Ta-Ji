@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
         self.window?.backgroundColor = navigationBarColor
         self.setDefalutNavigationBarStyle()
         if TAUtilsManager.userInfoManager.readloginState() == true {
+            updateUserInfo()
             self.window?.rootViewController = TAVCManager.tabBarController
         } else {
             self.window?.rootViewController = LoginController()
@@ -67,6 +68,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
         }
     }
     
+    func updateUserInfo() {
+        Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+            let json = JSON(response.result.value!)
+            print(json)
+            TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
+            if json["data"]["school"].type == .Null {
+                TAUtilsManager.userInfoManager.writeSchool("Null")
+            } else {
+                TAUtilsManager.userInfoManager.writeSchool(json["data"]["school"].string!)
+            }
+            if json["data"]["skill"].type == .Null {
+                
+            } else {
+                TAUtilsManager.userInfoManager.writeSkill(json["data"]["skill"].string!)
+            }
+            if json["data"]["interest"].type == .Null {
+                
+            } else {
+                TAUtilsManager.userInfoManager.writeInterest(json["data"]["interest"].string!)
+            }
+            TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
+            TAUtilsManager.userInfoManager.synchronize()
+        }
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

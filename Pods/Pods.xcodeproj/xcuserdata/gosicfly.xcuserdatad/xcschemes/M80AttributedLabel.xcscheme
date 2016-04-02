@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7374654711F417FA7482256B'
+               BlueprintIdentifier = '6231DBD8849612D22CFC6B1D'
                BlueprintName = 'M80AttributedLabel'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'M80AttributedLabel.framework'>

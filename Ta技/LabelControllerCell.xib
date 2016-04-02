@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LabelControllerCell" customModule="Ta技" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="165" height="196"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="165" height="196"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YLz-qf-Ykp">
+                        <rect key="frame" x="8" y="8" width="149" height="149.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="YLz-qf-Ykp" secondAttribute="height" multiplier="1:1" id="JwH-hF-Ppe"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselect" highlightedImage="select" translatesAutoresizingMaskIntoConstraints="NO" id="MJt-y6-7nq">
+                        <rect key="frame" x="132" y="-1" width="33" height="33.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="MJt-y6-7nq" secondAttribute="height" multiplier="1:1" id="v6j-up-qLe"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xva-Rx-0TC">
+                        <rect key="frame" x="0.0" y="162.5" width="165" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.21176470588235294" green="0.12941176470588234" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YLz-qf-Ykp" secondAttribute="trailing" constant="8" id="3WU-xl-JHY"/>
+                <constraint firstAttribute="trailing" secondItem="Xva-Rx-0TC" secondAttribute="trailing" id="Q3D-Zf-YOM"/>
+                <constraint firstItem="Xva-Rx-0TC" firstAttribute="top" secondItem="YLz-qf-Ykp" secondAttribute="bottom" constant="5" id="VNa-GX-UWq"/>
+                <constraint firstItem="MJt-y6-7nq" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.2" id="WJ2-nW-5Ga"/>
+                <constraint firstItem="YLz-qf-Ykp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="ZNI-Am-kdV"/>
+                <constraint firstItem="YLz-qf-Ykp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="cIC-wR-KoT"/>
+                <constraint firstItem="Xva-Rx-0TC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hsz-3m-7pc"/>
+                <constraint firstItem="MJt-y6-7nq" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.16" id="vnH-2H-KhL"/>
+                <constraint firstItem="MJt-y6-7nq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="1.8" id="zE6-py-NxO"/>
+            </constraints>
+            <size key="customSize" width="165" height="196"/>
+            <connections>
+                <outlet property="checkMark" destination="MJt-y6-7nq" id="XCk-M2-RW2"/>
+                <outlet property="imageView" destination="YLz-qf-Ykp" id="Eyq-fk-3bp"/>
+                <outlet property="skill" destination="Xva-Rx-0TC" id="a7p-3n-MZj"/>
+            </connections>
+            <point key="canvasLocation" x="685.5" y="430"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="select" width="30" height="30"/>
+        <image name="unselect" width="30" height="30"/>
+    </resources>
+</document>

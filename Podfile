@@ -9,7 +9,7 @@ pod 'Kingfisher', '~> 2.0.3'    #网络图片缓存库
 pod 'Device'                    #判断设备型号
 pod 'RealmSwift'                #数据库
 pod 'CryptoSwift'               #加密库
-pod 'SVProgressHUD'             #HUD (OC)
+pod 'SVProgressHUD', '~> 1.1.3' #HUD (OC)
 pod 'ChameleonFramework/Swift'  #颜色框架
 pod 'MJRefresh'                 #下拉刷新 (OC)
 pod 'M80AttributedLabel'        #富文本Label

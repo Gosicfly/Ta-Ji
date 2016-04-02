@@ -143,4 +143,8 @@ extension String {
     func convertToURL() -> NSURL? {
         return NSURL(string: self)
     }
+    
+    func convertToUTF8() -> String? {
+        return self.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+    }
 }
