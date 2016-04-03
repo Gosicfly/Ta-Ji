@@ -24,23 +24,21 @@ class TATabBarController: UITabBarController {
     
     lazy var uploadView: TapButton = {
         let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "select")!, title: "上传照片/视频") { [unowned self] in
-            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.hideButtons()
-                }, completion: nil)
+            self.hideButtons()
         }
         button.alpha = 0
         button.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
+        button.transform = CGAffineTransformMakeScale(0.3, 0.3)
         return button
     }()
     
     lazy var shotView: TapButton = {
         let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "unselect")!, title: "拍摄照片/视频") { [unowned self] in
-            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.hideButtons()
-                }, completion: nil)
+            self.hideButtons()
         }
         button.alpha = 0
         button.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
+        button.transform = CGAffineTransformMakeScale(0.3, 0.3)
         return button
     }()
     
@@ -76,7 +74,7 @@ class TATabBarController: UITabBarController {
         super.viewDidAppear(animated)
         self.view.addSubview(self.maskView)
         self.view.addSubview(self.uploadView)
-        self.view.addSubview(self.shotView)
+        (UIApplication.sharedApplication().delegate as! AppDelegate).window!.addSubview(self.shotView)
         self.addCenterButton()
     }
     
@@ -110,11 +108,13 @@ class TATabBarController: UITabBarController {
     }
     
     func showButtons() {
-        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: { 
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.uploadView.center = CGPoint(x: self.view.frame.width / 3.5, y: self.view.frame.height / 1.3)
             self.uploadView.alpha = 1
+            self.uploadView.transform = CGAffineTransformIdentity
             self.shotView.center = CGPoint(x: self.view.frame.width - self.view.frame.width / 3.5, y: self.view.frame.height / 1.3)
             self.shotView.alpha = 1
+            self.shotView.transform = CGAffineTransformIdentity
             self.maskView.alpha = 1
             }, completion: nil)
     }
@@ -123,8 +123,10 @@ class TATabBarController: UITabBarController {
         UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.uploadView.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
             self.uploadView.alpha = 0
+            self.uploadView.transform = CGAffineTransformMakeScale(0.3, 0.3)
             self.shotView.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
             self.shotView.alpha = 0
+            self.shotView.transform = CGAffineTransformMakeScale(0.3, 0.3)
             self.maskView.alpha = 0
             }, completion: nil)
     }

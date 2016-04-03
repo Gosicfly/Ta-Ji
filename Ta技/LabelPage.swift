@@ -86,7 +86,7 @@ extension LabelPage: UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
         SVProgressHUD.show()
-        Alamofire.request(.GET, "http://taji.whutech.com/User/search?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&wd=\(self.searchBar.text!)").responseJSON { (response) in
+        Alamofire.request(.GET, "http://taji.whutech.com/User/search?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&wd=\(self.searchBar.text!.convertToUTF8()!)").responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
