@@ -59,6 +59,10 @@
 		A377950A1C79FBEB0063EE09 /* TAActionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37795091C79FBEB0063EE09 /* TAActionLabel.swift */; };
 		A377950C1C79FCC90063EE09 /* TAPureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950B1C79FCC90063EE09 /* TAPureLabel.swift */; };
 		A377950E1C7A01730063EE09 /* RichTextConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */; };
+		A37B37A41CB0BF93000ADD77 /* PeoplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B37A31CB0BF93000ADD77 /* PeoplePage.swift */; };
+		A37B37A61CB0BFA5000ADD77 /* CirclePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B37A51CB0BFA5000ADD77 /* CirclePage.swift */; };
+		A37B37A81CB0BFB3000ADD77 /* LabelPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B37A71CB0BFB3000ADD77 /* LabelPage.swift */; };
+		A37B37AA1CB0E384000ADD77 /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B37A91CB0E384000ADD77 /* TapButton.swift */; };
 		A3822ABF1C7D952000177822 /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822ABE1C7D952000177822 /* MessageListController.swift */; };
 		A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3822AC11C7D95DC00177822 /* MessageController.swift */; };
 		A399D3E31C9835660007AE82 /* SkillChangingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399D3E11C9835660007AE82 /* SkillChangingCell.swift */; };
@@ -84,8 +88,6 @@
 		A3DE3EEA1C77795E00DD7313 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EE81C77795E00DD7313 /* CircleCell.swift */; };
 		A3DE3EEB1C77795E00DD7313 /* CircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DE3EE91C77795E00DD7313 /* CircleCell.xib */; };
 		A3DE3EEE1C7844C000DD7313 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EED1C7844C000DD7313 /* SearchController.swift */; };
-		A3DE3EF31C7848C500DD7313 /* SearchPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE3EF11C7848C500DD7313 /* SearchPageItem.swift */; };
-		A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DE3EF21C7848C500DD7313 /* SearchPageItem.xib */; };
 		A3E03F1A1C65CD95006BEF6F /* GFCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */; };
 		A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */; };
 		A3E03F1E1C65FB7F006BEF6F /* HotPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */; };
@@ -147,6 +149,10 @@
 		A37795091C79FBEB0063EE09 /* TAActionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAActionLabel.swift; sourceTree = "<group>"; };
 		A377950B1C79FCC90063EE09 /* TAPureLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAPureLabel.swift; sourceTree = "<group>"; };
 		A377950D1C7A01730063EE09 /* RichTextConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextConvertHelper.swift; sourceTree = "<group>"; };
+		A37B37A31CB0BF93000ADD77 /* PeoplePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePage.swift; sourceTree = "<group>"; };
+		A37B37A51CB0BFA5000ADD77 /* CirclePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePage.swift; sourceTree = "<group>"; };
+		A37B37A71CB0BFB3000ADD77 /* LabelPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPage.swift; sourceTree = "<group>"; };
+		A37B37A91CB0E384000ADD77 /* TapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
 		A3822AB91C7CACDE00177822 /* Ta技-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Ta技-Bridging-Header.h"; path = "Ta技/Ta技-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3822ABE1C7D952000177822 /* MessageListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
 		A3822AC11C7D95DC00177822 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
@@ -173,8 +179,6 @@
 		A3DE3EE81C77795E00DD7313 /* CircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
 		A3DE3EE91C77795E00DD7313 /* CircleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleCell.xib; sourceTree = "<group>"; };
 		A3DE3EED1C7844C000DD7313 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		A3DE3EF11C7848C500DD7313 /* SearchPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPageItem.swift; sourceTree = "<group>"; };
-		A3DE3EF21C7848C500DD7313 /* SearchPageItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPageItem.xib; sourceTree = "<group>"; };
 		A3E03F191C65CD95006BEF6F /* GFCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollView.swift; sourceTree = "<group>"; };
 		A3E03F1B1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFCycleScrollViewCell.swift; sourceTree = "<group>"; };
 		A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotPageItem.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 		A34242801C567A9000FAD46D /* 界面 */ = {
 			isa = PBXGroup;
 			children = (
+				A37B37A91CB0E384000ADD77 /* TapButton.swift */,
 				A34242901C567BB400FAD46D /* TATabBarController.swift */,
 				A342428B1C567B6A00FAD46D /* 登陆 */,
 				A342428F1C567B8F00FAD46D /* 首页 */,
@@ -523,8 +528,9 @@
 			isa = PBXGroup;
 			children = (
 				A3DE3EED1C7844C000DD7313 /* SearchController.swift */,
-				A3DE3EF11C7848C500DD7313 /* SearchPageItem.swift */,
-				A3DE3EF21C7848C500DD7313 /* SearchPageItem.xib */,
+				A37B37A31CB0BF93000ADD77 /* PeoplePage.swift */,
+				A37B37A51CB0BFA5000ADD77 /* CirclePage.swift */,
+				A37B37A71CB0BFB3000ADD77 /* LabelPage.swift */,
 			);
 			name = "搜索";
 			sourceTree = "<group>";
@@ -629,7 +635,6 @@
 				A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */,
 				A3252B5B1C6F4B7100022AC0 /* MeViewController.xib in Resources */,
 				A36E325B1CAEBCFB001E7D77 /* LabelControllerCell.xib in Resources */,
-				A3DE3EF41C7848C500DD7313 /* SearchPageItem.xib in Resources */,
 				A30C782C1C7F40E40002757B /* SubscribersController.xib in Resources */,
 				A34242AF1C567EB800FAD46D /* Podfile in Resources */,
 				A37794F61C795F320063EE09 /* FansController.xib in Resources */,
@@ -709,6 +714,7 @@
 				A3822AC21C7D95DC00177822 /* MessageController.swift in Sources */,
 				A3D709041C575D270055AD9D /* ReusedValues.swift in Sources */,
 				A3E03F1E1C65FB7F006BEF6F /* HotPageItem.swift in Sources */,
+				A37B37A41CB0BF93000ADD77 /* PeoplePage.swift in Sources */,
 				A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */,
 				A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */,
 				A342429F1C567C7600FAD46D /* TAMenuItem.swift in Sources */,
@@ -718,8 +724,10 @@
 				A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */,
 				A3D708FE1C575B850055AD9D /* CodeInputController.swift in Sources */,
 				A37794F51C795F320063EE09 /* FansController.swift in Sources */,
+				A37B37A61CB0BFA5000ADD77 /* CirclePage.swift in Sources */,
 				A342426F1C567A4200FAD46D /* AppDelegate.swift in Sources */,
 				A37795001C79EF7A0063EE09 /* PaintingPictureCell.swift in Sources */,
+				A37B37A81CB0BFB3000ADD77 /* LabelPage.swift in Sources */,
 				A3028E5D1CAFD1B70054A232 /* SkillCell.swift in Sources */,
 				A36E32511CAE2CCE001E7D77 /* ImageSelectedView.swift in Sources */,
 				A36E32571CAEB426001E7D77 /* LabelController.swift in Sources */,
@@ -731,7 +739,6 @@
 				A3AF0B3F1C7C7F3200C3FD5B /* TAManager.swift in Sources */,
 				A3822ABF1C7D952000177822 /* MessageListController.swift in Sources */,
 				A3DE3EE21C77627600DD7313 /* RecommendPageItem.swift in Sources */,
-				A3DE3EF31C7848C500DD7313 /* SearchPageItem.swift in Sources */,
 				A3DE3EEE1C7844C000DD7313 /* SearchController.swift in Sources */,
 				A34242A11C567C8C00FAD46D /* ConcernViewController.swift in Sources */,
 				A3E03F1C1C65CDD2006BEF6F /* GFCycleScrollViewCell.swift in Sources */,
@@ -742,6 +749,7 @@
 				A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */,
 				A37794ED1C78C11D0063EE09 /* SubscribersController.swift in Sources */,
 				A37794E81C78AF740063EE09 /* MAndAController.swift in Sources */,
+				A37B37AA1CB0E384000ADD77 /* TapButton.swift in Sources */,
 				A3D708FC1C575ACF0055AD9D /* TelInputController.swift in Sources */,
 				A377950C1C79FCC90063EE09 /* TAPureLabel.swift in Sources */,
 				A3D7090E1C5BBCFF0055AD9D /* TATextField.swift in Sources */,

@@ -82,3 +82,14 @@ class LabelInfo: Object {
         return "skill"
     }
 }
+
+struct UserInfo {
+    
+    var userid = ""
+    
+    var username = ""
+    
+    var avatar = ""
+    
+    var signature = ""
+}

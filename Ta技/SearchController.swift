@@ -77,7 +77,9 @@ class SearchController: UIViewController, TANavigationBarType {
             self._pageView.contentSize = CGSize(width: SCREEN_WIDTH * 2, height: SCREEN_HEIGTH - self._menuView.bounds.height)
             self._pageView.bounces = false
             self._pageView.showsHorizontalScrollIndicator = false
-            self._pageView.registerNib(UINib(nibName: "SearchPageItem", bundle: nil), forCellWithReuseIdentifier: String(SearchPageItem))
+            self._pageView.registerClass(PeoplePage.self, forCellWithReuseIdentifier: String(PeoplePage))
+            self._pageView.registerClass(CirclePage.self, forCellWithReuseIdentifier: String(CirclePage))
+            self._pageView.registerClass(LabelPage.self, forCellWithReuseIdentifier: String(LabelPage))
             self.view.addSubview(self._pageView)
         }
     }
@@ -136,18 +138,15 @@ extension SearchController: UICollectionViewDataSource, UICollectionViewDelegate
             cell.name = self._itemStringArray[indexPath.row]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(SearchPageItem), forIndexPath: indexPath) as! SearchPageItem
+            let cell: UICollectionViewCell
             switch indexPath.row {
             case 0:
-                cell.type = .People
+                cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(PeoplePage), forIndexPath: indexPath) as! PeoplePage
             case 1:
-                cell.type = .Circle
-            case 2:
-                cell.type = .Label
+                cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(CirclePage), forIndexPath: indexPath) as! CirclePage
             default:
-                break
+                cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(LabelPage), forIndexPath: indexPath) as! LabelPage
             }
-            cell.menuView = self._menuView
             return cell
         }
     }

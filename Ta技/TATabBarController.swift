@@ -13,6 +13,37 @@ import SVProgressHUD
 
 class TATabBarController: UITabBarController {
     
+    lazy var maskView: UIView = {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let maskView = UIVisualEffectView(effect: blurEffect)
+        maskView.frame = self.view.frame
+        maskView.alpha = 0
+        maskView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideButtons)))
+        return maskView
+    }()
+    
+    lazy var uploadView: TapButton = {
+        let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "select")!, title: "上传照片/视频") { [unowned self] in
+            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.hideButtons()
+                }, completion: nil)
+        }
+        button.alpha = 0
+        button.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
+        return button
+    }()
+    
+    lazy var shotView: TapButton = {
+        let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "unselect")!, title: "拍摄照片/视频") { [unowned self] in
+            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.hideButtons()
+                }, completion: nil)
+        }
+        button.alpha = 0
+        button.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
+        return button
+    }()
+    
     lazy private var centerButton: UIButton = {
         let button = UIButton(frame: CGRect(x: SCREEN_WIDTH / 5 * 2, y: 0, width: SCREEN_WIDTH / 5, height: self.tabBar.bounds.height))
         button.setImage(UIImage(named: "icon_tab_center"), forState: .Normal)
@@ -20,7 +51,7 @@ class TATabBarController: UITabBarController {
         button.layer.shadowColor = UIColor.blackColor().CGColor
         button.layer.shadowOpacity = 0.4
         button.layer.shadowPath = UIBezierPath(roundedRect: CGRectInset(button.bounds, -5, 1), cornerRadius: 0).CGPath
-        button.addTarget(self, action: #selector(TATabBarController.presentPublishViewController), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(TATabBarController.showButtons), forControlEvents: .TouchUpInside)
         return button
     }()
     
@@ -43,6 +74,9 @@ class TATabBarController: UITabBarController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.view.addSubview(self.maskView)
+        self.view.addSubview(self.uploadView)
+        self.view.addSubview(self.shotView)
         self.addCenterButton()
     }
     
@@ -73,6 +107,26 @@ class TATabBarController: UITabBarController {
     
     func addCenterButton() {
         self.tabBar.addSubview(self.centerButton)
+    }
+    
+    func showButtons() {
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: { 
+            self.uploadView.center = CGPoint(x: self.view.frame.width / 3.5, y: self.view.frame.height / 1.3)
+            self.uploadView.alpha = 1
+            self.shotView.center = CGPoint(x: self.view.frame.width - self.view.frame.width / 3.5, y: self.view.frame.height / 1.3)
+            self.shotView.alpha = 1
+            self.maskView.alpha = 1
+            }, completion: nil)
+    }
+    
+    func hideButtons() {
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.uploadView.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
+            self.uploadView.alpha = 0
+            self.shotView.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
+            self.shotView.alpha = 0
+            self.maskView.alpha = 0
+            }, completion: nil)
     }
     
     func presentPublishViewController() {
