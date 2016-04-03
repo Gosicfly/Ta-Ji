@@ -117,6 +117,9 @@ class TATabBarController: UITabBarController {
             self.shotView.transform = CGAffineTransformIdentity
             self.maskView.alpha = 1
             }, completion: nil)
+        UIView.animateWithDuration(0.25) {
+            self.tabBar.transform = CGAffineTransformMakeTranslation(0, self.tabBar.frame.height + 5)
+        }
     }
     
     func hideButtons() {
@@ -129,6 +132,9 @@ class TATabBarController: UITabBarController {
             self.shotView.transform = CGAffineTransformMakeScale(0.3, 0.3)
             self.maskView.alpha = 0
             }, completion: nil)
+        UIView.animateWithDuration(0.25) {
+            self.tabBar.transform = CGAffineTransformIdentity
+        }
     }
     
     func presentPublishViewController() {
