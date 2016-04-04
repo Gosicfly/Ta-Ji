@@ -18,6 +18,8 @@ class RecommendPageItem: UICollectionViewCell, TATableViewType, TARefreshable {
     
     var type: RecommendPageItemType = .Hot
     
+    var currentMaxPage: Int = 1
+    
     var tableView: UITableView! {
         didSet {
             self.contentView.addSubview(tableView)

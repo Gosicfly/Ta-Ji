@@ -6,6 +6,9 @@
 //  Copyright © 2016年 Gosicfly. All rights reserved.
 //
 
+// userID 1002
+// openID b6850e695aee83b8e6f4eaef5d2bb172
+
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -31,20 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     }
     
     func setDefalutNavigationBarStyle() {
-//        let colorfulLayer = CAGradientLayer()
-//        colorfulLayer.colors = [UIColor.yellowColor().CGColor, UIColor.blueColor().CGColor]
-////        colorfulLayer.locations = [NSNumber(double: 0.0), NSNumber(double: 1.0)]
-//        colorfulLayer.startPoint = CGPoint(x: 0, y: 0)
-//        colorfulLayer.endPoint = CGPoint(x: 1, y: 1)
-//        colorfulLayer.frame = UINavigationBar.appearance().bounds
-////        UINavigationBar.appearance().layer.addSublayer(colorfulLayer)
-//        UINavigationBar.appearance().layer.insertSublayer(colorfulLayer, atIndex: 0)
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UINavigationBar.appearance().barTintColor = UIColor(patternImage: UIImage(named: "导航栏渐变色")!)
         UINavigationBar.appearance().tintColor = defaultTintColot
         UINavigationBar.appearance().translucent = false
-        
     }
     
     func setRongCloudDataSource() {
@@ -70,8 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     
     func updateUserInfo() {
         Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+            guard response.result.isSuccess else {
+                return
+            }
             let json = JSON(response.result.value!)
-            TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
+            if json["data"]["rcToken"].type != .Null {
+                TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
+            }
             if json["data"]["school"].type == .Null {
                 TAUtilsManager.userInfoManager.writeSchool("Null")
             } else {

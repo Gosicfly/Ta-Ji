@@ -36,9 +36,11 @@ protocol TACollectionViewType: class {
 // 提供默认下拉刷新动作
 protocol TARefreshable: class {
     
+    var currentMaxPage: Int { get set }
+    
     func setHeaderWithRefreshingBlock(block: (() -> Void)?)
     
-//    func setfooterWithRefreshingBlock(block: (() -> Void)?)
-//    
+    func setfooterWithRefreshingBlock(block: (() -> Void)?)
+//
 //    func beginRefreshing()
 }

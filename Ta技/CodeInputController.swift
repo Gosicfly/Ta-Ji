@@ -165,6 +165,10 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
         case true:
             let code = self.codeInputField.text!.uppercaseString
             Alamofire.request(.GET, "http://taji.whutech.com/Sms/verify_code?mobile=\(self.mobile)&code=\(code)").responseJSON(completionHandler: { response in
+                guard response.result.isSuccess else {
+                    SVProgressHUD.showErrorWithStatus("请检查网络")
+                    return
+                }
                 let json = JSON(response.result.value!)
                 print(json)
                 guard json["status"].string! == "200" else {

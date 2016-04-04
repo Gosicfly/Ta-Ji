@@ -297,8 +297,8 @@
 				A342429E1C567C7600FAD46D /* TAMenuItem.swift */,
 				A3D709031C575D270055AD9D /* ReusedValues.swift */,
 				A3D709061C5795540055AD9D /* Protocols.swift */,
-				A34242AA1C567D0500FAD46D /* ClassExtensions.swift */,
 				A34EFE831C9BE57600A74263 /* ProtocolExtensions.swift */,
+				A34242AA1C567D0500FAD46D /* ClassExtensions.swift */,
 				A30C782D1C7F49330002757B /* Models.swift */,
 			);
 			name = Reused;

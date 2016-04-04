@@ -12,9 +12,13 @@ import Alamofire
 import Kingfisher
 import SwiftyJSON
 import SnapKit
+import ReachabilitySwift
+import RealmSwift
 
 /// 无限轮播图
 class GFCycleScrollView: UICollectionReusableView {
+    
+    var bannerInfos: Results<BannerInfo>
     
     var collectionView: UICollectionView! {
         didSet {
@@ -54,19 +58,8 @@ class GFCycleScrollView: UICollectionReusableView {
         }
     }
     
-    var urlArray: [String]?
-    
-    var imageArray: [UIImage]? {
-        didSet {
-            self.imageViewArray = self.imageArray!.map({ (image) -> UIImageView in
-                return UIImageView(image: image)
-            })
-        }
-    }
-    
-    var imageViewArray = [UIImageView]()
-    
     override init(frame: CGRect) {
+        self.bannerInfos = realm.objects(BannerInfo)
         super.init(frame: frame)
         self.setSubViews()
     }
@@ -84,7 +77,7 @@ class GFCycleScrollView: UICollectionReusableView {
     
     override func layoutSubviews() {
         self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), atScrollPosition: .Left, animated: false)
-        self.pageControl.numberOfPages = self.imageViewArray.count
+        self.pageControl.numberOfPages = self.bannerInfos.count
     }
     
     func scrollImages() {
@@ -97,18 +90,22 @@ class GFCycleScrollView: UICollectionReusableView {
 extension GFCycleScrollView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageArray!.count + 2
+        return self.bannerInfos.count + 2
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GFCycleScrollViewCell), forIndexPath: indexPath) as! GFCycleScrollViewCell
+        guard self.bannerInfos.count > 0 else {
+            cell.imageView.image = UIImage(named: "loading")
+            return cell
+        }
         switch indexPath.row {
         case 0:
-            cell.imageView = self.imageViewArray.last
-        case self.imageArray!.count + 1:
-            cell.imageView = self.imageViewArray[0]
+            cell.imageView.kf_setImageWithURL(self.bannerInfos.last!.pic.convertToURL()!)
+        case self.bannerInfos.count + 1:
+            cell.imageView.kf_setImageWithURL(self.bannerInfos.first!.pic.convertToURL()!)
         default:
-            cell.imageView = self.imageViewArray[indexPath.row - 1]
+            cell.imageView.kf_setImageWithURL(self.bannerInfos[indexPath.row - 1].pic.convertToURL()!)
         }
         return cell
     }
@@ -119,12 +116,12 @@ extension GFCycleScrollView: UIScrollViewDelegate {
     //这个地方有一个Bug，就是当极快速的连续滑动时不能顺利的无线轮播；还有一个不算Bug，就是当图片数组只有一个元素的时候，会出现黑边，只要加个逻辑判断，稍后加
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let selectedItem = scrollView.contentOffset.x / SCREEN_WIDTH
-        if selectedItem == CGFloat(self.imageViewArray.count + 1) {
+        if selectedItem == CGFloat(self.bannerInfos.count + 1) {
             self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), atScrollPosition: .Left, animated: false)
             self.pageControl.currentPage = 0
         } else if selectedItem == 0 {
-            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: self.imageViewArray.count, inSection: 0), atScrollPosition: .Left, animated: false)
-            self.pageControl.currentPage = self.imageViewArray.count - 1
+            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: self.bannerInfos.count, inSection: 0), atScrollPosition: .Left, animated: false)
+            self.pageControl.currentPage = self.bannerInfos.count - 1
         } else {
             self.pageControl.currentPage = Int(selectedItem) - 1
         }

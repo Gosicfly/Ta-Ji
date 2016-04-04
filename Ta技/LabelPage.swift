@@ -88,6 +88,7 @@ extension LabelPage: UISearchBarDelegate {
         SVProgressHUD.show()
         Alamofire.request(.GET, "http://taji.whutech.com/User/search?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&wd=\(self.searchBar.text!.convertToUTF8()!)").responseJSON { (response) in
             guard response.result.isSuccess else {
+                SVProgressHUD.showErrorWithStatus("请检查网络")
                 return
             }
             let json = JSON(response.result.value!)

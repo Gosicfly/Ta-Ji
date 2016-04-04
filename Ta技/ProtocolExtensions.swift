@@ -26,6 +26,10 @@ extension TARefreshable where Self: TATableViewType {
         header.lastUpdatedTimeLabel?.hidden = true
         self.tableView.mj_header = header
     }
+    
+    func setfooterWithRefreshingBlock(block: (() -> Void)?) {
+        
+    }
 }
 
 extension TARefreshable where Self: TACollectionViewType {
@@ -34,8 +38,6 @@ extension TARefreshable where Self: TACollectionViewType {
         let header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             if let block = block {
                 block()
-                self.collectionView.reloadData()
-                self.collectionView.mj_header.endRefreshing()
             } else {
                 debugPrint("refresh")
                 self.collectionView.reloadData()
@@ -47,5 +49,21 @@ extension TARefreshable where Self: TACollectionViewType {
         header.stateLabel?.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
         header.lastUpdatedTimeLabel?.hidden = true
         self.collectionView.mj_header = header
+    }
+    
+    func setfooterWithRefreshingBlock(block: (() -> Void)?) {
+        let footer = MJRefreshAutoNormalFooter { 
+            if let block = block {
+                block()
+            } else {
+                debugPrint("footerRefresh")
+                self.collectionView.reloadData()
+                self.collectionView.mj_header.endRefreshing()
+            }
+        }
+        footer.automaticallyRefresh = false
+        footer.activityIndicatorViewStyle = .White
+        footer.stateLabel?.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
+        self.collectionView.mj_footer = footer
     }
 }

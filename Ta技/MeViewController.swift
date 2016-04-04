@@ -142,8 +142,8 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.interestLayout.itemSize = CGSize(width: wantedSkillContainer.bounds.width / 4.5, height: wantedSkillContainer.bounds.height)
-        self.skillLayout.itemSize = CGSize(width: wantedSkillContainer.bounds.width / 4.5, height: wantedSkillContainer.bounds.height)
+        self.interestLayout.itemSize = CGSize(width: wantedSkillContainer.bounds.width / 4.5, height: wantedSkillContainer.bounds.height/1.05)
+        self.skillLayout.itemSize = CGSize(width: wantedSkillContainer.bounds.width / 4.5, height: wantedSkillContainer.bounds.height/1.05)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -151,7 +151,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         self.numberOfStudents.text = String(realm.objects(StudentInfo).count)
         self.numberOfSubscribers.text = String(realm.objects(SubscriberInfo).count)
         self.numberOfFans.text = String(realm.objects(FansInfo).count)
-        Alamofire.request(.GET, "http://taji.whutech.com//Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://taji.whutech.com//Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }
@@ -291,7 +291,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
         })
         //选项卡相关数据请求
-        Alamofire.request(.GET, "http://taji.whutech.com/Master/masterList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://taji.whutech.com/Master/masterList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }

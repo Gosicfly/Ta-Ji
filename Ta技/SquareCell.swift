@@ -7,12 +7,13 @@
 //
 
 import UIKit
-var a = 1
+
 class SquareCell: UICollectionViewCell {
     
     var showImageView: UIImageView! {
         didSet {
             self.addSubview(self.showImageView)
+            self.showImageView.contentMode = .ScaleToFill
             self.showImageView.snp_makeConstraints { (make) -> Void in
                 make.left.equalTo(self)
                 make.right.equalTo(self)
@@ -84,7 +85,7 @@ class SquareCell: UICollectionViewCell {
                 make.top.equalTo(self.likeImageView)
                 make.bottom.equalTo(self.likeImageView)
             }
-            self.numberOfLikers.text = "1024"
+            self.numberOfLikers.text = "0"
             self.numberOfLikers.textColor = defaultTintColot
             self.numberOfLikers.font = UIFont.systemFontOfSize(12)
         }

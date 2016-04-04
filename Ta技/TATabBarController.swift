@@ -23,7 +23,7 @@ class TATabBarController: UITabBarController {
     }()
     
     lazy var uploadView: TapButton = {
-        let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "select")!, title: "上传照片/视频") { [unowned self] in
+        let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "left")!, title: "上传照片/视频") { [unowned self] in
             self.hideButtons()
         }
         button.alpha = 0
@@ -33,7 +33,7 @@ class TATabBarController: UITabBarController {
     }()
     
     lazy var shotView: TapButton = {
-        let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "unselect")!, title: "拍摄照片/视频") { [unowned self] in
+        let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "right")!, title: "拍摄照片/视频") { [unowned self] in
             self.hideButtons()
         }
         button.alpha = 0

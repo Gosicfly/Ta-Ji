@@ -83,6 +83,77 @@ class LabelInfo: Object {
     }
 }
 
+class SquareEventInfo: Object {
+//    
+//    "id:"1",
+//    "userid":"1000",
+//    "author":"1000",
+//    "media":"http://taji.whutech.com/uploads/2016-03-18/56ec15efbc0a4.png",
+//    "content":"测试动态111",
+//    "tag":"足球",
+//    "at":"1001.1002.1003",
+//    "loc":"湖北省武汉市",
+//    "mastercircle":"0",
+//    "views":"5",
+//    "forward":"0",
+//    "like":"9",
+//    "type":"image",
+//    "time":"2016-04-03 22:09:58",
+//    "username":"涂飞",
+//    "avatar":"http://taji.whutech.com/uploads/tufei.jpg"
+    
+    dynamic var id = ""
+    
+    dynamic var userid = ""
+    
+    dynamic var author = ""
+    
+    dynamic var media = ""
+    
+    dynamic var content = ""
+    
+    dynamic var tag = ""
+    
+    dynamic var at = ""
+    
+    dynamic var loc = ""
+    
+    dynamic var mastercircle = ""
+    
+    dynamic var views = ""
+    
+    dynamic var forward = ""
+    
+    dynamic var like = ""
+    
+    dynamic var type = ""
+    
+    dynamic var time = ""
+    
+    dynamic var username = ""
+    
+    dynamic var avatar = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+class BannerInfo: Object {
+    
+    dynamic var id = ""
+    
+    dynamic var pic = "1"
+    
+    dynamic var url = ""
+    
+    dynamic var time = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
+
 struct UserInfo {
     
     var userid = ""
