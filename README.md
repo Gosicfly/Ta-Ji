@@ -9,3 +9,5 @@ Snapshot：
 ![picture](https://github.com/Gosicfly/Ta-Ji/blob/master/snapshot/3.gif)
 
 ![picture](https://github.com/Gosicfly/Ta-Ji/blob/master/snapshot/4.gif)
+
+![picture](https://github.com/Gosicfly/Ta-Ji/blob/master/snapshot/5.gif)
