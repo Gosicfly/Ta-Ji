@@ -124,7 +124,7 @@ class SquareEventInfo: Object {
     
     dynamic var forward = ""
     
-    dynamic var like = ""
+    dynamic var likes = ""
     
     dynamic var type = ""
     
@@ -147,7 +147,7 @@ class BannerInfo: Object {
     
     dynamic var url = ""
     
-    dynamic var time = ""
+//    dynamic var time = ""
     
     override static func primaryKey() -> String? {
         return "id"

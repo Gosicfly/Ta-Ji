@@ -117,7 +117,7 @@ class LoginController: UIViewController {
                         TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
                         TAUtilsManager.userInfoManager.synchronize()
                         self.performSelector(#selector(LoginController.dismissHUD), withObject: nil, afterDelay: 0.5)
-                        UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.tabBarController
+                        UIApplication.sharedApplication().windows[0].rootViewController = TATabBarController()
                     }
                 })
             })

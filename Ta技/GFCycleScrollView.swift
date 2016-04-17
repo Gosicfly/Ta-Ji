@@ -81,10 +81,14 @@ class GFCycleScrollView: UICollectionReusableView {
     }
     
     func scrollImages() {
+        guard self.bannerInfos.count > 0 else {
+            return
+        }
         let contentOffsetX = self.collectionView.contentOffset.x
         let currentRow = contentOffsetX / SCREEN_WIDTH
         self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: Int(currentRow) + 1, inSection: 0), atScrollPosition: .Left, animated: true)
     }
+    
 }
 
 extension GFCycleScrollView: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -96,7 +100,6 @@ extension GFCycleScrollView: UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GFCycleScrollViewCell), forIndexPath: indexPath) as! GFCycleScrollViewCell
         guard self.bannerInfos.count > 0 else {
-            cell.imageView.image = UIImage(named: "loading")
             return cell
         }
         switch indexPath.row {

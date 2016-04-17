@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
         self.setDefalutNavigationBarStyle()
         if TAUtilsManager.userInfoManager.readloginState() == true {
             updateUserInfo()
-            self.window?.rootViewController = TAVCManager.tabBarController
+            self.window?.rootViewController = TATabBarController()
         } else {
             self.window?.rootViewController = LoginController()
         }

@@ -62,6 +62,15 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
         self.collectionView.center = self.contentView.center
     }
     
+    override func didMoveToWindow() {
+        if realm.objects(BannerInfo).count == 0 {
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(300 * NSEC_PER_MSEC))
+            dispatch_after(delayTime, dispatch_get_main_queue(), {
+                self.collectionView.mj_header.beginRefreshing()
+            })
+        }
+    }
+    
     func fetchData(page: Int, count: Int, header: Bool, clear: Bool) {
         if header {
             self.currentMaxPage = 1
@@ -74,29 +83,30 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
                 guard json["status"].string! == "200" && json["data"].array!.count >= 2 else {
                     return
                 }
-                try! realm.write({ 
+                try! realm.write({
                     realm.delete(realm.objects(BannerInfo))
                 })
-                for (_, subJson) in json["data"] {
-                    let id = subJson["id"].string!
+                for (id, subJson) in json["data"] {
+//                    let id = subJson["id"].string!
                     let pic = subJson["pic"].string!
                     let url = subJson["url"].string!
-                    let time = subJson["time"].string!
+//                    let time = subJson["time"].string!
                     
                     let info = BannerInfo()
                     info.id = id
                     info.pic = pic
                     info.url = url
-                    info.time = time
-                    try! realm.write({ 
+//                    info.time = time
+                    try! realm.write({
                         realm.add(info, update: true)
                     })
                 }
+                self.collectionViewHeader?.collectionView.reloadData()
             })
         } else {
             self.currentMaxPage += 1
         }
-        Alamofire.request(.GET, "http://taji.whutech.com/DongTai?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&page=\(currentMaxPage)&count=\(count)").responseJSON { (response) in
+        Alamofire.request(.GET, "http://taji.whutech.com/DongTai?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&page=\(self.currentMaxPage)&count=\(count)").responseJSON { (response) in
             guard response.result.isSuccess else {
                 SVProgressHUD.showErrorWithStatus("请检查网络")
                 return
@@ -113,7 +123,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
                 self.collectionView.mj_footer.resetNoMoreData()
             }
             for (_, subJson) in json["data"] {
-                let id = subJson["id"].string!
+                let id = subJson["tid"].string!
                 let userid = subJson["userid"].string!
                 let author = subJson["author"].string!
                 let media = subJson["media"].string!
@@ -124,7 +134,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
                 let mastercircle = subJson["mastercircle"].string!
                 let views = subJson["views"].string!
                 let forward = subJson["forward"].string!
-                let like = subJson["like"].string!
+                let likes = subJson["likes"].string!
                 let type = subJson["type"].string!
                 let time = subJson["time"].string!
                 let username = subJson["username"].string!
@@ -142,7 +152,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
                 info.mastercircle = mastercircle
                 info.views = views
                 info.forward = forward
-                info.like = like
+                info.likes = likes
                 info.type = type
                 info.time = time
                 info.username = username
@@ -187,7 +197,7 @@ extension HotPageItem: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.showImageView.kf_setImageWithURL(info.media.convertToURL()!)
         cell.avatarImageView.kf_setImageWithURL(info.avatar.convertToURL()!)
         cell.titleLabel.text = info.content
-        cell.numberOfLikers.text = info.like
+        cell.numberOfLikers.text = info.likes
         return cell
     }
     

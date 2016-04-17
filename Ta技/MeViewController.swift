@@ -467,6 +467,7 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.section = 1
             cell.row = 1
             cell.title.text = "收藏"
+            cell.picture.image = UIImage(named: "收藏")
         default:
             break
         }

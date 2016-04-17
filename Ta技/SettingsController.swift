@@ -52,6 +52,9 @@ class SettingsController: UIViewController, TANavigationBarType {
             SVProgressHUD.dismiss()
             UIApplication.sharedApplication().windows[0].rootViewController = TAVCManager.loginController
         }
+        try! realm.write({ 
+            realm.deleteAll()
+        })
     }
     
 }
