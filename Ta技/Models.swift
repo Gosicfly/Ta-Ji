@@ -102,17 +102,17 @@ class SquareEventInfo: Object {
 //    "username":"涂飞",
 //    "avatar":"http://taji.whutech.com/uploads/tufei.jpg"
     
-    dynamic var id = ""
+    dynamic var tid = ""
     
     dynamic var userid = ""
     
     dynamic var author = ""
     
+    dynamic var authorname = ""
+    
     dynamic var media = ""
     
     dynamic var content = ""
-    
-    dynamic var tag = ""
     
     dynamic var at = ""
     
@@ -121,21 +121,31 @@ class SquareEventInfo: Object {
     dynamic var mastercircle = ""
     
     dynamic var views = ""
-    
+
     dynamic var forward = ""
     
     dynamic var likes = ""
-    
+
     dynamic var type = ""
-    
-    dynamic var time = ""
-    
+
+    dynamic var time_pub = ""
+
     dynamic var username = ""
     
     dynamic var avatar = ""
     
+    dynamic var child = ""
+    
+    dynamic var video = "" // ""则为无视频
+    
+    dynamic var parent = ""
+    
+    dynamic var is_follow = false
+    
+    dynamic var is_liked = false
+    
     override static func primaryKey() -> String? {
-        return "id"
+        return "tid"
     }
 }
 

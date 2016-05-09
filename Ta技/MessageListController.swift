@@ -122,7 +122,7 @@ class MessageListController: RCConversationListViewController, TANavigationBarTy
             let chat = MessageController()
             chat.conversationType = .ConversationType_PRIVATE
             chat.targetId = id
-            Alamofire.request(.GET, "http://taji.whutech.com/user/getAvatar?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&uid=\(id)").responseJSON { (response) -> Void in
+            Alamofire.request(.GET, "http://api.tajiapp.cn/user/getAvatar?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&uid=\(id)").responseJSON { (response) -> Void in
                 if response.result.isSuccess {
                     let json = JSON(response.result.value!)
                     if json["data"]["username"].type == .Null {

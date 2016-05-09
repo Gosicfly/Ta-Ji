@@ -133,8 +133,8 @@ class LabelController: UIViewController, TANavigationBarType {
                 $0 + "." + $1
             })
             string = string.substringFromIndex(string.startIndex.advancedBy(1))
-            print("http://taji.whutech.com/Skill/intadskill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&interest=\(string.convertToUTF8()!)&skill=\(TAUtilsManager.userInfoManager.readSkill().convertToUTF8()!)")
-            Alamofire.request(.GET, "http://taji.whutech.com/Skill/intadskill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&interest=\(string.convertToUTF8()!)&skill=\(TAUtilsManager.userInfoManager.readSkill().convertToUTF8()!)").responseJSON(completionHandler: { (response) in
+            print("http://api.tajiapp.cn/Skill/intadskill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&interest=\(string.convertToUTF8()!)&skill=\(TAUtilsManager.userInfoManager.readSkill().convertToUTF8()!)")
+            Alamofire.request(.GET, "http://api.tajiapp.cn/Skill/intadskill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&interest=\(string.convertToUTF8()!)&skill=\(TAUtilsManager.userInfoManager.readSkill().convertToUTF8()!)").responseJSON(completionHandler: { (response) in
                 guard response.result.isSuccess else {
                     return
                 }
@@ -155,7 +155,7 @@ class LabelController: UIViewController, TANavigationBarType {
             let string = arr.reduce("", combine: {
                 $0 + "." + $1
             })
-            Alamofire.request(.GET, "http://taji.whutech.com/Skill/intadskill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&interest=\(TAUtilsManager.userInfoManager.readInterest().convertToUTF8()!)&skill=\(string.convertToUTF8()!)").responseJSON(completionHandler: { (response) in
+            Alamofire.request(.GET, "http://api.tajiapp.cn/Skill/intadskill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&interest=\(TAUtilsManager.userInfoManager.readInterest().convertToUTF8()!)&skill=\(string.convertToUTF8()!)").responseJSON(completionHandler: { (response) in
                 guard response.result.isSuccess else {
                     return
                 }

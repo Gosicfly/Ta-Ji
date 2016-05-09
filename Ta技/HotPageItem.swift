@@ -74,7 +74,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
     func fetchData(page: Int, count: Int, header: Bool, clear: Bool) {
         if header {
             self.currentMaxPage = 1
-            Alamofire.request(.GET, "http://taji.whutech.com/DongTai/Banner?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) in
+            Alamofire.request(.GET, "http://api.tajiapp.cn/DongTai/Banner?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) in
                 guard response.result.isSuccess else {
                     SVProgressHUD.showErrorWithStatus("请检查网络")
                     return
@@ -106,7 +106,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
         } else {
             self.currentMaxPage += 1
         }
-        Alamofire.request(.GET, "http://taji.whutech.com/DongTai?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&page=\(self.currentMaxPage)&count=\(count)").responseJSON { (response) in
+        Alamofire.request(.GET, "http://api.tajiapp.cn/DongTai?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&page=\(self.currentMaxPage)&count=\(count)").responseJSON { (response) in
             guard response.result.isSuccess else {
                 SVProgressHUD.showErrorWithStatus("请检查网络")
                 return
@@ -123,12 +123,11 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
                 self.collectionView.mj_footer.resetNoMoreData()
             }
             for (_, subJson) in json["data"] {
-                let id = subJson["tid"].string!
+                let tid = subJson["tid"].string!
                 let userid = subJson["userid"].string!
-                let author = subJson["author"].string!
+                let authorname = subJson["authorname"].string!
                 let media = subJson["media"].string!
                 let content = subJson["content"].string!
-                let tag = subJson["tag"].string!
                 let at = subJson["at"].string!
                 let loc = subJson["loc"].string!
                 let mastercircle = subJson["mastercircle"].string!
@@ -136,17 +135,16 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
                 let forward = subJson["forward"].string!
                 let likes = subJson["likes"].string!
                 let type = subJson["type"].string!
-                let time = subJson["time"].string!
+                let time_pub = subJson["time_pub"].string!
                 let username = subJson["username"].string!
                 let avatar = subJson["avatar"].string!
                 
                 let info = SquareEventInfo()
-                info.id = id
+                info.tid = tid
                 info.userid = userid
-                info.author = author
+                info.authorname = authorname
                 info.media = media
                 info.content = content
-                info.tag = tag
                 info.at = at
                 info.loc = loc
                 info.mastercircle = mastercircle
@@ -154,7 +152,7 @@ class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
                 info.forward = forward
                 info.likes = likes
                 info.type = type
-                info.time = time
+                info.time_pub = time_pub
                 info.username = username
                 info.avatar = avatar
                 

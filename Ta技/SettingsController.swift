@@ -16,7 +16,7 @@ class SettingsController: UIViewController, TANavigationBarType {
             self.view.addSubview(tableView)
             tableView.delegate = self
             tableView.dataSource = self
-            
+            tableView.tableFooterView = UIView()
         }
     }
     

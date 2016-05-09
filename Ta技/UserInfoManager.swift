@@ -43,7 +43,7 @@ final class UserInfoManager {
         self.defaultPlist.setValue("男", forKey: "sex")
         self.defaultPlist.setValue("", forKey: "mobile")
         self.defaultPlist.setValue("这个人很懒，什么都没说!", forKey: "signature")
-        self.defaultPlist.setURL(NSURL(string: "http://taji.whutech.com/uploads/no_avatar.png"), forKey: "avatarURL")
+        self.defaultPlist.setURL(NSURL(string: "http://api.tajiapp.cn/uploads/no_avatar.png"), forKey: "avatarURL")
         self.defaultPlist.setValue("暂无", forKey: "interest")
         self.defaultPlist.setValue("暂无", forKey: "skill")
         self.defaultPlist.synchronize()

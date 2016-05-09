@@ -25,6 +25,7 @@ class TATabBarController: UITabBarController {
     lazy var uploadView: TapButton = {
         let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "left")!, title: "上传照片/视频") { [unowned self] in
             self.hideButtons()
+            self.presentPublishViewController()
         }
         button.alpha = 0
         button.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
@@ -108,7 +109,7 @@ class TATabBarController: UITabBarController {
     }
     
     func showButtons() {
-        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.uploadView.center = CGPoint(x: self.view.frame.width / 3.5, y: self.view.frame.height / 1.3)
             self.uploadView.alpha = 1
             self.uploadView.transform = CGAffineTransformIdentity
@@ -123,7 +124,7 @@ class TATabBarController: UITabBarController {
     }
     
     func hideButtons() {
-        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.uploadView.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
             self.uploadView.alpha = 0
             self.uploadView.transform = CGAffineTransformMakeScale(0.3, 0.3)

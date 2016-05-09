@@ -164,7 +164,7 @@ class CodeInputController: UIViewController, TANavigationBarType, UIGestureRecog
         switch self.reachability.isReachable() {
         case true:
             let code = self.codeInputField.text!.uppercaseString
-            Alamofire.request(.GET, "http://taji.whutech.com/Sms/verify_code?mobile=\(self.mobile)&code=\(code)").responseJSON(completionHandler: { response in
+            Alamofire.request(.GET, "http://api.tajiapp.cn/Sms/verify_code?mobile=\(self.mobile)&code=\(code)").responseJSON(completionHandler: { response in
                 guard response.result.isSuccess else {
                     SVProgressHUD.showErrorWithStatus("请检查网络")
                     return

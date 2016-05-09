@@ -136,7 +136,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
         switch self.reachability.isReachable() {
         case true:
             self.view.endEditing(true)
-            Alamofire.request(.GET, "http://taji.whutech.com/User/register?mobile=\(mobile)&code=\(code)&password=\(password)").responseJSON(completionHandler: { response in
+            Alamofire.request(.GET, "http://api.tajiapp.cn/User/register?mobile=\(mobile)&code=\(code)&password=\(password)").responseJSON(completionHandler: { response in
                 let json = JSON(response.result.value!)
                 debugPrint(json)
                 guard json["status"].string! == "200" else {
@@ -145,7 +145,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
                     return
                 }
                 dispatch_async(dispatch_get_main_queue(), {
-                    Alamofire.request(.GET, "http://taji.whutech.com/user/login?mobile=\(self.mobile)&password=\(password)").responseJSON(completionHandler: { (response) -> Void in
+                    Alamofire.request(.GET, "http://api.tajiapp.cn/user/login?mobile=\(self.mobile)&password=\(password)").responseJSON(completionHandler: { (response) -> Void in
                         guard response.result.value != nil else {
                             SVProgressHUD.showErrorWithStatus("请检查网络状况")
                             return
@@ -174,7 +174,7 @@ class PasswordInputController: UIViewController, TANavigationBarType, UIGestureR
                         userInfoManager.writeAvatarURL(NSURL(string: json["data"]["avatar"].string!)!)
                         userInfoManager.synchronize()
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(userID)&openid=\(openID)").responseJSON { (response) -> Void in
+                            Alamofire.request(.GET, "http://api.tajiapp.cn/user/userinfo?userid=\(userID)&openid=\(openID)").responseJSON { (response) -> Void in
                                 json = JSON(response.result.value!)
                                 TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)
                                 if json["data"]["school"].type == .Null {

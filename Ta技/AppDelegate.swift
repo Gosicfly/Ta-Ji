@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     
     func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!) {
         let userInfo = RCUserInfo()
-        Alamofire.request(.GET, "http://taji.whutech.com/user/getAvatar?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&uid=\(userId)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://api.tajiapp.cn/user/getAvatar?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)&uid=\(userId)").responseJSON { (response) -> Void in
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)
                 userInfo.userId = json["data"]["uid"].string!
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     }
     
     func updateUserInfo() {
-        Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://api.tajiapp.cn/user/userinfo?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }

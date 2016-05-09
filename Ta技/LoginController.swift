@@ -61,7 +61,7 @@ class LoginController: UIViewController {
             }
             let mobile = userNameInput.text!
             let password = passwordInput.text!.md5()
-            Alamofire.request(.GET, "http://taji.whutech.com/user/login?mobile=\(mobile)&password=\(password)").responseJSON(completionHandler: { (response) -> Void in
+            Alamofire.request(.GET, "http://api.tajiapp.cn/user/login?mobile=\(mobile)&password=\(password)").responseJSON(completionHandler: { (response) -> Void in
                 guard response.result.value != nil else {
                     SVProgressHUD.showErrorWithStatus("请检查网络状况")
                     return
@@ -95,7 +95,7 @@ class LoginController: UIViewController {
                 userInfoManager.writeAvatarURL(NSURL(string: json["data"]["avatar"].string!)!)
                 userInfoManager.synchronize()
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    Alamofire.request(.GET, "http://taji.whutech.com/user/userinfo?userid=\(userID)&openid=\(openID)").responseJSON { (response) -> Void in
+                    Alamofire.request(.GET, "http://api.tajiapp.cn/user/userinfo?userid=\(userID)&openid=\(openID)").responseJSON { (response) -> Void in
                         json = JSON(response.result.value!)
                         print(json)
                         TAUtilsManager.userInfoManager.writeRcToken(json["data"]["rcToken"].string!)

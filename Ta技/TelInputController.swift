@@ -101,7 +101,7 @@ class TelInputController: UIViewController, TANavigationBarType {
         switch self.reachability.isReachable() {
         case true:      //有网络连接时
             let moblie = self.telInputField.text!
-            Alamofire.request(.GET, "http://taji.whutech.com/Sms/get_code?mobile=\(moblie)").responseJSON { response in
+            Alamofire.request(.GET, "http://api.tajiapp.cn/Sms/get_code?mobile=\(moblie)").responseJSON { response in
                 if response.result.isSuccess {
                     let json = JSON(response.result.value!)
                     print(json)

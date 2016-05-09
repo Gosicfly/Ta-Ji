@@ -151,7 +151,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
         self.numberOfStudents.text = String(realm.objects(StudentInfo).count)
         self.numberOfSubscribers.text = String(realm.objects(SubscriberInfo).count)
         self.numberOfFans.text = String(realm.objects(FansInfo).count)
-        Alamofire.request(.GET, "http://taji.whutech.com//Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://api.tajiapp.cn//Master/tudiList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }
@@ -197,7 +197,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                 }
             }
         }
-        Alamofire.request(.GET, "http://taji.whutech.com/Follow/followList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://api.tajiapp.cn/Follow/followList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }
@@ -243,7 +243,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                 }
             }
         }
-        Alamofire.request(.GET, "http://taji.whutech.com/Follow/fansList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) -> Void in
+        Alamofire.request(.GET, "http://api.tajiapp.cn/Follow/fansList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON(completionHandler: { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }
@@ -291,7 +291,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
         })
         //选项卡相关数据请求
-        Alamofire.request(.GET, "http://taji.whutech.com/Master/masterList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "http://api.tajiapp.cn/Master/masterList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
             guard response.result.isSuccess else {
                 return
             }
@@ -337,7 +337,7 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
             }
         }
         //请求可添加的标签数据
-        Alamofire.request(.GET, "http://taji.whutech.com/Skill/skill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) in
+        Alamofire.request(.GET, "http://api.tajiapp.cn/Skill/skill?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) in
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)
                 if json["status"] == "200" {
@@ -351,7 +351,8 @@ class MeViewController: UIViewController, TANavigationBarType, UIGestureRecogniz
                     for (_, subJson) in json["data"] {
                         let id = subJson["id"].string!
                         let skill = subJson["skill"].string!
-                        let imageURL = subJson["pic"].string!
+                        //防crash
+                        let imageURL = subJson["pic"].string ?? "http://api.tajiapp.cn/uploads/skill/1.png"
                         
                         let info = LabelInfo()
                         info.id = id
