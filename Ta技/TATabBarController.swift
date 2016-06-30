@@ -13,6 +13,8 @@ import SVProgressHUD
 
 class TATabBarController: UITabBarController {
     
+    weak var publishViewController: PublishViewController?
+    
     lazy var maskView: UIView = {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         let maskView = UIVisualEffectView(effect: blurEffect)
@@ -25,7 +27,7 @@ class TATabBarController: UITabBarController {
     lazy var uploadView: TapButton = {
         let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "left")!, title: "上传照片/视频") { [unowned self] in
             self.hideButtons()
-            self.presentPublishViewController()
+            self.presentPublishViewController(nil)
         }
         button.alpha = 0
         button.center = CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGTH)
@@ -35,6 +37,12 @@ class TATabBarController: UITabBarController {
     
     lazy var shotView: TapButton = {
         let button = TapButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3), image: UIImage(named: "right")!, title: "拍摄照片/视频") { [unowned self] in
+            let picker = UIImagePickerController()
+            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                picker.delegate = self
+                picker.sourceType = .Camera
+                self.presentViewController(picker, animated: true, completion: nil)
+            }
             self.hideButtons()
         }
         button.alpha = 0
@@ -138,8 +146,24 @@ class TATabBarController: UITabBarController {
         }
     }
     
-    func presentPublishViewController() {
+    func presentPublishViewController(completion: (() -> Void)?) {
         let publishViewController = PublishViewController()
-        self.presentViewController(UINavigationController(rootViewController: publishViewController), animated: true, completion: nil)
+        self.presentViewController(UINavigationController(rootViewController: publishViewController), animated: true, completion: {
+            self.publishViewController = publishViewController
+            if let completion = completion {
+                completion()
+            }
+        })
+    }
+}
+
+extension TATabBarController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true) { 
+            self.presentPublishViewController() {
+                self.publishViewController?.coverPicture.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            }
+        }
     }
 }

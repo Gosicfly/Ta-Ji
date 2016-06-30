@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PublishViewController: UIViewController, TANavigationBarType {
 
@@ -35,7 +37,31 @@ class PublishViewController: UIViewController, TANavigationBarType {
     
     @IBOutlet weak var weiboImageView: UIImageView!
     
-    @IBOutlet weak var shituquanImageView: UIImageView!
+    @IBOutlet weak var shituquanImageView: UIImageView! {
+        didSet {
+            self.shituquanImageView.userInteractionEnabled = true
+            self.shituquanImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.shituquanTap)))
+        }
+    }
+    
+    @IBOutlet weak var pickerButton: UIButton! {
+        didSet {
+            pickerButton.addTarget(self, action: #selector(PublishViewController.setPicture), forControlEvents: .TouchUpInside)
+        }
+    }
+    
+    // 封面图片
+    @IBOutlet weak var coverPicture: UIImageView!
+    
+    @IBOutlet weak var upload: UIButton! {
+        didSet {
+            upload.layer.cornerRadius = upload.frame.height / 2 - 2
+        }
+    }
+    
+    @IBAction func upload(sender: AnyObject) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +83,19 @@ class PublishViewController: UIViewController, TANavigationBarType {
     // MARK: - Private Method
     @objc private func dismiss() {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: - Selector
+    @objc private func setPicture() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .PhotoLibrary
+        picker.allowsEditing = true
+        self.presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    @objc private func shituquanTap() {
+        self.shituquanImageView.highlighted = !self.shituquanImageView.highlighted
     }
 }
 
@@ -88,5 +127,13 @@ extension PublishViewController {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.textView.endEditing(true)
+    }
+}
+
+extension PublishViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        self.coverPicture.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
