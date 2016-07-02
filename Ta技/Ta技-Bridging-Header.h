@@ -3,3 +3,5 @@
 //
 
 #import <RongIMKit/RongIMKit.h>
+#import <ALBBSDK/ALBBSDK.h>
+#import <ALBBMediaService/ALBBMediaService.h>

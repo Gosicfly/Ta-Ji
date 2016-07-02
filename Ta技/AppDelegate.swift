@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
     
     var window: UIWindow?
     
+    var mediaService: ALBBMediaServiceProtocol?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: SCREEN_BOUNDS)
         self.window?.backgroundColor = navigationBarColor
@@ -30,6 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
         }
         self.window?.makeKeyAndVisible()
         self.setRongCloudDataSource()
+        
+        //阿里百川SDK初始化
+        ALBBSDK.sharedInstance().setDebugLogOpen(false)
+        ALBBSDK.sharedInstance().asyncInit({ 
+            print("ALBBSDK init success!")
+            }, failure: { error in
+                print("ALBBSDK init success!:\(error.description)")
+        })
+        self.mediaService = ALBBSDK.sharedInstance().getService(ALBBMediaServiceProtocol) as? ALBBMediaServiceProtocol
         return true
     }
     
@@ -86,7 +97,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
             } else {
                 TAUtilsManager.userInfoManager.writeInterest(json["data"]["interest"].string!)
             }
-            TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
+            if json["data"]["signature"].type == .Null {
+                
+            } else {
+                TAUtilsManager.userInfoManager.writeSignature(json["data"]["signature"].string!)
+            }
             TAUtilsManager.userInfoManager.synchronize()
         }
     }

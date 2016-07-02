@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class PublishViewController: UIViewController, TANavigationBarType {
 
@@ -60,7 +61,39 @@ class PublishViewController: UIViewController, TANavigationBarType {
     }
     
     @IBAction func upload(sender: AnyObject) {
+        SVProgressHUD.showWithStatus("上传中")
         
+        let data = UIImageJPEGRepresentation(self.coverPicture.image!, 1.0)!
+        (UIApplication.sharedApplication().delegate as! AppDelegate).mediaService?.uploadByData(data, space: "taji-ios", fileName: String(arc4random_uniform(99999999)), dir: "/taji", progress: nil, success: { (uploadSession, returnURL) in
+            
+            Alamofire.request(.POST, "http://api.tajiapp.cn/DongTai/publish", parameters:
+                [
+                    "userid" : UserInfoManager.sharedManager().readID().0,
+                    "openid" : UserInfoManager.sharedManager().readID().1,
+                    "media" : returnURL,
+                    "vedio" : "",
+                    "content" : self.textView.text,
+                    "parent" : "绘画",
+                    "child" : "素描",
+                    "loc" : "湖北省武汉市",
+                    "mastercircle" : self.shituquanImageView.highlighted ? "1" : "0",
+                ]).responseJSON(completionHandler: { (response) in
+                    guard response.result.isSuccess else {
+                        SVProgressHUD.showErrorWithStatus(response.result.error!.localizedDescription)
+                        return
+                    }
+                    let json = JSON(response.result.value!)
+                    print(json)
+                    if json["status"].string! == "200" {
+                        SVProgressHUD.showSuccessWithStatus("上传成功")
+                        NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
+                    } else {
+                        SVProgressHUD.showErrorWithStatus(json["msg"].string!)
+                    }
+                })
+            }, failed: { (uploadSession, info) in
+                SVProgressHUD.showErrorWithStatus("上传失败")
+        })
     }
     
     override func viewDidLoad() {
