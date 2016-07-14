@@ -107,6 +107,12 @@ extension HotViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(HotPageItem), forIndexPath: indexPath) as! HotPageItem
+            switch indexPath.row {
+            case 0:
+                cell.type = .Square
+            default:
+                cell.type = .Painting
+            }
             return cell
         }
     }

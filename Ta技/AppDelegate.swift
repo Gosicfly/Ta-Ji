@@ -104,6 +104,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCIMUserInfoDataSource {
             }
             TAUtilsManager.userInfoManager.synchronize()
         }
+        
+        //登录时获取一次订阅列表
+        Alamofire.request(.GET, "http://api.tajiapp.cn/Follow/followList?userid=\(TAUtilsManager.userInfoManager.readID().0)&openid=\(TAUtilsManager.userInfoManager.readID().1)").responseJSON { (response) -> Void in
+            guard response.result.isSuccess else {
+                return
+            }
+            let json = JSON(response.result.value!)
+            if json["status"] == "200" {
+                try! realm.write({
+                    let infos = realm.objects(SubscriberInfo)
+                    realm.delete(infos)
+                })
+                guard json["data"].type == .Array else {
+                    return
+                }
+                for (_, subJson) in json["data"] {
+                    let userName: String
+                    if subJson["username"].type == .Null {
+                        userName = "Null"
+                    } else {
+                        userName = subJson["username"].string!
+                    }
+                    let userID = subJson["userid"].string!
+                    let signature: String
+                    if subJson["signature"].type == .Null {
+                        signature = defaultSignature
+                    } else {
+                        signature = subJson["signature"].string!
+                    }
+                    let avatarURL: String
+                    if subJson["avatar"].type == .Null {
+                        avatarURL = defaultAvatarURL
+                    } else {
+                        avatarURL = subJson["avatar"].string!
+                    }
+                    let subscriberInfo = SubscriberInfo()
+                    subscriberInfo.userID = userID
+                    subscriberInfo.userName = userName
+                    subscriberInfo.signature = signature
+                    subscriberInfo.avatarURL = avatarURL
+                    try! realm.write({ () -> Void in
+                        realm.add(subscriberInfo, update: true)
+                    })
+                }
+            }
+        }
     }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -149,6 +149,10 @@ class SquareEventInfo: Object {
     }
 }
 
+class PaintingEventInfo: SquareEventInfo {
+    
+}
+
 class BannerInfo: Object {
     
     dynamic var id = ""
