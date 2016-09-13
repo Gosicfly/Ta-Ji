@@ -20,6 +20,8 @@ enum HotPageItemType {
 
 class HotPageItem: UICollectionViewCell, TACollectionViewType, TARefreshable {
     
+    weak var navigationController: UINavigationController?
+    
     var type: HotPageItemType = .Square
     
     private var squareEventInfos = realm.objects(SquareEventInfo)
@@ -294,10 +296,12 @@ extension HotPageItem: UICollectionViewDelegate, UICollectionViewDataSource {
         case .Square:
             let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier(String(SquareCell), forIndexPath: indexPath) as! SquareCell
             let info = self.squareEventInfos[indexPath.row]
-            cell.showImageView.kf_setImageWithURL(info.media.convertToURL()!)
-            cell.avatarImageView.kf_setImageWithURL(info.avatar.convertToURL()!)
-            cell.titleLabel.text = info.content
+            cell.picture.kf_setImageWithURL(info.media.convertToURL()!)
+            cell.avatar.kf_setImageWithURL(info.avatar.convertToURL()!)
+            cell.text.text = info.content
+            cell.name.text = info.authorname
             cell.numberOfLikers.text = info.likes
+            cell.favorNumber = info.likes
             return cell
         case .Painting:
             let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier(String(PaintingPictureCell), forIndexPath: indexPath) as! PaintingPictureCell
@@ -307,10 +311,22 @@ extension HotPageItem: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.picture.kf_setImageWithURL(info.media.convertToURL()!)
             cell.text.text = info.content
             cell.concernButton.uid = info.userid
+            cell.favorNumber = info.likes
             cell.layer.cornerRadius = cell.bounds.height / 70
             return cell
         }
         
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! HotCellItem
+        let detail = DetailViewController()
+        detail.avatarImage = cell.avatar.image!
+        detail.pictureImage = cell.picture.image!
+        detail.textText = cell.text.text!
+        detail.nameText = cell.name.text!
+        detail.favorNumberText = cell.favorNumber
+        self.navigationController?.pushViewController(detail, animated: true)
     }
 
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {

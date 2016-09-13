@@ -18,7 +18,9 @@ class ConcernButton: UIButton {
     var uid = ""
 }
 
-class PaintingPictureCell: UICollectionViewCell {
+class PaintingPictureCell: UICollectionViewCell, HotCellItem {
+    
+    var favorNumber = "0"
     
     @IBOutlet weak var avatar: UIImageView!
     

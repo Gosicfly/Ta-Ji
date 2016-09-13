@@ -63,6 +63,8 @@
 		A35A12061C724BDA005FAC9F /* TALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12051C724BDA005FAC9F /* TALabel.swift */; };
 		A35A12091C73863F005FAC9F /* MeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A12071C73863F005FAC9F /* MeMenuCell.swift */; };
 		A35A120A1C73863F005FAC9F /* MeMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A35A12081C73863F005FAC9F /* MeMenuCell.xib */; };
+		A36406B01D877B7600E24DB2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36406AE1D877B7600E24DB2 /* DetailViewController.swift */; };
+		A36406B11D877B7600E24DB2 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A36406AF1D877B7600E24DB2 /* DetailViewController.xib */; };
 		A36E32511CAE2CCE001E7D77 /* ImageSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36E32501CAE2CCE001E7D77 /* ImageSelectedView.swift */; };
 		A36E32571CAEB426001E7D77 /* LabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36E32561CAEB426001E7D77 /* LabelController.swift */; };
 		A36E325A1CAEBCFB001E7D77 /* LabelControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36E32581CAEBCFB001E7D77 /* LabelControllerCell.swift */; };
@@ -179,6 +181,8 @@
 		A35A12051C724BDA005FAC9F /* TALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TALabel.swift; sourceTree = "<group>"; };
 		A35A12071C73863F005FAC9F /* MeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMenuCell.swift; sourceTree = "<group>"; };
 		A35A12081C73863F005FAC9F /* MeMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeMenuCell.xib; sourceTree = "<group>"; };
+		A36406AE1D877B7600E24DB2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A36406AF1D877B7600E24DB2 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		A36E32501CAE2CCE001E7D77 /* ImageSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectedView.swift; sourceTree = "<group>"; };
 		A36E32561CAEB426001E7D77 /* LabelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelController.swift; sourceTree = "<group>"; };
 		A36E32581CAEBCFB001E7D77 /* LabelControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelControllerCell.swift; sourceTree = "<group>"; };
@@ -510,6 +514,8 @@
 			children = (
 				A342429C1C567C5F00FAD46D /* HotViewController.swift */,
 				A3E03F1D1C65FB7F006BEF6F /* HotPageItem.swift */,
+				A36406AE1D877B7600E24DB2 /* DetailViewController.swift */,
+				A36406AF1D877B7600E24DB2 /* DetailViewController.xib */,
 				A3E03F1F1C672E14006BEF6F /* CustomCells */,
 			);
 			name = "热门";
@@ -730,6 +736,7 @@
 				A37795011C79EF7A0063EE09 /* PaintingPictureCell.xib in Resources */,
 				A399D3E41C9835660007AE82 /* SkillChangingCell.xib in Resources */,
 				A34242791C567A4200FAD46D /* LaunchScreen.storyboard in Resources */,
+				A36406B11D877B7600E24DB2 /* DetailViewController.xib in Resources */,
 				A39D2B5B1C80AC3D00795B97 /* StudentsController.xib in Resources */,
 				A3C1FA661C82DB85007CA284 /* AddLabelController.xib in Resources */,
 				A37795051C79EF8F0063EE09 /* PaintingVedioCell.xib in Resources */,
@@ -819,6 +826,7 @@
 				A37B37A41CB0BF93000ADD77 /* PeoplePage.swift in Sources */,
 				A3252B5A1C6F4B7100022AC0 /* MeViewController.swift in Sources */,
 				A33B52B61C64711A007AEE0D /* ReachabilityManager.swift in Sources */,
+				A36406B01D877B7600E24DB2 /* DetailViewController.swift in Sources */,
 				A342429F1C567C7600FAD46D /* TAMenuItem.swift in Sources */,
 				A34EFE841C9BE57600A74263 /* ProtocolExtensions.swift in Sources */,
 				A34242911C567BB400FAD46D /* TATabBarController.swift in Sources */,

@@ -110,8 +110,10 @@ extension HotViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             switch indexPath.row {
             case 0:
                 cell.type = .Square
+                cell.navigationController = self.navigationController
             default:
                 cell.type = .Painting
+                cell.navigationController = self.navigationController
             }
             return cell
         }

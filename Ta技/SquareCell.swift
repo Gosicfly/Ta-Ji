@@ -8,13 +8,17 @@
 
 import UIKit
 
-class SquareCell: UICollectionViewCell {
+class SquareCell: UICollectionViewCell, HotCellItem {
     
-    var showImageView: UIImageView! {
+    var name: UILabel! = UILabel()
+    
+    var favorNumber = "0"
+    
+    var picture: UIImageView! {
         didSet {
-            self.addSubview(self.showImageView)
-            self.showImageView.contentMode = .ScaleToFill
-            self.showImageView.snp_makeConstraints { (make) -> Void in
+            self.addSubview(self.picture)
+            self.picture.contentMode = .ScaleToFill
+            self.picture.snp_makeConstraints { (make) -> Void in
                 make.left.equalTo(self)
                 make.right.equalTo(self)
                 make.top.equalTo(self)
@@ -23,14 +27,14 @@ class SquareCell: UICollectionViewCell {
         }
     }
     
-    var avatarImageView: UIImageView! {
+    var avatar: UIImageView! {
         didSet {
-            self.addSubview(self.avatarImageView)
-            self.avatarImageView.snp_makeConstraints { (make) -> Void in
+            self.addSubview(self.avatar)
+            self.avatar.snp_makeConstraints { (make) -> Void in
                 make.left.equalTo(self).offset(10)
-                make.centerY.equalTo(self.showImageView.snp_bottom)
+                make.centerY.equalTo(self.picture.snp_bottom)
                 make.bottom.equalTo(self).offset(-5)
-                make.width.equalTo(self.avatarImageView.snp_height)
+                make.width.equalTo(self.avatar.snp_height)
             }
         }
     }
@@ -41,26 +45,26 @@ class SquareCell: UICollectionViewCell {
             self.squareMaskView.snp_makeConstraints { (make) -> Void in
                 make.left.equalTo(self)
                 make.right.equalTo(self)
-                make.bottom.equalTo(self.showImageView.snp_bottom)
-                make.top.equalTo(self.avatarImageView.snp_top).offset(-5)
+                make.bottom.equalTo(self.picture.snp_bottom)
+                make.top.equalTo(self.avatar.snp_top).offset(-5)
             }
             self.squareMaskView.backgroundColor = UIColor.blackColor()
             self.squareMaskView.alpha = 0.5
         }
     }
     
-    var titleLabel: UILabel! {
+    var text: UILabel! {
         didSet {
-            self.addSubview(self.titleLabel)
-            self.titleLabel.snp_makeConstraints { (make) -> Void in
-                make.left.equalTo(self.avatarImageView.snp_right).offset(7)
+            self.addSubview(self.text)
+            self.text.snp_makeConstraints { (make) -> Void in
+                make.left.equalTo(self.avatar.snp_right).offset(7)
                 make.right.equalTo(self)
                 make.top.equalTo(self.squareMaskView.snp_top).offset(5)
                 make.bottom.equalTo(self.squareMaskView.snp_bottom).offset(-5)
             }
-            self.titleLabel.text = "加载中..."
-            self.titleLabel.textColor = defaultTintColot
-            self.titleLabel.font = UIFont.systemFontOfSize(12)
+            self.text.text = "加载中..."
+            self.text.textColor = defaultTintColot
+            self.text.font = UIFont.systemFontOfSize(12)
         }
     }
     
@@ -68,9 +72,9 @@ class SquareCell: UICollectionViewCell {
         didSet {
             self.addSubview(self.likeImageView)
             self.likeImageView.snp_makeConstraints { (make) -> Void in
-                make.left.equalTo(self.avatarImageView.snp_right).offset(7)
+                make.left.equalTo(self.avatar.snp_right).offset(7)
                 make.width.equalTo(self.likeImageView.snp_height)
-                make.top.equalTo(self.showImageView.snp_bottom).offset(2)
+                make.top.equalTo(self.picture.snp_bottom).offset(2)
                 make.bottom.equalTo(self).offset(-2)
             }
         }
@@ -101,20 +105,20 @@ class SquareCell: UICollectionViewCell {
     }
     
     private func setSubViews() {
-        self.showImageView = UIImageView(image: UIImage(named: "loading"))
-        self.avatarImageView = UIImageView(image: UIImage(named: "loading"))
+        self.picture = UIImageView(image: UIImage(named: "loading"))
+        self.avatar = UIImageView(image: UIImage(named: "loading"))
         self.squareMaskView = UIView()
-        self.titleLabel = UILabel()
+        self.text = UILabel()
         self.likeImageView = UIImageView(image: UIImage(named: "icon_tab_home_hot_favor"))
         self.numberOfLikers = UILabel()
         
-        self.bringSubviewToFront(self.avatarImageView)
-        self.bringSubviewToFront(self.titleLabel)
+        self.bringSubviewToFront(self.avatar)
+        self.bringSubviewToFront(self.text)
     }
     
     override func layoutSubviews() {
         self.layoutIfNeeded()
-        self.avatarImageView.gf_addCorner(radius: self.avatarImageView.bounds.width / 2)
+        self.avatar.gf_addCorner(radius: self.avatar.bounds.width / 2)
     }
     
 }

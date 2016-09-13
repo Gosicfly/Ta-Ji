@@ -44,3 +44,16 @@ protocol TARefreshable: class {
 //
 //    func beginRefreshing()
 }
+
+protocol HotCellItem {
+    
+    var avatar: UIImageView! { get set }
+    
+    var picture: UIImageView! { get set }
+    
+    var text: UILabel! { get set }
+    
+    var name: UILabel! { get set }
+    
+    var favorNumber: String { get set }
+}
