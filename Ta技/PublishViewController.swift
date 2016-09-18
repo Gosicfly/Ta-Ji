@@ -56,7 +56,7 @@ class PublishViewController: UIViewController, TANavigationBarType {
     
     @IBOutlet weak var upload: UIButton! {
         didSet {
-            upload.layer.cornerRadius = upload.frame.height / 2 - 2
+//            upload.layer.cornerRadius = upload.frame.height / 2 - 2
         }
     }
     
